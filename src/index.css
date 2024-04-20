@@ -1,11 +1,45 @@
-/*Regular*/
-/*
+/* AppleSDGothicR */
 @font-face {
-  font-family: "Pretendard";
-  font-style: normal;
+  font-family: "AppleSDGothicNeo";
   font-weight: 400;
-  font-display: swap;
-  src: url(../public/Pretendard-Regular.otf) format("truetype"), url(../public/Pretendard-Regular.ttf) format("ttf"),
-    url(../public/Pretendard-Regular.woff) format("woff"), url(../public/Pretendard-Regular.woff2) format("woff2");
+  src: url(../public/fonts/AppleSDGothicNeoR.ttf) format("ttf"),
+    url(../public/fonts/AppleSDGothicNeoR.woff2) format("woff2");
 }
-*/
+
+/* AppleSDGothicM */
+@font-face {
+  font-family: "AppleSDGothicNeo";
+  font-weight: 500;
+  src: url(../public/fonts/AppleSDGothicNeoM.ttf) format("ttf"),
+    url(../public/fonts/AppleSDGothicNeoM.woff2) format("woff2");
+}
+
+/* AppleSDGothicSB */
+@font-face {
+  font-family: "AppleSDGothicNeo";
+  font-weight: 600;
+  src: url(../public/fonts/AppleSDGothicNeoSB.ttf) format("ttf"),
+    url(../public/fonts/AppleSDGothicNeoSB.woff2) format("woff2");
+}
+
+/* AppleSDGothicEB */
+@font-face {
+  font-family: "AppleSDGothicNeo";
+  font-weight: 800;
+  src: url(../public/fonts/AppleSDGothicNeoEB.ttf) format("ttf"),
+    url(../public/fonts/AppleSDGothicNeoEB.woff2) format("woff2");
+}
+
+/* PressStart */
+@font-face {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  src: url(../public/fonts/PressStart2P-Regular.ttf) format("ttf");
+}
+
+/* Prompt */
+@font-face {
+  font-family: "Prompt", sans-serif;
+  font-weight: 600;
+  src: url(../public/fonts/Prompt-SemiBold.ttf) format("ttf");
+}

@@ -5,7 +5,8 @@ img {
 
 body {
   margin: 0;
-  /* font-family: "Pretendard"; */
+  /* font-family: "AppleSDGothicNeo";
+  font-weight: 400; */
   overflow-x: hidden;
 
   min-height: 100vh;
