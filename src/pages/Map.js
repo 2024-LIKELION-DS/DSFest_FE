@@ -1,10 +1,19 @@
 import React from "react";
+import * as C from "../styles/CommonStyle";
 import * as Mp from "../styles/MapStyle";
 
 function Map() {
   return (
     <>
-      <Mp.Map></Mp.Map>
+      <C.Page>
+        <C.Center>
+          <Mp.Background>
+            <C.PageSpace>
+              <Mp.Map></Mp.Map>
+            </C.PageSpace>
+          </Mp.Background>
+        </C.Center>
+      </C.Page>
     </>
   );
 }
