@@ -158,6 +158,8 @@ export const TitleText = styled.div`
 `;
 
 export const Phone = styled.div`
+  overflow-y: scroll;
+
   @media (hover: hover) and (pointer: fine) {
     width: 360px;
     height: 800px;
