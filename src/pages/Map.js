@@ -4,6 +4,7 @@ import * as Mp from "../styles/MapStyle";
 
 import PcTitle from "../components/PcTitle";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Map() {
   return (
@@ -22,6 +23,7 @@ function Map() {
                 여기 부분 작업!
                 <br />
                 기존 코드 절대 수정하면 안 됩니다
+                {/* <Footer /> */}
               </Mp.Map>
             </C.Phone>
           </Mp.Background>
