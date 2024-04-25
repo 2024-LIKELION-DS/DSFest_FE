@@ -3,6 +3,8 @@ import * as C from "../styles/CommonStyle";
 import * as N from "../styles/NoticeStyle";
 
 import PcTitle from "../components/PcTitle";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Notice() {
   return (
@@ -16,9 +18,12 @@ function Notice() {
           <N.Background>
             <C.Phone>
               <N.Notice>
+                <Header />
+                <C.PageTitle>NOTICE</C.PageTitle>
                 여기 부분 작업!
                 <br />
                 기존 코드 절대 수정하면 안 됩니다
+                {/* <Footer /> */}
               </N.Notice>
             </C.Phone>
           </N.Background>
