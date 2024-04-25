@@ -2,17 +2,27 @@ import React from "react";
 import * as C from "../styles/CommonStyle";
 import * as N from "../styles/NoticeStyle";
 
+import PcTitle from "../components/PcTitle";
+
 function Notice() {
   return (
     <>
       <C.Page>
-        <C.Center>
+        <C.BlackBg />
+        <C.Area>
+          <C.Title>
+            <PcTitle />
+          </C.Title>
           <N.Background>
-            <C.PageSpace>
-              <N.Notice></N.Notice>
-            </C.PageSpace>
+            <C.Phone>
+              <N.Notice>
+                여기 부분 작업!
+                <br />
+                기존 코드 절대 수정하면 안 됩니다
+              </N.Notice>
+            </C.Phone>
           </N.Background>
-        </C.Center>
+        </C.Area>
       </C.Page>
     </>
   );
