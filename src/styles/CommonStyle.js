@@ -173,3 +173,11 @@ export const Phone = styled.div`
     }
   }
 `;
+
+export const PageTitle = styled.div`
+  text-align: center;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+`;
