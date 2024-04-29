@@ -14,7 +14,7 @@ export const FooterSpace = styled.div`
   margin-top: 16px;
 
   font-family: "Prompt", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 9px;
   color: white;
   line-height: 180%;

@@ -46,7 +46,7 @@ export const DropdownItem = styled.div`
   padding: 0 24px;
   color: #448bdb;
   font-family: "Prompt", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   cursor: pointer;
   display: flex;
