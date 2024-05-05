@@ -5,8 +5,7 @@ img {
 
 body {
   margin: 0;
-  /* font-family: "AppleSDGothicNeo";
-  font-weight: 400; */
+  font-family: "AppleSDGothicNeo", "Prompt", "Press Start 2P";
   overflow-x: hidden;
 
   min-height: 100vh;
