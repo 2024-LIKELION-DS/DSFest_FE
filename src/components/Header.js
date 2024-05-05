@@ -39,7 +39,7 @@ function Header() {
               <H.DropdownItem onClick={() => handleNavLinkClick("/map")}>Map</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/review")}>Review</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/timetable")}>Time Table</H.DropdownItem>
-              <H.DropdownItem onClick={() => handleNavLinkClick("/event")}>Event</H.DropdownItem>
+              <H.DropdownItem onClick={() => handleNavLinkClick("/photo")}>Photo</H.DropdownItem>
             </H.DropdownContainer>
           </>
         )}
