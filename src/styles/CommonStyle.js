@@ -173,8 +173,8 @@ export const Phone = styled.div`
     @media (min-height: 801px) {
       border: 12px solid #111111;
       border-radius: 24px;
-      margin-top: -12px;
-      margin-right: -12px;
+      margin-top: -11.294px;
+      margin-right: -11.294px;
       box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
     }
   }
