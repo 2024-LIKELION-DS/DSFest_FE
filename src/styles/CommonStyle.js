@@ -159,10 +159,16 @@ export const TitleText = styled.div`
 
 export const Phone = styled.div`
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (hover: hover) and (pointer: fine) {
     width: 360px;
-    height: 800px;
+    height: 100%;
 
     @media (min-height: 801px) {
       border: 12px solid #111111;
