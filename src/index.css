@@ -2,6 +2,7 @@
 @font-face {
   font-family: "AppleSDGothicNeo";
   font-weight: 400;
+  font-display: swap;
   src: url(../public/fonts/AppleSDGothicNeoR.ttf) format("ttf"),
     url(../public/fonts/AppleSDGothicNeoR.otf) format("truetype"),
     url(../public/fonts/AppleSDGothicNeoR.woff2) format("woff2");
@@ -11,6 +12,7 @@
 @font-face {
   font-family: "AppleSDGothicNeo";
   font-weight: 500;
+  font-display: swap;
   src: url(../public/fonts/AppleSDGothicNeoM.ttf) format("ttf"),
     url(../public/fonts/AppleSDGothicNeoM.otf) format("truetype"),
     url(../public/fonts/AppleSDGothicNeoM.woff2) format("woff2");
@@ -20,6 +22,7 @@
 @font-face {
   font-family: "AppleSDGothicNeo";
   font-weight: 600;
+  font-display: swap;
   src: url(../public/fonts/AppleSDGothicNeoSB.ttf) format("ttf"),
     url(../public/fonts/AppleSDGothicNeoSB.otf) format("truetype"),
     url(../public/fonts/AppleSDGothicNeoSB.woff2) format("woff2");
@@ -29,6 +32,7 @@
 @font-face {
   font-family: "AppleSDGothicNeo";
   font-weight: 800;
+  font-display: swap;
   src: url(../public/fonts/AppleSDGothicNeoEB.ttf) format("ttf"),
     url(../public//fonts/AppleSDGothicNeoEB.otf) format("truetype"),
     url(../public/fonts/AppleSDGothicNeoEB.woff2) format("woff2");
@@ -38,6 +42,7 @@
 @font-face {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
+  font-display: swap;
   src: url(../public/fonts/PressStart2P-Regular.ttf) format("ttf"),
     url(../public//fonts/PressStart2P-Regular.otf) format("truetype"),
     url(../public/fonts/PressStart2P-Regular.woff) format("woff"),
@@ -48,6 +53,7 @@
 @font-face {
   font-family: "Prompt", sans-serif;
   font-weight: 600;
+  font-display: swap;
   src: url(../public/fonts/Prompt-SemiBold.ttf) format("ttf"),
     url(../public/fonts/Prompt-SemiBold.otf) format("truetype"),
     url(../public/fonts/Prompt-SemiBold.woff) format("woff"), url(../public/fonts/Prompt-SemiBold.woff2) format("woff2");
@@ -57,6 +63,7 @@
 @font-face {
   font-family: "Prompt", sans-serif;
   font-weight: 500;
+  font-display: swap;
   src: url(../public/fonts/Prompt-Medium.ttf) format("ttf"), url(../public/fonts/Prompt-Medium.otf) format("truetype"),
     url(../public/fonts/Prompt-Medium.woff) format("woff"), url(../public/fonts/Prompt-Medium.woff2) format("woff2");
 }
@@ -65,6 +72,7 @@
 @font-face {
   font-family: "Prompt", sans-serif;
   font-weight: 400;
+  font-display: swap;
   src: url(../public/fonts/Prompt-Regular.ttf) format("ttf"), url(../public/fonts/Prompt-Regular.otf) format("truetype"),
     url(../public/fonts/Prompt-Regular.woff) format("woff"), url(../public/fonts/Prompt-Regular.woff2) format("woff2");
 }
