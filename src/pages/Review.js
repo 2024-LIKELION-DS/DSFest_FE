@@ -2,17 +2,32 @@ import React from "react";
 import * as C from "../styles/CommonStyle";
 import * as R from "../styles/ReviewStyle";
 
+import PcTitle from "../components/PcTitle";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
 function Review() {
   return (
     <>
       <C.Page>
-        <C.Center>
+        <C.BlackBg />
+        <C.Area>
+          <C.Title>
+            <PcTitle />
+          </C.Title>
           <R.Background>
-            <C.PageSpace>
-              <R.Review></R.Review>
-            </C.PageSpace>
+            <C.Phone>
+              <R.Review>
+                <Header />
+                <C.PageTitle>REVIEW</C.PageTitle>
+                여기 부분 작업!
+                <br />
+                기존 코드 절대 수정하면 안 됩니다
+                {/* <Footer /> */}
+              </R.Review>
+            </C.Phone>
           </R.Background>
-        </C.Center>
+        </C.Area>
       </C.Page>
     </>
   );

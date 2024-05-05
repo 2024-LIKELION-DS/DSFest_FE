@@ -2,17 +2,27 @@ import React from "react";
 import * as C from "../styles/CommonStyle";
 import * as S from "../styles/SplashStyle";
 
+import PcTitle from "../components/PcTitle";
+
 function Splash() {
   return (
     <>
       <C.Page>
-        <C.Center>
+        <C.BlackBg />
+        <C.Area>
+          <C.Title>
+            <PcTitle />
+          </C.Title>
           <S.Background>
-            <C.PageSpace>
-              <S.Splash></S.Splash>
-            </C.PageSpace>
+            <C.Phone>
+              <S.Splash>
+                여기 부분 작업!
+                <br />
+                기존 코드 절대 수정하면 안 됩니다
+              </S.Splash>
+            </C.Phone>
           </S.Background>
-        </C.Center>
+        </C.Area>
       </C.Page>
     </>
   );
