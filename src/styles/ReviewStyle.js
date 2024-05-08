@@ -35,19 +35,21 @@ export const CloudLeft = styled.div`
     height: 74px;
     position: absolute;
     top: 6.5rem;
-    left: -1rem;
+    right: 18rem;
 `;
 
 export const CloudRight = styled.div`
-    width: 143px;
+    width: 131px;
     height: 144px;
     position: absolute;
-    top: 12rem;
-    right: -0.7rem;
-    z-index: -1;
+    top: 11rem;
+    right: 0rem;
+    z-index: 0;
 `;
 
-export const Write = styled.form``;
+export const Write = styled.form`
+    z-index: 1;
+`;
 
 export const WriteText = styled.textarea`
     display: flex;
@@ -83,7 +85,8 @@ export const WriteButton = styled.button`
 export const ReviewList = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    min-height: 521.5px;
 `;
 
 export const List = styled.ul`
@@ -95,7 +98,6 @@ export const List = styled.ul`
 export const Parasol = styled.div`
     width: 46px;
     height: 46px;
-    /*display: ${({ isVisible }) => (isVisible ? "block" : "none")};*/
 `;
 
 export const ListItem = styled.li`

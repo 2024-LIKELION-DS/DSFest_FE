@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import * as C from "../styles/CommonStyle";
 import * as R from "../styles/ReviewStyle";
@@ -12,16 +13,24 @@ import cloudRight from "../img/3_cloud_131x144.png";
 import parasol from "../img/parasol&tube_76x47.png";
 
 function Review() {
-    const [text, setText] = useState("");
+    const [content, setContent] = useState("");
     const [review, setReview] = useState([]);
     const writeRef = useRef();
+
     const onChange = (event) => {
         const height = event.target.value;
-        setText(height);
-    };
-    const checkTime = (time) => {
+        setContent(height);
+    }; //입력창 변화
+
+    useEffect(() => {
+        writeRef.current.style.height = "76px";
+        const scrollHeight = writeRef.current.scrollHeight;
+        writeRef.current.style.height = scrollHeight + "px";
+    }, [content]); //작성칸 높이 변경
+
+    const checkTime = (createdAt) => {
         const currentTime = new Date();
-        const submitTime = new Date(time);
+        const submitTime = new Date(createdAt);
         const timeDifference = (currentTime - submitTime) / 1000;
         if (timeDifference < 60) {
             return "방금";
@@ -38,24 +47,48 @@ function Review() {
             };
             return submitTime.toLocaleString("en-US", options);
         }
-    };
-    const onSubmit = (event) => {
-        event.preventDefault();
-        if (text === "") {
-            return;
+    }; //작성 시간 설정
+
+    const fetchReviews = async () => {
+        try {
+            const response = await axios.get(
+                "http://15.165.230.224:8080/review"
+            );
+            setReview(response.data);
+        } catch (error) {
+            console.error(
+                "리뷰 데이터를 불러오는 중 오류가 발생했습니다:",
+                error
+            );
         }
-        const currentTime = new Date();
-        setReview((currentArray) => [
-            { text, time: currentTime },
-            ...currentArray,
-        ]);
-        setText("");
     };
     useEffect(() => {
-        writeRef.current.style.height = "76px";
-        const scrollHeight = writeRef.current.scrollHeight;
-        writeRef.current.style.height = scrollHeight + "px";
-    }, [text]);
+        fetchReviews();
+    }, []); //get api*/
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        if (content === "") {
+            return;
+        }
+        try {
+            const response = await axios.post(
+                "http://15.165.230.224:8080/review",
+                {
+                    content: content,
+                }
+            );
+            const newReview = {
+                id: response.data.data.id,
+                content: response.data.data.content,
+                createdAt: response.data.data.createdAt,
+            };
+            setReview((currentArray) => [newReview, ...currentArray]);
+            setContent("");
+        } catch (error) {
+            console.error("content를 입력해주세요.", error);
+        }
+    }; //post api
 
     return (
         <>
@@ -81,12 +114,15 @@ function Review() {
                                         <R.WriteText
                                             ref={writeRef}
                                             onChange={onChange}
-                                            value={text}
+                                            value={content}
                                             type="text"
                                             placeholder="2024 근화제 <찬란> 재밌게 즐기셨나요?
                                             후기를 남겨주세요!"
                                         ></R.WriteText>
-                                        <R.WriteButton hasText={text}>
+                                        <R.WriteButton
+                                            hasText={content}
+                                            type="submit"
+                                        >
                                             등록하기
                                         </R.WriteButton>
                                     </R.Write>
@@ -99,18 +135,18 @@ function Review() {
                                             </R.Parasol>
                                         )}
                                         {review.map((item, index) => (
-                                            <R.ListItem key={index}>
+                                            <R.ListItem key={item.id}>
                                                 <R.ListText>
-                                                    {item.text}
+                                                    {item.content}
                                                 </R.ListText>
                                                 <R.ListTime>
-                                                    {checkTime(item.time)}
+                                                    {checkTime(item.createdAt)}
                                                 </R.ListTime>
                                             </R.ListItem>
                                         ))}
                                     </R.List>
                                 </R.ReviewList>
-                                {/* <Footer /> */}
+                                {<Footer />}
                             </R.Review>
                         </C.Phone>
                     </R.Background>
