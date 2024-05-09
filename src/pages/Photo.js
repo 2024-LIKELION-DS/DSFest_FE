@@ -1,11 +1,11 @@
 import React from "react";
 import * as C from "../styles/CommonStyle";
-import * as DE from "../styles/DSEventStyle";
+import * as P from "../styles/PhotoStyle";
 
 import PcTitle from "../components/PcTitle";
 import Header from "../components/Header";
 
-function DSEvent() {
+function Photo() {
   return (
     <>
       <C.Page>
@@ -14,21 +14,21 @@ function DSEvent() {
           <C.Title>
             <PcTitle />
           </C.Title>
-          <DE.Background>
+          <P.Background>
             <C.Phone>
-              <DE.DSEvent>
+              <P.Photo>
                 <Header />
-                <C.PageTitle>EVENT</C.PageTitle>
+                <C.PageTitle>PHOTO</C.PageTitle>
                 여기 부분 작업!
                 <br />
                 기존 코드 절대 수정하면 안 됩니다
-              </DE.DSEvent>
+              </P.Photo>
             </C.Phone>
-          </DE.Background>
+          </P.Background>
         </C.Area>
       </C.Page>
     </>
   );
 }
 
-export default DSEvent;
+export default Photo;

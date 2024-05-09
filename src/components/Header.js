@@ -28,18 +28,18 @@ function Header() {
         <H.HeaderLogo onClick={() => handleNavLinkClick("/main")}>
           <img src={headerLogo} alt="찬란" />
         </H.HeaderLogo>
-        <H.HeaderMenu onClick={handleMenuClick} isVisible={isDropdownVisible}>
+        <H.HeaderMenu onClick={handleMenuClick} $isVisible={isDropdownVisible}>
           <img src={isDropdownVisible ? headerClickMenu : headerMenu} alt="메뉴" />
         </H.HeaderMenu>
         {isDropdownVisible && (
           <>
             <H.Background onClick={closeMenuClick} />
-            <H.DropdownContainer isVisible={isDropdownVisible}>
+            <H.DropdownContainer $isVisible={isDropdownVisible}>
               <H.DropdownItem onClick={() => handleNavLinkClick("/notice")}>Notice</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/map")}>Map</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/review")}>Review</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/timetable")}>Time Table</H.DropdownItem>
-              <H.DropdownItem onClick={() => handleNavLinkClick("/event")}>Event</H.DropdownItem>
+              <H.DropdownItem onClick={() => handleNavLinkClick("/photo")}>Photo</H.DropdownItem>
             </H.DropdownContainer>
           </>
         )}
