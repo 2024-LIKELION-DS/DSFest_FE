@@ -37,7 +37,12 @@ export const Notice = styled.div`
     align-items: center;
     background-color: #FFFFFF;
     border-radius: 24px;
+    box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     position: relative;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
     & .rock {
         position: absolute;
         bottom: 0;
@@ -50,6 +55,10 @@ export const Notice = styled.div`
         font-size: 20px;
         font-weight: 600;
         color: #448BDB;
+        transition: color 0.3s ease;
+    }
+    &:hover div {
+        color: rgba(68, 139, 219, 0.60);
     }
 `;
 
@@ -68,7 +77,13 @@ export const TimeTable = styled.div`
     background-color: #654FE9;
     border: 4px solid #FFFFFF;
     border-radius: 24px;
+    box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     position: relative;
+    transition: border 0.3s ease, background 0.3s ease;
+    &:hover {
+        border: 4px solid rgba(255, 255, 255, 0.50);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #654FE9; /* hover 시 배경색 변경 */
+    }
     & .beachball {
         position: absolute;
         top: 36px;
@@ -98,6 +113,10 @@ export const TimeTable = styled.div`
         font-size: 20px;
         font-weight: 600;
         color: #FFFFFF;
+        transition: color 0.3s ease;
+    }
+    &:hover div {
+        color: rgba(255, 255, 255, 0.50);
     }
 `;
 
@@ -120,13 +139,24 @@ export const Map = styled.div`
     align-items: center;
     border-radius: 24px;
     border: 4px solid #FFFFFF;
+    box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
+    transition: border 0.3s ease, background 0.3s ease;
+    &:hover {
+        border: 4px solid rgba(255, 255, 255, 0.50);
+        background: rgba(255, 255, 255, 0.10);
+    }
     & div {
         font-family: Prompt;
         font-size: 20px;
         font-weight: 600;
         color: #FFFFFF;
+        transition: color 0.3s ease;
+    }
+    &:hover div {
+        color: rgba(255, 255, 255, 0.60);
     }
 `;
+
 
 export const Review = styled.div`
     width: 94px;
@@ -136,11 +166,21 @@ export const Review = styled.div`
     align-items: center;
     border-radius: 24px;
     border: 4px solid #FFFFFF;
+    box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
+    transition: border 0.3s ease, background 0.3s ease;
+    &:hover {
+        border: 4px solid rgba(255, 255, 255, 0.50);
+        background: rgba(255, 255, 255, 0.10);
+    }
     & div {
         font-family: Prompt;
         font-size: 20px;
         font-weight: 600;
         color: #FFFFFF;
+        transition: color 0.3s ease;
+    }
+    &:hover div {
+        color: rgba(255, 255, 255, 0.60);
     }
 `;
 
@@ -152,7 +192,12 @@ export const Photo = styled.div`
     justify-content: center;
     background-color: #FFFFFF;
     border-radius: 24px;
+    box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     position: relative;
+    transition: opacity 0.3s ease; /* 트랜지션 효과 추가 */
+    &:hover {
+        opacity: 0.7; /* hover 시 투명도 변경 */
+    }
     & .parasol {
         position: absolute;
         top: -46px;
@@ -173,5 +218,9 @@ export const Photo = styled.div`
         font-size: 20px;
         font-weight: 600;
         color: #448BDB;
+        transition: color 0.3s ease; /* 텍스트 색상에 트랜지션 효과 추가 */
+    }
+    &:hover div {
+        color: rgba(68, 139, 219, 0.60); /* hover 시 텍스트 색상 변경 */
     }
 `;
