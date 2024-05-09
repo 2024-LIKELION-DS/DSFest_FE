@@ -18,9 +18,18 @@ export const Photo = styled.div`
   }
 `;
 
-export const TextSpace = styled.div`
+export const PhotoSpace = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+export const TextSpace = styled.div`
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 40px;
+  margin-bottom: 16px;
 `;
 
 export const Text = styled.div`
@@ -29,8 +38,14 @@ export const Text = styled.div`
   font-weight: 400;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.5);
-  width: 360px;
-  margin: 40px 0 16px 20px;
+  margin-left: 20px;
+`;
+
+export const PhotoDownImg = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  cursor: pointer;
 `;
 
 export const FrameBox = styled.div`
