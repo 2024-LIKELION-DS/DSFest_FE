@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import * as S from "../styles/ShortStyle";
 
 import logo from "../img/splash_logo_202x220.png"
@@ -16,27 +17,37 @@ function Shortcut() {
                 <div><img src={logo} alt="찬란 로고"/></div>
             </S.Logo>
             <S.ShortcutArea>
-                <S.Notice>
-                    <img className='rock' src={rock} alt='rock' />
-                    <div>Notice</div>
-                </S.Notice>
+                <NavLink to="/notice">
+                    <S.Notice>
+                        <img className='rock' src={rock} alt='rock' />
+                        <div>Notice</div>
+                    </S.Notice>
+                </NavLink>
                 <S.QuadArea>
-                    <S.TimeTable>
-                        <img className='beachball' src={beachball} alt='beachball'/>
-                        <img className='boat' src={boat} alt='boat'/>
-                        <img className='star' src={star} alt='star'/>
-                        <div>Time Table</div>
-                    </S.TimeTable>
+                    <NavLink to="/timetable">
+                        <S.TimeTable>
+                            <img className='beachball' src={beachball} alt='beachball'/>
+                            <img className='boat' src={boat} alt='boat'/>
+                            <img className='star' src={star} alt='star'/>
+                            <div>Time Table</div>
+                        </S.TimeTable>
+                    </NavLink>
                     <S.TrioArea>
                         <S.DuoArea>
-                            <S.Map><div>Map</div></S.Map>
-                            <S.Review><div>Review</div></S.Review>
+                            <NavLink to="/map">
+                                <S.Map><div>Map</div></S.Map>
+                            </NavLink>
+                            <NavLink to="/review">
+                                <S.Review><div>Review</div></S.Review>
+                            </NavLink>
                         </S.DuoArea>
-                        <S.Photo>
-                            <img className='parasol' src={parasol} alt='parasol' />
-                            <img className='beach' src={beach} alt='Beach' />
-                            <div>Photo</div>
-                        </S.Photo>
+                        <NavLink to="/photo">
+                            <S.Photo>
+                                <img className='parasol' src={parasol} alt='parasol' />
+                                <img className='beach' src={beach} alt='Beach' />
+                                <div>Photo</div>
+                            </S.Photo>
+                        </NavLink>
                     </S.TrioArea>
                 </S.QuadArea>
             </S.ShortcutArea>
