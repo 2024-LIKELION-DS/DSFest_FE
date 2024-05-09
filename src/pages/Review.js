@@ -11,6 +11,8 @@ import cloudLeft from "../img/3_cloud_104x75.png";
 import cloudRight from "../img/3_cloud_131x144.png";
 import parasol from "../img/parasol&tube_76x47.png";
 
+const API_KEY = process.env.REACT_APP_API;
+
 function Review() {
   const [content, setContent] = useState("");
   const [review, setReview] = useState([]);
@@ -50,7 +52,8 @@ function Review() {
 
   const fetchReviews = async () => {
     try {
-      const response = await axios.get("http://15.165.230.224:8080/review");
+      const url = `${API_KEY}` + "/review";
+      const response = await axios.get(url);
       setReview(response.data.data);
     } catch (error) {
       console.error("리뷰 데이터를 불러오는 중 오류가 발생했습니다:", error);
@@ -63,7 +66,8 @@ function Review() {
       return;
     }
     try {
-      const response = await axios.post("http://15.165.230.224:8080/review", {
+      const url = `${API_KEY}` + "/review";
+      const response = await axios.post(url, {
         content: content,
       });
       const newReview = {
