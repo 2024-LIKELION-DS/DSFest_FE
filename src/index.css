@@ -1,70 +1,80 @@
 /* AppleSDGothicR */
 @font-face {
   font-family: "AppleSDGothicNeo";
+  font-style: normal;
   font-weight: 400;
-  src: url(../public/fonts/AppleSDGothicNeoR.ttf) format("ttf"),
-    url(../public/fonts/AppleSDGothicNeoR.otf) format("truetype"),
+  font-display: swap;
+  src: url(../public/fonts/AppleSDGothicNeoR.otf) format("opentype"),
     url(../public/fonts/AppleSDGothicNeoR.woff2) format("woff2");
 }
 
 /* AppleSDGothicM */
 @font-face {
   font-family: "AppleSDGothicNeo";
+  font-style: normal;
   font-weight: 500;
-  src: url(../public/fonts/AppleSDGothicNeoM.ttf) format("ttf"),
-    url(../public/fonts/AppleSDGothicNeoM.otf) format("truetype"),
+  font-display: swap;
+  src: url(../public/fonts/AppleSDGothicNeoM.otf) format("opentype"),
     url(../public/fonts/AppleSDGothicNeoM.woff2) format("woff2");
 }
 
 /* AppleSDGothicSB */
 @font-face {
   font-family: "AppleSDGothicNeo";
+  font-style: normal;
   font-weight: 600;
-  src: url(../public/fonts/AppleSDGothicNeoSB.ttf) format("ttf"),
-    url(../public/fonts/AppleSDGothicNeoSB.otf) format("truetype"),
+  font-display: swap;
+  src: url(../public/fonts/AppleSDGothicNeoSB.otf) format("opentype"),
     url(../public/fonts/AppleSDGothicNeoSB.woff2) format("woff2");
 }
 
 /* AppleSDGothicEB */
 @font-face {
   font-family: "AppleSDGothicNeo";
+  font-style: normal;
   font-weight: 800;
-  src: url(../public/fonts/AppleSDGothicNeoEB.ttf) format("ttf"),
-    url(../public//fonts/AppleSDGothicNeoEB.otf) format("truetype"),
+  font-display: swap;
+  src: url(../public/fonts/AppleSDGothicNeoEB.otf) format("opentype"),
     url(../public/fonts/AppleSDGothicNeoEB.woff2) format("woff2");
 }
 
 /* PressStart */
 @font-face {
-  font-family: "Press Start 2P", system-ui;
+  font-family: "Press Start 2P";
+  font-style: normal;
   font-weight: 400;
-  src: url(../public/fonts/PressStart2P-Regular.ttf) format("ttf"),
-    url(../public//fonts/PressStart2P-Regular.otf) format("truetype"),
+  font-display: swap;
+  src: url(../public/fonts/PressStart2P-Regular.otf) format("opentype"),
     url(../public/fonts/PressStart2P-Regular.woff) format("woff"),
     url(../public/fonts/PressStart2P-Regular.woff2) format("woff2");
 }
 
 /* Prompt SemiBold */
 @font-face {
-  font-family: "Prompt", sans-serif;
+  font-family: "Prompt";
+  font-style: normal;
   font-weight: 600;
-  src: url(../public/fonts/Prompt-SemiBold.ttf) format("ttf"),
-    url(../public/fonts/Prompt-SemiBold.otf) format("truetype"),
+  font-display: swap;
+  src: url(../public/fonts/Prompt-SemiBold.otf) format("opentype"),
     url(../public/fonts/Prompt-SemiBold.woff) format("woff"), url(../public/fonts/Prompt-SemiBold.woff2) format("woff2");
 }
 
 /* Prompt Medium */
 @font-face {
-  font-family: "Prompt", sans-serif;
+  font-family: "Prompt";
+  font-style: normal;
   font-weight: 500;
-  src: url(../public/fonts/Prompt-Medium.ttf) format("ttf"), url(../public/fonts/Prompt-Medium.otf) format("truetype"),
-    url(../public/fonts/Prompt-Medium.woff) format("woff"), url(../public/fonts/Prompt-Medium.woff2) format("woff2");
+  font-display: swap;
+  src: url(../public/fonts/Prompt-Medium.otf) format("opentype"), url(../public/fonts/Prompt-Medium.woff) format("woff"),
+    url(../public/fonts/Prompt-Medium.woff2) format("woff2");
 }
 
 /* Prompt Regular */
 @font-face {
-  font-family: "Prompt", sans-serif;
+  font-family: "Prompt";
+  font-style: normal;
   font-weight: 400;
-  src: url(../public/fonts/Prompt-Regular.ttf) format("ttf"), url(../public/fonts/Prompt-Regular.otf) format("truetype"),
+  font-display: swap;
+  src: url(../public/fonts/Prompt-Regular.otf) format("opentype"),
     url(../public/fonts/Prompt-Regular.woff) format("woff"), url(../public/fonts/Prompt-Regular.woff2) format("woff2");
 }

@@ -9,7 +9,8 @@ import NoticeList from "./pages/NoticeList";
 import TimeTable from "./pages/TimeTable";
 import Map from "./pages/Map";
 import Review from "./pages/Review";
-import DSEvent from "./pages/DSEvent";
+import Photo from "./pages/Photo";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -22,7 +23,10 @@ function App() {
         <Route exact path="/timetable" element={<TimeTable />} />
         <Route exact path="/map" element={<Map />} />
         <Route exact path="/review" element={<Review />} />
-        <Route exact path="/event" element={<DSEvent />} />
+        <Route exact path="/photo" element={<Photo />} />
+
+        {/* 어드민 페이지 */}
+        <Route exact path="/pado/admin/post" element={<Admin />} />
       </Routes>
     </div>
   );
