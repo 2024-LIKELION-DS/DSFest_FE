@@ -24,7 +24,7 @@ export const HeaderMenu = styled.div`
 `;
 
 export const DropdownContainer = styled.div`
-  z-index: 2;
+  z-index: 25;
   position: absolute;
   text-align: center;
   justify-content: center;
@@ -67,7 +67,7 @@ export const Background = styled.div`
   background-color: none;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 20;
   display: flex;
   justify-content: center;
   align-items: center;
