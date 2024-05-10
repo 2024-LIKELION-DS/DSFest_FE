@@ -27,34 +27,70 @@ export const img_wrap = styled.div`
 export const img_boat = styled.img`
 width: 37px;
 height: 44px;
+margin-right:2rem;
 `;
 
 export const content_wrap = styled.div`
-  display:flex;
-  text-align:left;
-  justify-content:center;
   /*height:26.5rem;*//* 고정 높이 설정, 필요하다면 제거할 수 있음 */
-  padding-right:0.5rem;
-  padding-left:0.5rem;
-  padding-bottom:1rem;
+  text-align:center;
+  display: grid;
+  grid-template-columns: auto auto ;
+  grid-template-rows: auto auto auto ;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center; /* 모든 그리드 아이템을 가로축 중앙에 정렬 */
+  align-items: center; /* 모든 그리드 아이템을 세로축 중앙에 정렬 */
+
+
 `;
+
+export const content = styled.div`
+  text-align:left;
+  
+`;
+
+
 
 export const box = styled.div`
   display: flex; /* flexbox를 사용하여 내부 아이템을 정렬 */
   flex-direction: column; /* 아이템을 세로로 정렬 */
-  justify-content: left; /* 좌측 정렬 */
-  align-items: start; /* 아이템들을 시작점에서 정렬 */
-  border: 4px solid white; /* 테두리 설정 */
-  border-radius: 12px; /* 테두리 둥근 설정 */
-  width: auto; /* 부모 요소의 너비를 따름 */
-  overflow-y: auto; /* 세로 스크롤 활성화 */
-  box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
-
+  justify-content: center; /* 좌측 정렬 */
+  align-items: center; /* 아이템들을 시작점에서 정렬 */
+  
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width: 156px;
+  height:156px;
+  padding:0px;
   `;
 
   export const img_exImg = styled.img`
-  width: 124px;
-  height: 124px;
+  border: 4px solid white; /* 테두리 설정 */
+  border-radius: 12px; /* 테두리 둥근 설정 */
+  box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
+  
+  width: 156px;
+  height: 156px;
   
   
+  `;
+
+  /* 제목 & 카테고리*/
+  export const title = styled.div`
+  fontSize: 15px;
+  font-family: "AppleSDGothicNeo";
+  font-Weight: 800;
+  color:white;
+  margin-top:1rem;
+  
+  `;
+
+  export const category = styled.div`
+  fontSize: 12px;
+  font-family: "AppleSDGothicNeo";
+  font-Weight: 400;
+  color:white;
+  opacity: 0.8;
   `;

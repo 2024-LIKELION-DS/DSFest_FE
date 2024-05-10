@@ -27,6 +27,7 @@ export const img_wrap = styled.div`
 export const img_boat = styled.img`
 width: 37px;
 height: 44px;
+margin-right:2rem;
 `;
 
 export const content_wrap = styled.div`
@@ -36,9 +37,10 @@ export const content_wrap = styled.div`
   /*height:26.5rem;*//* 고정 높이 설정, 필요하다면 제거할 수 있음 */
   padding-right:0.5rem;
   padding-left:0.5rem;
-  padding-bottom:1rem;
+  padding-bottom:1.4rem;
   
   `;
+  
   
   export const box_wrap = styled.div`
   display: flex; /* flexbox를 사용하여 내부 아이템을 정렬 */
@@ -59,23 +61,28 @@ export const content_wrap = styled.div`
 
 export const List = styled.div`
 fontSize: 12px;
-font-family: "AppleSDGothicNeoR", system-ui;
-fontWeight: '400';
+font-family: "AppleSDGothicNeo";
+font-Weight: 400;
 color:white;
+opacity: 0.8;
 `;
 
 export const Title = styled.div`
 fontSize: 15px;
-font-family: "AppleSDGothicNeoEB", system-ui;
-fontWeight: '400';
+font-family: "AppleSDGothicNeo";
+font-Weight: 800;
 color:white;
+margin-top:1rem;
+margin-bottom:1rem;
 `;
 
 export const Context = styled.div`
 fontSize: 15px;
-font-family: "AppleSDGothicNeoM", system-ui;
-fontWeight: '400';
+font-family: "AppleSDGothicNeo";
+font-Weight: 500;
 color:white;
+opacity: 0.8;
+margin-bottom:1rem;
 `;
 
 //이미지

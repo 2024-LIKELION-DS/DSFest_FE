@@ -27,12 +27,73 @@ function NoticeList() {
                 <NL.img_boat src={boatImg} alt="Boat" />
                 </NL.img_wrap>
                 <NL.content_wrap>
-                  <NL.box>
-                  <NL.img_exImg src={exImg} alt="exImg" /> 
-                  </NL.box>
-                  <NL.box>
-                  <NL.img_exImg src={exImg} alt="exImg" /> 
-                  </NL.box>
+                  <NL.content>
+                    <NL.box>
+                      <NL.img_exImg src={exImg} alt="exImg" /> 
+                    </NL.box>
+                    <NL.title>
+                      영근터 쓰레기 처리 안내
+                    </NL.title>
+                    <NL.category>
+                      Notice
+                    </NL.category>
+                  </NL.content>
+                  <NL.content>
+                    <NL.box>
+                      <NL.img_exImg src={exImg} alt="exImg" /> 
+                    </NL.box>
+                    <NL.title>
+                      영근터 쓰레기 처리 안내
+                    </NL.title>
+                    <NL.category>
+                      Notice
+                    </NL.category>
+                  </NL.content>
+                  <NL.content>
+                    <NL.box>
+                      <NL.img_exImg src={exImg} alt="exImg" /> 
+                    </NL.box>
+                    <NL.title>
+                      영근터 쓰레기 처리 안내
+                    </NL.title>
+                    <NL.category>
+                      Notice
+                    </NL.category>
+                  </NL.content>
+                  <NL.content>
+                    <NL.box>
+                      <NL.img_exImg src={exImg} alt="exImg" /> 
+                    </NL.box>
+                    <NL.title>
+                      영근터 쓰레기 처리 안내
+                    </NL.title>
+                    <NL.category>
+                      Notice
+                    </NL.category>
+                  </NL.content>
+                  <NL.content>
+                    <NL.box>
+                      <NL.img_exImg src={exImg} alt="exImg" /> 
+                    </NL.box>
+                    <NL.title>
+                      영근터 쓰레기 처리 안내
+                    </NL.title>
+                    <NL.category>
+                      Notice
+                    </NL.category>
+                  </NL.content>
+                  <NL.content>
+                    <NL.box>
+                      <NL.img_exImg src={exImg} alt="exImg" /> 
+                    </NL.box>
+                    <NL.title>
+                      영근터 쓰레기 처리 안내
+                    </NL.title>
+                    <NL.category>
+                      Notice
+                    </NL.category>
+                  </NL.content>
+                  
                 </NL.content_wrap>
                 
                 <Footer />
