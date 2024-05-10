@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import boat_37x44 from "../img/boat_37x44.png";
 
 function TimeTable() {
@@ -18,6 +18,11 @@ function TimeTable() {
     };
 
     function Day1TimeTable() {
+        const [isAnimated, setIsAnimated] = useState(false);
+
+        useEffect(() => {
+            setIsAnimated(true);
+        }, []);
         return (
             <T.Wrapper>
                 <T.Booth>
@@ -36,43 +41,58 @@ function TimeTable() {
                     <T.Top>영근터</T.Top>
                     <div
                         style={{
-                            height: "175px",
-                            display: "flex",
-                            justifyContent: "flex-end",
-                            alignItems: "flex-end",
+                            transition: "all 0.5s ease",
+                            opacity: isAnimated ? 1 : 0,
+                            transform: isAnimated
+                                ? "translateY(0)"
+                                : "translateY(50px)",
                         }}
                     >
-                        <img
-                            src={boat_37x44}
-                            alt="Boat"
+                        <div
                             style={{
-                                width: "37px",
-                                height: "44px",
+                                height: "175px",
+                                display: "flex",
+                                justifyContent: "flex-end",
+                                alignItems: "flex-end",
                             }}
-                        />
-                    </div>
+                        >
+                            <img
+                                src={boat_37x44}
+                                alt="Boat"
+                                style={{
+                                    width: "37px",
+                                    height: "44px",
+                                }}
+                            />
+                        </div>
 
-                    <T.Movie>
-                        <T.Bold>영화 상영</T.Bold>
-                        <T.Time>15:00~17:30</T.Time>
-                    </T.Movie>
-                    <T.StuPerform>
-                        <T.Bold>
-                            재학생 및 <br />
-                            동아리 공연
-                        </T.Bold>
-                        <T.Time>17:30~20:00</T.Time>
-                    </T.StuPerform>
-                    <T.Celeb1>
-                        <T.BoldTop5>연예인 공연</T.BoldTop5>
-                        <T.Time>20:00~21:00</T.Time>
-                    </T.Celeb1>
+                        <T.Movie>
+                            <T.Bold>영화 상영</T.Bold>
+                            <T.Time>15:00~17:30</T.Time>
+                        </T.Movie>
+                        <T.StuPerform>
+                            <T.Bold>
+                                재학생 및 <br />
+                                동아리 공연
+                            </T.Bold>
+                            <T.Time>17:30~20:00</T.Time>
+                        </T.StuPerform>
+                        <T.Celeb1>
+                            <T.BoldTop5>연예인 공연</T.BoldTop5>
+                            <T.Time>20:00~21:00</T.Time>
+                        </T.Celeb1>
+                    </div>
                 </T.Young>
             </T.Wrapper>
         );
     }
 
     function Day2TimeTable() {
+        const [isAnimated, setIsAnimated] = useState(false);
+
+        useEffect(() => {
+            setIsAnimated(true);
+        }, []);
         return (
             <T.Wrapper>
                 <T.Booth>
@@ -92,33 +112,48 @@ function TimeTable() {
                     <T.Top>영근터</T.Top>
                     <div
                         style={{
-                            height: "330px",
-                            display: "flex",
-                            justifyContent: "flex-end",
-                            alignItems: "flex-end",
+                            transition: "all 0.5s ease",
+                            opacity: isAnimated ? 1 : 0,
+                            transform: isAnimated
+                                ? "translateY(0)"
+                                : "translateY(50px)",
                         }}
                     >
-                        <img
-                            src={boat_37x44}
-                            alt="Boat"
-                            style={{ width: "37px", height: "44px" }}
-                        />
+                        <div
+                            style={{
+                                height: "330px",
+                                display: "flex",
+                                justifyContent: "flex-end",
+                                alignItems: "flex-end",
+                            }}
+                        >
+                            <img
+                                src={boat_37x44}
+                                alt="Boat"
+                                style={{ width: "37px", height: "44px" }}
+                            />
+                        </div>
+                        <T.SongFest>
+                            <T.Bold>운현가요제</T.Bold>
+                            <T.Time>18:30~20:30</T.Time>
+                        </T.SongFest>
+                        <T.Celeb2Fire>
+                            <T.InlineBold>연예인 공연</T.InlineBold>
+                            <T.InlineTime>20:30~21:00</T.InlineTime>
+                        </T.Celeb2Fire>
+                        <div style={{ height: "47px" }}></div>
                     </div>
-                    <T.SongFest>
-                        <T.Bold>운현가요제</T.Bold>
-                        <T.Time>18:30~20:30</T.Time>
-                    </T.SongFest>
-                    <T.Celeb2Fire>
-                        <T.InlineBold>연예인 공연</T.InlineBold>
-                        <T.InlineTime>20:30~21:00</T.InlineTime>
-                    </T.Celeb2Fire>
-                    <div style={{ height: "47px" }}></div>
                 </T.Young>
             </T.Wrapper>
         );
     }
 
     function Day3TimeTable() {
+        const [isAnimated, setIsAnimated] = useState(false);
+
+        useEffect(() => {
+            setIsAnimated(true);
+        }, []);
         return (
             <T.Wrapper>
                 <T.Booth>
@@ -138,39 +173,49 @@ function TimeTable() {
                     <T.Top>영근터</T.Top>
                     <div
                         style={{
-                            height: "175px",
-                            display: "flex",
-                            justifyContent: "flex-end",
-                            alignItems: "flex-end",
+                            transition: "all 0.5s ease",
+                            opacity: isAnimated ? 1 : 0,
+                            transform: isAnimated
+                                ? "translateY(0)"
+                                : "translateY(50px)",
                         }}
                     >
-                        <img
-                            src={boat_37x44}
-                            alt="Boat"
-                            style={{ width: "37px", height: "44px" }}
-                        />
-                    </div>
+                        <div
+                            style={{
+                                height: "175px",
+                                display: "flex",
+                                justifyContent: "flex-end",
+                                alignItems: "flex-end",
+                            }}
+                        >
+                            <img
+                                src={boat_37x44}
+                                alt="Boat"
+                                style={{ width: "37px", height: "44px" }}
+                            />
+                        </div>
 
-                    <T.Movie>
-                        <T.Bold>영화 상영</T.Bold>
-                        <T.Time>15:00~17:30</T.Time>
-                    </T.Movie>
-                    <div style={{ height: "45px" }}></div>
-                    <T.Content>
-                        <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
-                        <T.Time>18:30~19:30</T.Time>
-                    </T.Content>
-                    <T.Dj>
-                        <T.BoldTop5>
-                            DJ 및 <br /> 연예인 공연
-                        </T.BoldTop5>
-                        <T.Time>19:30~21:00</T.Time>
-                    </T.Dj>
-                    <div style={{ height: "18px" }}></div>
-                    <T.Celeb2Fire>
-                        <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
-                        <T.InlineTimeF>21:30~22:00</T.InlineTimeF>
-                    </T.Celeb2Fire>
+                        <T.Movie>
+                            <T.Bold>영화 상영</T.Bold>
+                            <T.Time>15:00~17:30</T.Time>
+                        </T.Movie>
+                        <div style={{ height: "45px" }}></div>
+                        <T.Content>
+                            <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
+                            <T.Time>18:30~19:30</T.Time>
+                        </T.Content>
+                        <T.Dj>
+                            <T.BoldTop5>
+                                DJ 및 <br /> 연예인 공연
+                            </T.BoldTop5>
+                            <T.Time>19:30~21:00</T.Time>
+                        </T.Dj>
+                        <div style={{ height: "18px" }}></div>
+                        <T.Celeb2Fire>
+                            <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
+                            <T.InlineTimeF>21:30~22:00</T.InlineTimeF>
+                        </T.Celeb2Fire>
+                    </div>
                 </T.Young>
             </T.Wrapper>
         );

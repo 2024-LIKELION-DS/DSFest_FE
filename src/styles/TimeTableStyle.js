@@ -19,7 +19,7 @@ export const TimeTable = styled.div`
 
 export const Wrapper = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
     margin-top: -556px;
@@ -28,10 +28,12 @@ export const Wrapper = styled.div`
 
 export const Booth = styled.div`
     width: 126px;
+    padding-right: 10px;
 `;
 
 export const Young = styled.div`
     width: 126px;
+    padding-left: 10px;
 `;
 
 export const DayBox = styled.div`
@@ -232,7 +234,7 @@ export const Dj = styled.div`
     background-color: rgba(255, 255, 255, 0.2);
 `;
 export const Line = styled.hr`
-    width: 300px;
+    width: 100%;
     border-color: rgba(255, 255, 255, 0.4);
     display: inline-block;
 
