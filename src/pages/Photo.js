@@ -31,7 +31,7 @@ function Photo() {
     toPng(ref.current)
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "2024 근화제 찬란.png";
+        link.download = "2024 근화제 <찬란>.png";
         link.href = dataUrl;
         link.click();
       })
