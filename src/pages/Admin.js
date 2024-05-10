@@ -101,7 +101,9 @@ function Admin() {
                                 <A.Square>
                                     <A.LabelBox style={{ marginBottom: "3px" }}>
                                         <A.LabelTag
-                                            style={{ marginTop: "12px" }}
+                                            style={{
+                                                marginTop: "7px",
+                                            }}
                                         >
                                             분류
                                         </A.LabelTag>

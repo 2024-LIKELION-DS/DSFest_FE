@@ -110,95 +110,91 @@ export const BlankDiv = styled.div`
     padding: 10px;
     padding-left: 2px;
 
-    @media screen and (max-width: 2000px) {
+    @media all and (min-width: 1024px) {
         width: 720px;
     }
-    @media screen and (max-width: 920px) {
+
+    @media all and (min-width: 768px) and (max-width: 1023px) {
         width: 600px;
     }
-    @media screen and (max-width: 800px) {
+
+    @media all and (min-width: 620px) and (max-width: 768px) {
         width: 500px;
     }
-    @media screen and (max-width: 683px) {
-        width: 400px;
+    @media all and (max-width: 620px) {
+        width: 300px;
     }
-    @media screen and (max-width: 590px) {
-        width: 320px;
-    }
-    @media screen and (max-width: 490px) {
+
+    @media all and (max-width: 480px) {
         width: 235px;
-    }
-    @media screen and (max-width: 400px) {
-        width: 200px;
     }
 `;
 export const InputTitle = styled.input`
-    border: 0px;
+    border: 0;
     padding: 10px;
-    height: 20px;
+    margin-top: 5px;
+    height: 15px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
+    width: 100%;
 
     &:focus {
         outline: 1.5px solid #448bdb;
     }
-    @media all and (min-width: 1279px) {
-        width: 720px;
+
+    @media (min-width: 1023px) {
+        max-width: 720px;
     }
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
-        width: 600px;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        max-width: 600px;
     }
-    @media screen and (min-width: 500px) and (max-width: 768px) {
-        width: 500px;
+
+    @media (min-width: 620px) and (max-width: 768px) {
+        max-width: 500px;
     }
-    @media screen and (min-width: 650px) and (max-width: 500px) {
-        width: 350px;
+
+    @media all and (max-width: 620px) {
+        max-width: 300px;
     }
-    @media screen and (min-width: 500px) and (max-width: 650px) {
-        width: 350px;
-    }
-    @media screen and (max-width: 500px) {
-        width: 200px;
+
+    @media all and (max-width: 480px) {
+        max-width: 235px;
     }
 `;
-export const InputDetail = styled.textarea`
-    border: 0px;
-    padding: 10px;
 
+export const InputDetail = styled.textarea`
+    border: 0;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
+    width: 100%;
+    min-height: 100px;
 
     &:focus {
         outline: 1.5px solid #448bdb;
     }
-    @media all and (min-width: 1279px) {
-        width: 720px;
+
+    @media (min-width: 1023px) {
+        max-width: 720px; 
     }
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
-        width: 600px;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        max-width: 600px; 
     }
-    @media screen and (min-width: 500px) and (max-width: 768px) {
-        width: 500px;
+
+    @media (min-width: 620px) and (max-width: 768px) {
+        max-width: 500px; 
     }
-    @media screen and (min-width: 650px) and (max-width: 500px) {
-        width: 350px;
-    }
-    @media screen and (min-width: 500px) and (max-width: 650px) {
-        width: 350px;
-    }
-    @media screen and (max-width: 500px) {
-        width: 200px;
-        height: 300px;
-    }
-    @media screen and (max-height: 700px) {
-        height: 150px;
-    }
-    @media screen and (max-height: 830px) {
-        height: 200px;
-    }
-    @media screen and (min-height: 830px) {
-        height: 280px;
-    }
+}
+    @media all and (max-width: 620px) {
+      max-width: 300px;
+  }
+
+  @media all and (max-width: 480px) {
+      max-width: 235px;
+  }
+
 `;
 
 export const SubmitButton = styled.button`
