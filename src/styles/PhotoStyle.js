@@ -75,24 +75,28 @@ export const PhotoPos = styled.div`
 
 export const PhotoPosOne = styled.div`
   position: relative;
+  width: 152px;
   top: 132px;
   left: 20px;
 `;
 
 export const PhotoPosTwo = styled.div`
   position: relative;
+  width: 152px;
   top: calc(328px - 184px);
   left: 20px;
 `;
 
 export const PhotoPosThree = styled.div`
   position: relative;
+  width: 152px;
   top: calc(40px - 184px - 184px);
   left: 188px;
 `;
 
 export const PhotoPosFour = styled.div`
   position: relative;
+  width: 152px;
   top: calc(236px - 184px - 184px - 184px);
   left: 188px;
 `;
