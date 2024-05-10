@@ -159,16 +159,22 @@ export const TitleText = styled.div`
 
 export const Phone = styled.div`
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (hover: hover) and (pointer: fine) {
     width: 360px;
-    height: 800px;
+    height: 100%;
 
     @media (min-height: 801px) {
       border: 12px solid #111111;
       border-radius: 24px;
-      margin-top: -12px;
-      margin-right: -12px;
+      margin-top: -11.294px;
+      margin-right: -11.294px;
       box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
     }
   }
@@ -176,7 +182,7 @@ export const Phone = styled.div`
 
 export const PageTitle = styled.div`
   text-align: center;
-  font-family: "Press Start 2P", system-ui;
+  font-family: "Press Start 2P";
   font-weight: 400;
   font-size: 20px;
   color: white;

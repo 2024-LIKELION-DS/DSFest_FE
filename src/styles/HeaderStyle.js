@@ -18,13 +18,13 @@ export const HeaderMenu = styled.div`
   height: 30px;
   padding: 4px;
   cursor: pointer;
-  background-color: ${(props) => (props.isVisible ? "rgba(255, 255, 255, 0.8)" : "none")};
+  background-color: ${(props) => (props.$isVisible ? "rgba(255, 255, 255, 0.8)" : "none")};
   border-radius: 12px;
-  box-shadow: ${(props) => (props.isVisible ? "0 4px 4px rgba(47, 123, 209, 0.25)" : "none")};
+  box-shadow: ${(props) => (props.$isVisible ? "0 4px 4px rgba(47, 123, 209, 0.25)" : "none")};
 `;
 
 export const DropdownContainer = styled.div`
-  z-index: 2;
+  z-index: 25;
   position: absolute;
   text-align: center;
   justify-content: center;
@@ -33,7 +33,7 @@ export const DropdownContainer = styled.div`
   top: 103px;
   right: 24px;
   padding: 12px 0;
-  display: ${(props) => (props.isVisible ? "flex" : "none")};
+  display: ${(props) => (props.$isVisible ? "flex" : "none")};
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
@@ -45,7 +45,7 @@ export const DropdownItem = styled.div`
   height: 38px;
   padding: 0 24px;
   color: #448bdb;
-  font-family: "Prompt", sans-serif;
+  font-family: "Prompt";
   font-weight: 500;
   font-size: 18px;
   cursor: pointer;
@@ -67,7 +67,7 @@ export const Background = styled.div`
   background-color: none;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 20;
   display: flex;
   justify-content: center;
   align-items: center;
