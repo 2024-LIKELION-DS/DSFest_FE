@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
-    margin-top: -556px;
+    margin-top: -580px;
     margin-bottom: 50px;
 `;
 
@@ -149,7 +149,7 @@ export const Top = styled.span`
     color: white;
     font-size: 9pt;
     margin-top: 8px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     margin-left: 3.5px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
@@ -183,7 +183,7 @@ export const InlineTimeF = styled.span`
 `;
 export const Movie = styled.div`
     width: 126px;
-    height: 105px;
+    height: 111px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -213,7 +213,7 @@ export const Celeb2Fire = styled.div`
 `;
 export const SongFest = styled.div`
     width: 126px;
-    height: 82px;
+    height: 84px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
