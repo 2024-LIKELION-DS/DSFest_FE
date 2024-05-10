@@ -21,26 +21,38 @@ function Photo() {
     setImagePreviews(updatedPreviews);
   };
 
+  function isSafari() {
+    return /AppleWebKit/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent);
+  }
+
   const ref = useRef();
 
-  const onButtonClick = () => {
+  const onButtonClick = async () => {
     if (ref.current === null) {
       return;
     }
 
-    for (let i = 0; i < 5; i++) {
-      toPng(ref.current)
-        .then((dataUrl) => {
-          if (i === 4) {
-            const link = document.createElement("a");
-            link.download = "2024 근화제 찬란.png";
-            link.href = dataUrl;
-            link.click();
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    const captureImage = async () => {
+      try {
+        const dataUrl = await toPng(ref.current);
+        const link = document.createElement("a");
+        link.download = "2024 근화제 찬란.png";
+        link.href = dataUrl;
+        link.click();
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    if (isSafari()) {
+      await toPng(ref.current);
+      await toPng(ref.current);
+      await toPng(ref.current);
+      await toPng(ref.current);
+      await toPng(ref.current);
+      await captureImage();
+    } else {
+      await captureImage();
     }
   };
 
