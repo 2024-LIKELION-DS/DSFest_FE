@@ -33,9 +33,10 @@ export const Splash = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media (hover: hover) and (pointer: fine) {
+    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
         width: 100%;
         height: 100%;
+        overflow: hidden;
     }
 `;
 
@@ -49,6 +50,17 @@ const moveAndSpin = (y, x, r, translateY, translateX, rotateDeg) => keyframes`
     }
 `;
 
+const moveAndSpin1 = (y, x, r, translateY, translateX, rotateDeg) => keyframes`
+    from {
+        transform: translateY(${y}px) translateX(${x}px) rotate(${r}deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(${translateY}px) translateX(${translateX}px) rotate(${rotateDeg}deg);
+        opacity: 1;
+    }
+`;
+
 export const FdaySun1 = styled.img`
     width: 143px;
     height: 137px;
@@ -57,7 +69,7 @@ export const FdaySun1 = styled.img`
     right: -52px;
     top: -50px;
     transform: rotate(20deg);
-    animation: ${moveAndSpin(-50, 52, 20, 450, -180, 215)} 2s ease-out forwards;
+    animation: ${moveAndSpin1(-50, 52, 20, 450, -180, 215)} 2s ease-out forwards;
 `;
 
 export const FdaySun2 = styled.img`
@@ -77,7 +89,7 @@ export const FdaySun3 = styled.img`
     right: -20px;
     top: -8px;
     transform: rotate(18deg);
-    animation: ${moveAndSpin(-8, 20, 18, 110, -70, 120)} 2s ease-out forwards;
+    animation: ${moveAndSpin1(-8, 20, 18, 110, -70, 120)} 2s ease-out forwards;
 `;
 
 export const FdaySun4 = styled.img`
@@ -182,6 +194,7 @@ const moveStar = (y, x) => keyframes`
     }
     to {
         transform: translateY(${y}px) translateX(${x}px);
+        visibility: hidden;
     }
 `;
 

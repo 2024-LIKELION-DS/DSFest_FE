@@ -39,18 +39,18 @@ import TdayStar3 from "../img/3_star_220x176.png";
 
 function Splash() {
     // 자동으로 Main 넘어가기
-    const navigate = useNavigate();
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            navigate("/main");
-        }, 2500);
-        return () => clearTimeout(timer);
-    }, [navigate]);
+    // const navigate = useNavigate();
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         navigate("/main");
+    //     }, 2500);
+    //     return () => clearTimeout(timer);
+    // }, [navigate]);
 
     // 날짜별 테마 바꾸기
     const currentDate = new Date();
     const FirstDate = new Date(2024, 4, 22);
-    const SecondDate = new Date(2024, 4, 23);
+    const SecondDate = new Date(2024, 4, 11);
 
     if (currentDate.toDateString() === FirstDate.toDateString()) {
         return (
