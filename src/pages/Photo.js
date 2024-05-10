@@ -28,16 +28,20 @@ function Photo() {
       return;
     }
 
-    toPng(ref.current)
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "2024 근화제 <찬란>.png";
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    for (let i = 0; i < 5; i++) {
+      toPng(ref.current)
+        .then((dataUrl) => {
+          if (i === 4) {
+            const link = document.createElement("a");
+            link.download = "2024 근화제 찬란.png";
+            link.href = dataUrl;
+            link.click();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   return (

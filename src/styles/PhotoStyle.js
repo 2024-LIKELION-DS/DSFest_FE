@@ -36,14 +36,14 @@ export const Text = styled.div`
   font-family: "AppleSDGothicNeo";
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
   margin-left: 20px;
 `;
 
 export const PhotoDownImg = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   margin-right: 20px;
   cursor: pointer;
 `;
