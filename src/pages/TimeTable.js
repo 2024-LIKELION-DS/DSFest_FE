@@ -38,7 +38,7 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top>영근터</T.Top>
+                    <T.Top style={{ marginBottom: "20px" }}>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -109,7 +109,7 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top>영근터</T.Top>
+                    <T.Top style={{ marginBottom: "20px" }}>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -170,7 +170,7 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top>영근터</T.Top>
+                    <T.Top style={{ marginBottom: "20px" }}>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -191,7 +191,10 @@ function TimeTable() {
                             <img
                                 src={boat_37x44}
                                 alt="Boat"
-                                style={{ width: "37px", height: "44px" }}
+                                style={{
+                                    width: "37px",
+                                    height: "44px",
+                                }}
                             />
                         </div>
 
