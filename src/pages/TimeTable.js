@@ -17,8 +17,17 @@ function TimeTable() {
         setSelectedDay(day);
     };
 
+    const [isWedClicked, setIsWedClicked] = useState(false);
+    const [isThuClicked, setIsThuClicked] = useState(false);
+    const [isFriClicked, setIsFriClicked] = useState(false);
+
     function Day1TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
+        const handleWedButtonClick = () => {
+            setIsWedClicked(true);
+            setIsThuClicked(false); // 다른 버튼의 클릭 상태를 초기화
+            setIsFriClicked(false); // 다른 버튼의 클릭 상태를 초기화
+        };
 
         useEffect(() => {
             setIsAnimated(true);
@@ -31,7 +40,7 @@ function TimeTable() {
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
                     </T.DayBooth>
-                    <div style={{ height: "65px" }}></div>
+                    <div style={{ height: "68px" }}></div>
                     <T.DayBooth>
                         <T.Bold>야간 수익 사업</T.Bold>
                         <T.Time>16:00~19:30</T.Time>
@@ -48,14 +57,7 @@ function TimeTable() {
                                 : "translateY(50px)",
                         }}
                     >
-                        <div
-                            style={{
-                                height: "175px",
-                                display: "flex",
-                                justifyContent: "flex-end",
-                                alignItems: "flex-end",
-                            }}
-                        >
+                        <T.PcDiv>
                             <img
                                 src={boat_37x44}
                                 alt="Boat"
@@ -64,7 +66,7 @@ function TimeTable() {
                                     height: "44px",
                                 }}
                             />
-                        </div>
+                        </T.PcDiv>
 
                         <T.Movie>
                             <T.Bold>영화 상영</T.Bold>
@@ -89,6 +91,11 @@ function TimeTable() {
 
     function Day2TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
+        const handleThuButtonClick = () => {
+            setIsWedClicked(false); // 다른 버튼의 클릭 상태를 초기화
+            setIsThuClicked(true);
+            setIsFriClicked(false); // 다른 버튼의 클릭 상태를 초기화
+        };
 
         useEffect(() => {
             setIsAnimated(true);
@@ -102,7 +109,7 @@ function TimeTable() {
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
                     </T.DayBooth>
-                    <div style={{ height: "65px" }}></div>
+                    <div style={{ height: "68px" }}></div>
                     <T.DayBooth>
                         <T.Bold>야간 수익 사업</T.Bold>
                         <T.Time>16:00~19:30</T.Time>
@@ -119,20 +126,13 @@ function TimeTable() {
                                 : "translateY(50px)",
                         }}
                     >
-                        <div
-                            style={{
-                                height: "330px",
-                                display: "flex",
-                                justifyContent: "flex-end",
-                                alignItems: "flex-end",
-                            }}
-                        >
+                        <T.Day2PcDiv>
                             <img
                                 src={boat_37x44}
                                 alt="Boat"
                                 style={{ width: "37px", height: "44px" }}
                             />
-                        </div>
+                        </T.Day2PcDiv>
                         <T.SongFest>
                             <T.Bold>운현가요제</T.Bold>
                             <T.Time>18:30~20:30</T.Time>
@@ -150,7 +150,11 @@ function TimeTable() {
 
     function Day3TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
-
+        const handleFriButtonClick = () => {
+            setIsWedClicked(false); // 다른 버튼의 클릭 상태를 초기화
+            setIsThuClicked(false); // 다른 버튼의 클릭 상태를 초기화
+            setIsFriClicked(true);
+        };
         useEffect(() => {
             setIsAnimated(true);
         }, []);
@@ -163,7 +167,7 @@ function TimeTable() {
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
                     </T.DayBooth>
-                    <div style={{ height: "65px" }}></div>
+                    <div style={{ height: "68px" }}></div>
                     <T.DayBooth>
                         <T.Bold>야간 수익 사업</T.Bold>
                         <T.Time>16:00~19:30</T.Time>
@@ -180,14 +184,7 @@ function TimeTable() {
                                 : "translateY(50px)",
                         }}
                     >
-                        <div
-                            style={{
-                                height: "175px",
-                                display: "flex",
-                                justifyContent: "flex-end",
-                                alignItems: "flex-end",
-                            }}
-                        >
+                        <T.PcDiv>
                             <img
                                 src={boat_37x44}
                                 alt="Boat"
@@ -196,7 +193,7 @@ function TimeTable() {
                                     height: "44px",
                                 }}
                             />
-                        </div>
+                        </T.PcDiv>
 
                         <T.Movie>
                             <T.Bold>영화 상영</T.Bold>
@@ -213,7 +210,7 @@ function TimeTable() {
                             </T.BoldTop5>
                             <T.Time>19:30~21:00</T.Time>
                         </T.Dj>
-                        <div style={{ height: "18px" }}></div>
+                        <div style={{ height: "15px" }}></div>
                         <T.Celeb2Fire>
                             <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
                             <T.InlineTimeF>21:30~22:00</T.InlineTimeF>
@@ -240,27 +237,54 @@ function TimeTable() {
                                 <br />
                                 <T.DayBox>
                                     <T.WedButton
+                                        style={
+                                            selectedDay === "5/22 Wed"
+                                                ? { backgroundColor: "#ff9900" }
+                                                : {}
+                                        }
                                         onClick={() =>
                                             handleDayChange("5/22 Wed")
                                         }
+                                        onTouchStart={() =>
+                                            handleDayChange("5/22 Wed")
+                                        }
                                     >
-                                        5/22 Wed
+                                        5/24 Fri
                                     </T.WedButton>
+
                                     <T.ThuButton
+                                        style={
+                                            selectedDay === "5/23 Thu"
+                                                ? { backgroundColor: "#e94f64" }
+                                                : {}
+                                        }
                                         onClick={() =>
                                             handleDayChange("5/23 Thu")
+                                        }
+                                        onTouchStart={() =>
+                                            handleDayChange("5/2 Thu")
                                         }
                                     >
                                         5/23 Thu
                                     </T.ThuButton>
+
                                     <T.FriButton
+                                        style={
+                                            selectedDay === "5/24 Fri"
+                                                ? { backgroundColor: "#654fe9" }
+                                                : {}
+                                        }
                                         onClick={() =>
+                                            handleDayChange("5/24 Fri")
+                                        }
+                                        onTouchStart={() =>
                                             handleDayChange("5/24 Fri")
                                         }
                                     >
                                         5/24 Fri
                                     </T.FriButton>
                                 </T.DayBox>
+
                                 <br />
                                 <T.BackgroundBox>
                                     <T.TimeLine>
