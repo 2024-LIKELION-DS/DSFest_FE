@@ -39,20 +39,20 @@ import TdayStar3 from "../img/3_star_220x176.png";
 
 function Splash() {
     // 자동으로 Main 넘어가기
-    // const navigate = useNavigate();
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         navigate("/main");
-    //     }, 2500);
-    //     return () => clearTimeout(timer);
-    // }, [navigate]);
+    const navigate = useNavigate();
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigate("/main");
+        }, 2500);
+        return () => clearTimeout(timer);
+    }, [navigate]);
 
     // 날짜별 테마 바꾸기
     const currentDate = new Date();
-    const FirstDate = new Date(2024, 4, 22);
     const SecondDate = new Date(2024, 4, 23);
+    const LastDate = new Date(2024, 4, 24);
 
-    if (currentDate.toDateString() === FirstDate.toDateString()) {
+    if (currentDate.toDateString() === LastDate.toDateString()) {
         return (
             <>
                 <C.Page>
@@ -65,28 +65,24 @@ function Splash() {
                             <C.Phone>
                                 <S.Splash>
                                     <S.BackgroundImg
-                                        backgroundImage={FdayBackImg}
+                                        backgroundImage={TdayBackImg}
                                     >
-                                        <S.FdaySun1
-                                            src={FdaySun1}
-                                            alt="FdaySun1"
-                                        ></S.FdaySun1>
-                                        <S.FdaySun2
-                                            src={FdaySun2}
-                                            alt="FdaySun2"
-                                        ></S.FdaySun2>
-                                        <S.FdaySun3
-                                            src={FdaySun3}
-                                            alt="FdaySun3"
-                                        ></S.FdaySun3>
-                                        <S.FdaySun4
-                                            src={FdaySun4}
-                                            alt="FdaySun4"
-                                        ></S.FdaySun4>
-                                        <S.FdaySun5
-                                            src={FdaySun5}
-                                            alt="FdaySun5"
-                                        ></S.FdaySun5>
+                                        <S.TdayMoon
+                                            src={TdayMoon}
+                                            alt="TdayMoon"
+                                        ></S.TdayMoon>
+                                        <S.TdayStar1
+                                            src={TdayStar1}
+                                            alt="TdayStar1"
+                                        ></S.TdayStar1>
+                                        <S.TdayStar2
+                                            src={TdayStar2}
+                                            alt="TdayStar2"
+                                        ></S.TdayStar2>
+                                        <S.TdayStar3
+                                            src={TdayStar3}
+                                            alt="TdayStar3"
+                                        ></S.TdayStar3>
                                         <S.LogoBox>
                                             <S.Title
                                                 src={Title}
@@ -106,22 +102,22 @@ function Splash() {
                                             ></S.Text>
                                         </S.LogoBox>
                                         <S.BackStar
-                                            src={FdayBackStar}
-                                            alt="FdayBackStar"
+                                            src={TdayBackStar}
+                                            alt="TdayBackStar"
                                         ></S.BackStar>
                                         <S.CloudGroup>
                                             <S.CloudLeft
-                                                src={FdayCloudLeft}
-                                                alt="FdayCloudLeft"
+                                                src={TdayCloudLeft}
+                                                alt="TdayCloudLeft"
                                             ></S.CloudLeft>
                                             <S.CloudRight
-                                                src={FdayCloudRight}
-                                                alt="FdayCloudRight"
+                                                src={TdayCloudRight}
+                                                alt="TdayCloudRight"
                                             ></S.CloudRight>
                                         </S.CloudGroup>
                                         <S.Beach
-                                            src={FdayBeachImg}
-                                            alt="FdayBeachImg"
+                                            src={TdayBeachImg}
+                                            alt="TdayBeachImg"
                                         ></S.Beach>
                                     </S.BackgroundImg>
                                 </S.Splash>
@@ -223,24 +219,28 @@ function Splash() {
                             <C.Phone>
                                 <S.Splash>
                                     <S.BackgroundImg
-                                        backgroundImage={TdayBackImg}
+                                        backgroundImage={FdayBackImg}
                                     >
-                                        <S.TdayMoon
-                                            src={TdayMoon}
-                                            alt="TdayMoon"
-                                        ></S.TdayMoon>
-                                        <S.TdayStar1
-                                            src={TdayStar1}
-                                            alt="TdayStar1"
-                                        ></S.TdayStar1>
-                                        <S.TdayStar2
-                                            src={TdayStar2}
-                                            alt="TdayStar2"
-                                        ></S.TdayStar2>
-                                        <S.TdayStar3
-                                            src={TdayStar3}
-                                            alt="TdayStar3"
-                                        ></S.TdayStar3>
+                                        <S.FdaySun1
+                                            src={FdaySun1}
+                                            alt="FdaySun1"
+                                        ></S.FdaySun1>
+                                        <S.FdaySun2
+                                            src={FdaySun2}
+                                            alt="FdaySun2"
+                                        ></S.FdaySun2>
+                                        <S.FdaySun3
+                                            src={FdaySun3}
+                                            alt="FdaySun3"
+                                        ></S.FdaySun3>
+                                        <S.FdaySun4
+                                            src={FdaySun4}
+                                            alt="FdaySun4"
+                                        ></S.FdaySun4>
+                                        <S.FdaySun5
+                                            src={FdaySun5}
+                                            alt="FdaySun5"
+                                        ></S.FdaySun5>
                                         <S.LogoBox>
                                             <S.Title
                                                 src={Title}
@@ -260,22 +260,22 @@ function Splash() {
                                             ></S.Text>
                                         </S.LogoBox>
                                         <S.BackStar
-                                            src={TdayBackStar}
-                                            alt="TdayBackStar"
+                                            src={FdayBackStar}
+                                            alt="FdayBackStar"
                                         ></S.BackStar>
                                         <S.CloudGroup>
                                             <S.CloudLeft
-                                                src={TdayCloudLeft}
-                                                alt="TdayCloudLeft"
+                                                src={FdayCloudLeft}
+                                                alt="FdayCloudLeft"
                                             ></S.CloudLeft>
                                             <S.CloudRight
-                                                src={TdayCloudRight}
-                                                alt="TdayCloudRight"
+                                                src={FdayCloudRight}
+                                                alt="FdayCloudRight"
                                             ></S.CloudRight>
                                         </S.CloudGroup>
                                         <S.Beach
-                                            src={TdayBeachImg}
-                                            alt="TdayBeachImg"
+                                            src={FdayBeachImg}
+                                            alt="FdayBeachImg"
                                         ></S.Beach>
                                     </S.BackgroundImg>
                                 </S.Splash>
