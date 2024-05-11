@@ -36,6 +36,7 @@ function TimeTable() {
             <T.Wrapper>
                 <T.Booth>
                     <T.Top>Booth Zone</T.Top>
+
                     <T.DayBooth>
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
@@ -47,7 +48,7 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top style={{ marginBottom: "20px" }}>영근터</T.Top>
+                    <T.Top>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -116,7 +117,7 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top style={{ marginBottom: "20px" }}>영근터</T.Top>
+                    <T.Top>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -174,7 +175,7 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top style={{ marginBottom: "20px" }}>영근터</T.Top>
+                    <T.Top>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -199,7 +200,7 @@ function TimeTable() {
                             <T.Bold>영화 상영</T.Bold>
                             <T.Time>15:00~17:30</T.Time>
                         </T.Movie>
-                        <div style={{ height: "45px" }}></div>
+                        <div style={{ height: "47px" }}></div>
                         <T.Content>
                             <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
                             <T.Time>18:30~19:30</T.Time>
@@ -210,7 +211,7 @@ function TimeTable() {
                             </T.BoldTop5>
                             <T.Time>19:30~21:00</T.Time>
                         </T.Dj>
-                        <div style={{ height: "15px" }}></div>
+                        <div style={{ height: "16.5px" }}></div>
                         <T.Celeb2Fire>
                             <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
                             <T.InlineTimeF>21:30~22:00</T.InlineTimeF>
@@ -249,7 +250,7 @@ function TimeTable() {
                                             handleDayChange("5/22 Wed")
                                         }
                                     >
-                                        5/24 Fri
+                                        5/22 Wed
                                     </T.WedButton>
 
                                     <T.ThuButton
@@ -285,7 +286,15 @@ function TimeTable() {
                                     </T.FriButton>
                                 </T.DayBox>
 
-                                <br />
+                                {selectedDay === "5/22 Wed" && (
+                                    <Day1TimeTable />
+                                )}
+                                {selectedDay === "5/23 Thu" && (
+                                    <Day2TimeTable />
+                                )}
+                                {selectedDay === "5/24 Fri" && (
+                                    <Day3TimeTable />
+                                )}
                                 <T.BackgroundBox>
                                     <T.TimeLine>
                                         11:00
@@ -337,15 +346,7 @@ function TimeTable() {
                                     </T.TimeLine>
                                 </T.BackgroundBox>
                                 <br />
-                                {selectedDay === "5/22 Wed" && (
-                                    <Day1TimeTable />
-                                )}
-                                {selectedDay === "5/23 Thu" && (
-                                    <Day2TimeTable />
-                                )}
-                                {selectedDay === "5/24 Fri" && (
-                                    <Day3TimeTable />
-                                )}
+
                                 {/*여기 부분 작업!*/}
 
                                 <Footer />

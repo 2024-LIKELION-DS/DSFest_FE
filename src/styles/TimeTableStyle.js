@@ -22,11 +22,9 @@ export const Wrapper = styled.div`
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
-    margin-top: -580px;
     margin-bottom: 50px;
-    @media screen and (min-width: 1024px) {
-        margin-top: -565px;
-    }
+    position: static;
+    height: 1000px;
 `;
 
 export const Booth = styled.div`
@@ -104,7 +102,7 @@ export const FriButton = styled.button`
 
 export const DayBooth = styled.div`
     width: 126px;
-    height: 150px;
+    height: 153px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -149,7 +147,7 @@ export const InlineBoldF = styled.b`
     display: inline-block;
     margin-left: 12px;
     margin-right: 5px;
-    margin-top: 4px;
+    margin-top: 2px;
     color: white;
     font-size: 9pt;
     font-family: "AppleSDGothicNeo";
@@ -194,7 +192,7 @@ export const InlineTimeF = styled.span`
 `;
 export const Movie = styled.div`
     width: 126px;
-    height: 111px;
+    height: 107px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -211,7 +209,7 @@ export const StuPerform = styled.div`
 `;
 export const Celeb1 = styled.div`
     width: 126px;
-    height: 40px;
+    height: 42px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -227,7 +225,7 @@ export const Celeb2Fire = styled.div`
 `;
 export const SongFest = styled.div`
     width: 126px;
-    height: 84px;
+    height: 82px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -265,9 +263,10 @@ export const TimeLine = styled.div`
 `;
 export const BackgroundBox = styled.div`
     position: relative;
+    margin-top: -1030px;
 `;
 export const PcDiv = styled.div`
-    height: 175px;
+    height: 180px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -276,7 +275,7 @@ export const PcDiv = styled.div`
     }
 `;
 export const Day2PcDiv = styled.div`
-    height: 330px;
+    height: 337px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
