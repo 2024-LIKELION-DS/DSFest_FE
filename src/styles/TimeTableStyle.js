@@ -24,6 +24,9 @@ export const Wrapper = styled.div`
     margin-right: 12px;
     margin-top: -580px;
     margin-bottom: 50px;
+    @media screen and (min-width: 1024px) {
+        margin-top: -565px;
+    }
 `;
 
 export const Booth = styled.div`
@@ -58,7 +61,11 @@ export const WedButton = styled.button`
     width: 96px;
     height: 28px;
     margin: 0;
-    &:hover {
+    cursor: pointer;
+    &:hover,
+    &:visited,
+    &:active,
+    &.clicked {
         background-color: #ff9900;
     }
 `;
@@ -72,7 +79,9 @@ export const ThuButton = styled.button`
     width: 96px;
     height: 28px;
     margin: 0;
-    &:hover {
+    &:hover,
+    &:visited,
+    &:active {
         background-color: #e94f64;
     }
 `;
@@ -86,7 +95,9 @@ export const FriButton = styled.button`
     width: 96px;
     height: 28px;
     margin: 0;
-    &:hover {
+    &:hover,
+    &:visited,
+    &:active {
         background-color: #654fe9;
     }
 `;
@@ -187,6 +198,9 @@ export const Movie = styled.div`
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
+    @media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+        height: 105px;
+    }
 `;
 export const StuPerform = styled.div`
     width: 126px;
@@ -223,12 +237,11 @@ export const Content = styled.div`
     height: 42px;
     border-radius: 8px;
     border: 2px solid white;
-
     background-color: rgba(255, 255, 255, 0.2);
 `;
 export const Dj = styled.div`
     width: 126px;
-    height: 64px;
+    height: 62px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -252,4 +265,22 @@ export const TimeLine = styled.div`
 `;
 export const BackgroundBox = styled.div`
     position: relative;
+`;
+export const PcDiv = styled.div`
+    height: 175px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    @media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+        height: 172px;
+    }
+`;
+export const Day2PcDiv = styled.div`
+    height: 330px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    @media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+        height: 320px;
+    }
 `;
