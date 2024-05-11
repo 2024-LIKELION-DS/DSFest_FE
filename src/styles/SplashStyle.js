@@ -151,16 +151,16 @@ export const SdaySun4 = styled.img`
     z-index: 7;
     right: 90px;
     top: 500px;
-    animation: ${moveAndSpin(0, 0, 0, -360, 100, 0)} 2s ease-out forwards;
+    animation: ${moveAndSpin(0, 0, 0, -360, 95, 0)} 2s ease-out forwards;
 `;
 
-const moveSun = (y, x) => keyframes`
+const moveSun = (y) => keyframes`
     from {
-        transform: translateY(0px) translateX(0px);
+        transform: translateY(0px);
         opacity: 0.2;
     }
     to {
-        transform: translateY(${y}px) translateX(${x}px);
+        transform: translateY(${y}px);
         opacity: 1;
     }
 `;
@@ -170,10 +170,34 @@ export const SdaySun = styled.img`
     height: 56px;
     position: absolute;
     z-index: 8;
-    right: 150px;
-    top: 670px;
+    right: 42%;
+    top: 83%;
     opacity: 0.2;
-    animation: ${moveSun(-55, 0)} 2s ease-out forwards;
+    animation: ${moveSun(-55)} 2s ease-out forwards;
+
+    @media (min-width: 768px) and (min-height: 1024px) {
+        right: 340px;
+        top: 750px;
+        animation: ${moveSun(-70)} 2s ease-out forwards;
+    }
+
+    @media (min-width: 820px) and (min-height: 1180px) {
+        right: 360px;
+        top: 860px;
+        animation: ${moveSun(-70)} 2s ease-out forwards;
+    }
+
+    @media (min-width: 1024px) and (min-height: 1366px) {
+        right: 450px;
+        top: 1050px;
+        animation: ${moveSun(-130)} 2s ease-out forwards;
+    }
+
+    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
+        right: 150px;
+        top: 670px;
+        animation: ${moveSun(-55)} 2s ease-out forwards;
+    }
 `;
 
 // 3일차 달, 별
@@ -183,9 +207,15 @@ export const TdayMoon = styled.img`
     height: 40px;
     position: absolute;
     z-index: 8;
-    right: 280px;
-    top: 295px;
-    animation: ${moveAndSpin(0, 0, 0, -30, 0, 0)} 2s ease-out forwards;
+    right: 77%;
+    top: 37%;
+    animation: ${moveSun(-30)} 2s ease-out forwards;
+
+    @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
+        right: 280px;
+        top: 295px;
+        animation: ${moveSun(-30)} 2s ease-out forwards;
+    }
 `;
 
 const moveStar = (y, x) => keyframes`
@@ -363,7 +393,7 @@ export const CloudRight = styled.img`
 `;
 
 export const CloudGroup = styled.div`
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     position: absolute;
