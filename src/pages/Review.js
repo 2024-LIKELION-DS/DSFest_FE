@@ -85,6 +85,9 @@ function Review() {
 
   useEffect(() => {
     fetchReviews();
+  }, []); //get api
+  useEffect(() => {
+    fetchReviews();
   }, []); //get api*/
 
   return (
@@ -102,11 +105,8 @@ function Review() {
                 <C.PageTitle>REVIEW</C.PageTitle>
                 <R.ReviewWrite>
                   <R.CloudLeft>
-                    <img src={cloudLeft} alt="배경 구름" />
+                    <img src={cloudLeft} alt="배경 구름" width={102} style={{ marginLeft: "-28px" }} />
                   </R.CloudLeft>
-                  <R.CloudRight>
-                    <img src={cloudRight} alt="배경 구름" />
-                  </R.CloudRight>
                   <R.Write onSubmit={onSubmit}>
                     <R.WriteText
                       ref={writeRef}
@@ -119,6 +119,9 @@ function Review() {
                       등록하기
                     </R.WriteButton>
                   </R.Write>
+                  <R.CloudRight>
+                    <img src={cloudRight} alt="배경 구름" />
+                  </R.CloudRight>
                 </R.ReviewWrite>
                 <R.ReviewList>
                   <R.List>
@@ -135,8 +138,8 @@ function Review() {
                     ))}
                   </R.List>
                 </R.ReviewList>
-                {<Footer />}
               </R.Review>
+              <Footer />
             </C.Phone>
           </R.Background>
         </C.Area>

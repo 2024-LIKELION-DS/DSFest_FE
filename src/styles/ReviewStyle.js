@@ -10,7 +10,7 @@ export const Background = styled.div`
 
 export const Review = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: calc(100vh - 183px);
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
@@ -19,31 +19,35 @@ export const Review = styled.div`
 `;
 
 export const ReviewWrite = styled.div`
-  margin-top: 28px;
+  /*margin-top: 28px;*/
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
 `;
 
 export const CloudLeft = styled.div`
-  width: 102px;
+  display: flex;
+  width: 74px;
   height: 74px;
-  position: absolute;
-  top: 6.5rem;
-  right: 18rem;
+  overflow: hidden;
+  margin-bottom: -1rem;
+  margin-top: -2rem;
+  @media (hover: hover) and (pointer: fine) {
+    left: 40.6rem;
+  }
 `;
 
 export const CloudRight = styled.div`
+  display: flex;
   width: 131px;
   height: 144px;
-  position: absolute;
-  top: 11rem;
-  right: 0rem;
-  z-index: 0;
+  align-self: flex-end;
+  margin-top: -6rem;
 `;
 
 export const Write = styled.form`
   z-index: 1;
+  align-self: center;
 `;
 
 export const WriteText = styled.textarea`
@@ -90,8 +94,8 @@ export const WriteButton = styled.button`
 export const ReviewList = styled.div`
   display: flex;
   justify-content: center;
-
   min-height: 521.5px;
+  margin-top: -3rem;
 `;
 
 export const List = styled.ul`
@@ -128,6 +132,7 @@ export const ListText = styled.div`
   font-size: 15px;
   white-space: pre-wrap;
 `;
+
 export const ListTime = styled.div`
   font-family: "AppleSDGothicNeo";
   font-style: normal;

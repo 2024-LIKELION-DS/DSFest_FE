@@ -8,12 +8,30 @@ export const All = styled.div`
     margin-bottom: 72px;
 `;
 
+export const BgBox = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 9/11;
+    & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    animation: pulse;
+    animation-duration: 5s;
+    }
+`;
+
 export const Logo = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 72px;
     margin-bottom: 27px;
+    position: relative;
     & div {
         width: 150px;
         height: 150px;
@@ -42,6 +60,8 @@ export const Notice = styled.div`
     transition: background-color 0.3s ease;
     &:hover {
         background-color: rgba(255, 255, 255, 0.7);
+        animation: pulse;
+        animation-duration: 2s;
     }
     & .rock {
         position: absolute;
@@ -82,7 +102,9 @@ export const TimeTable = styled.div`
     transition: border 0.3s ease, background 0.3s ease;
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #654FE9; /* hover 시 배경색 변경 */
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #654FE9;
+        animation: pulse;
+        animation-duration: 2s;
     }
     & .beachball {
         position: absolute;
@@ -141,9 +163,12 @@ export const Map = styled.div`
     border: 4px solid #FFFFFF;
     box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     transition: border 0.3s ease, background 0.3s ease;
+    position: relative;
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
         background: rgba(255, 255, 255, 0.10);
+        animation: pulse;
+        animation-duration: 2s;
     }
     & div {
         font-family: Prompt;
@@ -168,9 +193,12 @@ export const Review = styled.div`
     border: 4px solid #FFFFFF;
     box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     transition: border 0.3s ease, background 0.3s ease;
+    position: relative;
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
         background: rgba(255, 255, 255, 0.10);
+        animation: pulse;
+        animation-duration: 2s;
     }
     & div {
         font-family: Prompt;
@@ -194,9 +222,11 @@ export const Photo = styled.div`
     border-radius: 24px;
     box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     position: relative;
-    transition: opacity 0.3s ease; /* 트랜지션 효과 추가 */
+    transition: opacity 0.3s ease;
     &:hover {
-        opacity: 0.7; /* hover 시 투명도 변경 */
+        opacity: 0.7;
+        animation: pulse;
+        animation-duration: 2s;
     }
     & .parasol {
         position: absolute;
@@ -205,6 +235,9 @@ export const Photo = styled.div`
         width: 58px;
         height: 46px;
     }
+    & .parasol:hover {
+        opacity: 1;
+    }
     & .beach {
         position: absolute;
         top: 0;
@@ -212,15 +245,18 @@ export const Photo = styled.div`
         width: 100%;
         height: 100%;
     }
+    & .beach:hover {
+        opacity: 0.6;
+    }
     & div {
         margin-top: 67px;
         font-family: Prompt;
         font-size: 20px;
         font-weight: 600;
         color: #448BDB;
-        transition: color 0.3s ease; /* 텍스트 색상에 트랜지션 효과 추가 */
+        transition: color 0.3s ease;
     }
     &:hover div {
-        color: rgba(68, 139, 219, 0.60); /* hover 시 텍스트 색상 변경 */
+        color: rgba(68, 139, 219, 0.60);
     }
 `;

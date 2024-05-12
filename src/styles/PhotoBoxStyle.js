@@ -8,6 +8,7 @@ export const PhotoBox = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 
   input[type="file"] {
     position: absolute;
@@ -45,15 +46,26 @@ export const UploadLabel = styled.label`
 export const File = styled.input``;
 
 export const FilePreview = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 
-  img {
-    width: 152px;
-    height: 184px;
-    object-fit: cover;
-
-    z-index: 5;
-  }
+  ${({ $horizontal }) =>
+    $horizontal
+      ? `
+    img {
+      height: 100%;
+      width: auto;
+    }
+  `
+      : `
+    img {
+      height: auto;
+      width: 100%;
+    }
+  `}
 `;

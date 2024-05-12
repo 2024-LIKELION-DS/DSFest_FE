@@ -6,6 +6,8 @@ import axios from "axios";
 import Logo from "../img/header_logo_48px.png";
 import Footer from "../components/Footer";
 
+const API_KEY = process.env.REACT_APP_API; // 환경변수에 저장된 API 키 불러오기
+
 function Admin() {
     const navigate = useNavigate();
 
@@ -13,36 +15,29 @@ function Admin() {
         navigate("/");
     };
 
+    // 초기 상태값을 빈 문자열로 설정
     const [formData, setFormData] = useState({
-        select: "",
         title: "",
-        detail: "",
-        files: [], // 파일 목록을 저장하는 배열
-        category: "",
-        userId: "", // 사용자 아이디 필드 추가
+        content: "",
+        categoryName: "",
     });
+
+    const handleFileChange = (event) => {
+        const images = event.target.files; // 이미지 파일 가져오기
+        if (images && images.length > 0) {
+            // 이미지 파일을 배열로 변환하여 formData에 추가
+            setFormData({
+                ...formData,
+                images: Array.from(images),
+            });
+        }
+    };
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({
             ...formData,
             [name]: value,
-        });
-    };
-
-    const handleFileChange = (event) => {
-        const files = event.target.files;
-        setFormData({
-            ...formData,
-            files: Array.from(files), // 파일 목록을 배열로 변환하여 저장
-        });
-    };
-
-    const handleSelectChange = (event) => {
-        const { value } = event.target;
-        setFormData({
-            ...formData,
-            select: value,
         });
     };
 
@@ -58,22 +53,29 @@ function Admin() {
         }
     };
 
+    const handleSelectChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
     async function createWriting(formData) {
         try {
             const formDataToSend = new FormData();
-            formDataToSend.append("category", formData.select);
+            formDataToSend.append("categoryName", formData.categoryName);
             formDataToSend.append("title", formData.title);
-            formDataToSend.append("userId", formData.userId);
-            formDataToSend.append("content", formData.detail);
+            formDataToSend.append("content", formData.content);
 
-            // 파일이 선택된 경우에만 FormData에 추가
-            if (formData.files.length > 0) {
-                for (const file of formData.files) {
-                    formDataToSend.append("imageFiles", file);
+            if (formData.images && formData.images.length > 0) {
+                for (const image of formData.images) {
+                    formDataToSend.append("images", image);
                 }
             }
 
-            const response = await axios.post(`/notice`, formDataToSend, {
+            const url = `${API_KEY}/admin`; // URL 조립 방식 변경
+            const response = await axios.post(url, formDataToSend, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -101,14 +103,16 @@ function Admin() {
                                 <A.Square>
                                     <A.LabelBox style={{ marginBottom: "3px" }}>
                                         <A.LabelTag
-                                            style={{ marginTop: "12px" }}
+                                            style={{
+                                                marginTop: "7px",
+                                            }}
                                         >
                                             분류
                                         </A.LabelTag>
                                         <A.BlankDiv>
                                             <A.Selection
-                                                name="select"
-                                                value={formData.select}
+                                                name="categoryName"
+                                                value={formData.categoryName}
                                                 onChange={handleSelectChange}
                                             >
                                                 <A.Opt
@@ -119,13 +123,22 @@ function Admin() {
                                                 >
                                                     선택
                                                 </A.Opt>
-                                                <A.Opt value="notice">
+                                                <A.Opt
+                                                    value="notice"
+                                                    name="notice"
+                                                >
                                                     Notice
                                                 </A.Opt>
-                                                <A.Opt value="program">
+                                                <A.Opt
+                                                    value="program"
+                                                    name="program"
+                                                >
                                                     Program
                                                 </A.Opt>
-                                                <A.Opt value="event">
+                                                <A.Opt
+                                                    value="event"
+                                                    name="program"
+                                                >
                                                     Event
                                                 </A.Opt>
                                             </A.Selection>
@@ -145,8 +158,8 @@ function Admin() {
                                     <A.LabelBox>
                                         <A.LabelTag>내용</A.LabelTag>
                                         <A.InputDetail
-                                            name="detail"
-                                            value={formData.detail}
+                                            name="content"
+                                            value={formData.content}
                                             onChange={handleInputChange}
                                             placeholder="내용을 입력해주세요"
                                         ></A.InputDetail>

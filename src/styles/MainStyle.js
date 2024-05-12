@@ -14,8 +14,9 @@ export const Background = styled.div`
 `;
 
 export const Main = styled.div`
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  min-height: calc(100vh - 183px);
+  position: relative;
 
     @media (hover: hover) and (pointer: fine) {
         width: 100%;

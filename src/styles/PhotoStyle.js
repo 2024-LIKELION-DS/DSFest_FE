@@ -10,7 +10,7 @@ export const Background = styled.div`
 
 export const Photo = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: calc(100vh - 183px);
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
@@ -36,16 +36,25 @@ export const Text = styled.div`
   font-family: "AppleSDGothicNeo";
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
   margin-left: 20px;
 `;
 
 export const PhotoDownImg = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   margin-right: 20px;
   cursor: pointer;
+`;
+
+export const FrameCenter = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const CaptureFrame = styled.div`
+  width: 360px;
 `;
 
 export const FrameBox = styled.div`
@@ -75,24 +84,28 @@ export const PhotoPos = styled.div`
 
 export const PhotoPosOne = styled.div`
   position: relative;
+  width: 152px;
   top: 132px;
   left: 20px;
 `;
 
 export const PhotoPosTwo = styled.div`
   position: relative;
+  width: 152px;
   top: calc(328px - 184px);
   left: 20px;
 `;
 
 export const PhotoPosThree = styled.div`
   position: relative;
+  width: 152px;
   top: calc(40px - 184px - 184px);
   left: 188px;
 `;
 
 export const PhotoPosFour = styled.div`
   position: relative;
+  width: 152px;
   top: calc(236px - 184px - 184px - 184px);
   left: 188px;
 `;
