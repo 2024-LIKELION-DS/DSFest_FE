@@ -211,7 +211,7 @@ function TimeTable() {
                             </T.BoldTop5>
                             <T.Time>19:30~21:00</T.Time>
                         </T.Dj>
-                        <div style={{ height: "18px" }}></div>
+                        <div style={{ height: "19px" }}></div>
                         <T.Celeb2Fire>
                             <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
                             <T.InlineTimeF>21:30~22:00</T.InlineTimeF>

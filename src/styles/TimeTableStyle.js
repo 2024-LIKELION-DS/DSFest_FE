@@ -200,7 +200,7 @@ export const Movie = styled.div`
 `;
 export const StuPerform = styled.div`
     width: 126px;
-    height: 107px;
+    height: 109px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -215,7 +215,7 @@ export const Celeb1 = styled.div`
 `;
 export const Celeb2Fire = styled.div`
     width: 126px;
-    height: 22px;
+    height: 23px;
     display: flex;
     border-radius: 8px;
     border: 2px solid white;
@@ -266,13 +266,13 @@ export const BackgroundBox = styled.div`
     margin-top: -600px;
 `;
 export const PcDiv = styled.div`
-    height: 178px;
+    height: 178.6px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
 `;
 export const Day2PcDiv = styled.div`
-    height: 334px;
+    height: 335px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
