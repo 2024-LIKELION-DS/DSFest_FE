@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { toPng } from "html-to-image";
+import html2canvas from "html2canvas";
 import * as C from "../styles/CommonStyle";
 import * as P from "../styles/PhotoStyle";
 
@@ -27,33 +27,22 @@ function Photo() {
 
   const ref = useRef();
 
-  const onButtonClick = async () => {
+  const onCaptureClick = async () => {
     if (ref.current === null) {
       return;
     }
 
-    const captureImage = async () => {
-      try {
-        const dataUrl = await toPng(ref.current);
-        const link = document.createElement("a");
-        link.download = "2024 근화제 찬란.png";
-        link.href = dataUrl;
-        link.click();
-      } catch (err) {
-        console.log(err);
+    const captureImg = async () => {
+      if (ref.current) {
+        const canvas = await html2canvas(ref.current, { scale: 4 });
+        const element = document.createElement("a");
+        element.href = canvas.toDataURL("image/png");
+        element.download = "2024 근화제 찬란.png";
+        element.click();
       }
     };
 
-    if (isSafari()) {
-      await toPng(ref.current);
-      await toPng(ref.current);
-      await toPng(ref.current);
-      await toPng(ref.current);
-      await toPng(ref.current);
-      await captureImage();
-    } else {
-      await captureImage();
-    }
+    captureImg();
   };
 
   return (
@@ -74,7 +63,7 @@ function Photo() {
                     <P.Text>
                       <p>* 이미지는 약 5:6 비율을 권장합니다.</p>
                     </P.Text>
-                    <P.PhotoDownImg src={PhotoDown} alt="다운로드" onClick={onButtonClick} />
+                    <P.PhotoDownImg src={PhotoDown} alt="다운로드" onClick={onCaptureClick} />
                   </P.TextSpace>
                 </P.PhotoSpace>
                 <div ref={ref}>

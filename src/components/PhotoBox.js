@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import heic2any from "heic2any";
 import * as P from "../styles/PhotoBoxStyle";
 
 import PhotoCam from "../img/photo_cam_32x32.png";
 
 function PhotoBox({ index, setImagePreview, imagePreview }) {
+  const [horizontalImage, setHorizontalImage] = useState(false);
+
   const handleProfileImageChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -35,6 +37,29 @@ function PhotoBox({ index, setImagePreview, imagePreview }) {
     }
   };
 
+  useEffect(() => {
+    const setDirection = (image) => {
+      const width = image.naturalWidth;
+      const height = image.naturalHeight;
+
+      if (width === height) {
+        // 가로와 세로 크기가 같을 경우
+        setHorizontalImage(true); // 가로로 처리
+      } else if (width > height) {
+        setHorizontalImage(true); // 가로 이미지
+      } else {
+        setHorizontalImage(false); // 세로 이미지
+      }
+    };
+
+    const image = document.getElementById(`img${index}`);
+    if (image) {
+      image.onload = () => {
+        setDirection(image);
+      };
+    }
+  }, [imagePreview]);
+
   return (
     <P.PhotoBox>
       <P.UploadLabel htmlFor={`file${index}`}>
@@ -47,7 +72,9 @@ function PhotoBox({ index, setImagePreview, imagePreview }) {
         accept="image/*, .heic"
         onChange={handleProfileImageChange}
       />
-      <P.FilePreview>{imagePreview && <img src={imagePreview} alt="Preview" />}</P.FilePreview>
+      <P.FilePreview $horizontal={horizontalImage}>
+        {imagePreview && <img id={`img${index}`} src={imagePreview} alt="Preview" />}
+      </P.FilePreview>
     </P.PhotoBox>
   );
 }
