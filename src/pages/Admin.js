@@ -93,6 +93,7 @@ function Admin() {
             return response.data;
         } catch (error) {
             console.error("에러:", error);
+            alert("모든 항목을 필수로 입력해주세요.");
             throw error;
         }
     }
