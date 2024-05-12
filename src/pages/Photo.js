@@ -90,8 +90,8 @@ function Photo() {
                     </P.FrameStyle>
                   </P.CaptureFrame>
                 </P.FrameCenter>
-                <Footer />
               </P.Photo>
+              <Footer />
             </C.Phone>
           </P.Background>
         </C.Area>

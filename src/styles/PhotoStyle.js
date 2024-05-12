@@ -10,7 +10,7 @@ export const Background = styled.div`
 
 export const Photo = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: calc(100vh - 183px);
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;

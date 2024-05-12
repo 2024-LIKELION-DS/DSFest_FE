@@ -4,7 +4,7 @@ import * as M from "../styles/MainStyle";
 
 import PcTitle from "../components/PcTitle";
 import Footer from "../components/Footer";
-import Shortcut from '../components/Shortcut';
+import Shortcut from "../components/Shortcut";
 
 function Main() {
   return (
@@ -18,9 +18,9 @@ function Main() {
           <M.Background>
             <C.Phone>
               <M.Main>
-                <Shortcut/>
-                <Footer/>
+                <Shortcut />
               </M.Main>
+              <Footer />
             </C.Phone>
           </M.Background>
         </C.Area>
