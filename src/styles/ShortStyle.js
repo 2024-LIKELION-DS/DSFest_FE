@@ -194,9 +194,9 @@ export const Photo = styled.div`
     border-radius: 24px;
     box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     position: relative;
-    transition: opacity 0.3s ease; /* 트랜지션 효과 추가 */
-    &:hover {
-        opacity: 0.7; /* hover 시 투명도 변경 */
+    transition: opacity 0.3s ease;
+    & :hover {
+        opacity: 0.7;
     }
     & .parasol {
         position: absolute;
@@ -212,15 +212,18 @@ export const Photo = styled.div`
         width: 100%;
         height: 100%;
     }
+    & .beach:hover {
+        opacity: 0.6;
+    }
     & div {
         margin-top: 67px;
         font-family: Prompt;
         font-size: 20px;
         font-weight: 600;
         color: #448BDB;
-        transition: color 0.3s ease; /* 텍스트 색상에 트랜지션 효과 추가 */
+        transition: color 0.3s ease;
     }
     &:hover div {
-        color: rgba(68, 139, 219, 0.60); /* hover 시 텍스트 색상 변경 */
+        color: rgba(68, 139, 219, 0.60);
     }
 `;
