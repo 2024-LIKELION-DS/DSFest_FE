@@ -193,7 +193,7 @@ export const InlineTimeF = styled.span`
 export const Movie = styled.div`
     width: 126px;
     margin-top: 2px;
-    height: 107px;
+    height: 105px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -215,7 +215,7 @@ export const Celeb1 = styled.div`
 `;
 export const Celeb2Fire = styled.div`
     width: 126px;
-    height: 24px;
+    height: 22px;
     display: flex;
     border-radius: 8px;
     border: 2px solid white;
@@ -272,7 +272,7 @@ export const PcDiv = styled.div`
     align-items: flex-end;
 `;
 export const Day2PcDiv = styled.div`
-    height: 336px;
+    height: 334px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
