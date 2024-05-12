@@ -48,6 +48,8 @@ function Admin() {
             const responseData = await createWriting(formData);
             console.log("Response from createWriting:", responseData);
             // TODO: 서버 응답에 대한 처리 추가
+            // 일단 notice 페이지로 이동하게 처리해둘게요~~~~
+            navigate("/notice");
         } catch (error) {
             console.error("Error:", error);
         }
@@ -64,32 +66,37 @@ function Admin() {
     async function createWriting(formData) {
         try {
             const formDataToSend = new FormData();
-            formDataToSend.append("categoryName", formData.categoryName);
-            formDataToSend.append("title", formData.title);
-            formDataToSend.append("content", formData.content);
-
+            // FormData에 필드들을 직접 추가
+            formDataToSend.append('noticeDTO', JSON.stringify({
+                title: formData.title,
+                content: formData.content,
+                categoryName: formData.categoryName,
+            }));
+    
+            // multipartFiles 필드 추가
             if (formData.images && formData.images.length > 0) {
                 for (const image of formData.images) {
-                    formDataToSend.append("images", image);
+                    formDataToSend.append("multipartFiles", image);
                 }
             }
-
+    
             const url = `${API_KEY}/admin`; // URL 조립 방식 변경
             const response = await axios.post(url, formDataToSend, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             });
-
-            console.log("Form submitted with data:", formDataToSend);
-            console.log("Response:", response.data);
-
+    
+            console.log("데이터와 함께 폼 제출:", formDataToSend);
+            console.log("응답:", response.data);
+    
             return response.data;
         } catch (error) {
-            console.error("Error:", error);
+            console.error("에러:", error);
             throw error;
         }
     }
+    
 
     return (
         <>
