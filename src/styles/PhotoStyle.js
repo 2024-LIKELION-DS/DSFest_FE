@@ -51,6 +51,10 @@ export const PhotoDownImg = styled.img`
 export const FrameCenter = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (min-width: 400px) {
+    margin-bottom: 48px;
+  }
 `;
 
 export const CaptureFrame = styled.div`
