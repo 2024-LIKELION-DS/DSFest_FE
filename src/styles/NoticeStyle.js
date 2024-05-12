@@ -30,14 +30,19 @@ height: 44px;
 margin-right:2rem;
 `;
 
+export const wrap = styled.div`
+
+`;
 export const content_wrap = styled.div`
   display:flex;
-  text-align:left;
+  text-align:center;
   justify-content:center;
-  /*height:26.5rem;*//* 고정 높이 설정, 필요하다면 제거할 수 있음 */
+  align-items:center;
+  /*height:26.5rem;*/ 고정 높이 설정, 필요하다면 제거할 수 있음 */
   padding-right:0.5rem;
   padding-left:0.5rem;
   padding-bottom:1.4rem;
+  margin-right:0.5rem;
   
   `;
   
@@ -50,8 +55,6 @@ export const content_wrap = styled.div`
   border: 4px solid white; /* 테두리 설정 */
   border-radius: 12px; /* 테두리 둥근 설정 */
   width: 100%; /* 부모 요소의 너비를 따름 */
-  max-height: 26.5rem;
-  overflow-y: auto; /* 세로 스크롤 활성화 */
   
   padding: 1rem; /* 패딩 설정 */
   box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
@@ -89,19 +92,83 @@ margin-bottom:1rem;
 
 
 export const img_wrap2 = styled.div`
-display: flex;  // flexbox를 사용하여 내부 아이템을 행으로 배열
-width: 100%;    // 부모 요소의 너비를 따름
+display: flex;
+  justify-content: center; // 이미지를 중앙 정렬
+  align-items: center; // 수직 방향도 중앙 정렬
+  width: 100%;
+  position: relative; // 상대적 위치 설정
+  box-sizing: border-box;
+  margin-bottom:3rem;
+  
 
-
-// 내용이 너비를 넘어갈 경우 가로 스크롤을 활성화
-box-sizing: border-box; // 패딩을 너비 계산에 포함
-max-height: 26.5rem;
 `;
 
 export const img_exImg = styled.img`
-width: 124px;
-height: 124px;
-margin-right: 1rem;
-
+width: 328px;
+height: 328px;
+border: 4px solid white; /* 테두리 설정 */
+border-radius: 12px; /* 테두리 둥근 설정 */
 
 `;
+
+//arrow이미지
+
+export const button = styled.div`
+  display: flex;
+  position: absolute; // 가장 가까운 포지셔닝된 조상에 대해 상대적으로 위치
+  bottom: 0.7rem; // 컨테이너의 하단에 정렬
+  width: 100%; // 너비를 이미지의 전체 너비로 설정
+  justify-content: space-between; // 요소들을 양 끝에 배치
+  padding: 0 10px; // 좌우 패딩으로 화살표 여백 조절
+`;
+
+// 왼쪽 화살표 스타일
+export const leftArrowImg = styled.img`
+  cursor: pointer; // 커서를 포인터로 변경
+  margin-left:1.7rem;
+  width: 2rem;
+  height: 2rem;
+`;
+
+// 오른쪽 화살표 스타일
+export const rightArrowImg = styled.img`
+  cursor: pointer;
+  margin-right:1.7rem;
+  width: 2rem;
+  height: 2rem;
+`;
+
+// 이미지 감싸는 컨테이너
+
+// export const button = styled.div`
+// display:float;
+// position: absolute; // 절대 위치
+//   bottom: 0; // 하단에 위치
+//   left: 50%; // 왼쪽에서 50% 위치에
+//   transform: translateX(-50%); // 중앙 정렬을 위해 X축 기준 50% 이동
+//   color: white; // 텍스트 색상
+//   font-size: 16px; // 폰트 크기
+
+// `;
+
+// const GalleryWrapper = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 100%;
+// `;
+
+// const Image = styled.img`
+//   width: 328px;
+//   height: 328px;
+// `;
+
+// export const img_arrow = styled.img`
+//   cursor: pointer;
+//   width: 50px; // 화살표 이미지의 크기를 지정
+//   height: 50px; // 화살표 이미지의 높이를 지정
+//   display: ${({ show }) => (show ? 'block' : 'none')};
+//   z-index: 1000;
+// `;
+
+

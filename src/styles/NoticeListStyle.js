@@ -43,7 +43,7 @@ export const content_wrap = styled.div`
   justify-content: center; /* 모든 그리드 아이템을 가로축 중앙에 정렬 */
   align-items: center; /* 모든 그리드 아이템을 세로축 중앙에 정렬 */
 
-
+  margin-bottom:3rem;
 `;
 
 export const content = styled.div`
@@ -94,3 +94,61 @@ export const box = styled.div`
   color:white;
   opacity: 0.8;
   `;
+
+  /*페이지네이션*/
+  export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  ul.pagination {
+    li {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: small;
+
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+
+        &:hover, &.active {
+          color: #986d9e;
+        }
+      }
+
+      &.active a {
+        color: #986d9e !important;
+      }
+
+      &.active {
+        background-color: none !important;
+      }
+    }
+  }
+`;
+
+export const PageSelection = styled.div`
+  width: 48px;
+  height: 30px;
+  color: #986d9e;
+`;

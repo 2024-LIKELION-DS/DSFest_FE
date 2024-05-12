@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Pagination from 'react-js-pagination';
 import * as C from "../styles/CommonStyle";
 import * as NL from "../styles/NoticeListStyle";
 
@@ -10,6 +13,28 @@ import boatImg from "../img/boat_37x44.png";
 import exImg from "../img/exImg.png";
 
 function NoticeList() {
+  const [notice, setNotice] = useState([]);  // 공지사항 목록을 저장하는 상태
+  const [totalNum, setTotalNum] = useState(0);  // 전체 공지사항 수를 저장하는 상태
+  const [currentPage, setCurrentPage] = useState(1);  // 현재 페이지 번호를 저장하는 상태
+
+  useEffect(() => {
+    const fetchNotice = async () => {
+      try {
+        const url = `${process.env.REACT_APP_API}/admin/read?page=${currentPage}&size=6`;
+        const response = await axios.get(url);
+        setNotice(response.data.data);  // 공지사항 데이터를 상태에 저장
+        setTotalNum(response.data.totalNum);  // 전체 공지사항 수를 상태에 저장
+      } catch (error) {
+        console.error("공지사항 데이터를 불러오는 중 오류가 발생했습니다:", error);
+      }
+    };
+    fetchNotice();
+  }, [currentPage]);  // currentPage가 변경될 때마다 API를 호출
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);  // 페이지 번호 변경
+  };
+
   return (
     <>
       <C.Page>
@@ -24,78 +49,34 @@ function NoticeList() {
                 <Header />
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <NL.img_wrap>
-                <NL.img_boat src={boatImg} alt="Boat" />
+                  <NL.img_boat src={boatImg} alt="Boat" />
                 </NL.img_wrap>
                 <NL.content_wrap>
-                  <NL.content>
-                    <NL.box>
-                      <NL.img_exImg src={exImg} alt="exImg" /> 
-                    </NL.box>
-                    <NL.title>
-                      영근터 쓰레기 처리 안내
-                    </NL.title>
-                    <NL.category>
-                      Notice
-                    </NL.category>
-                  </NL.content>
-                  <NL.content>
-                    <NL.box>
-                      <NL.img_exImg src={exImg} alt="exImg" /> 
-                    </NL.box>
-                    <NL.title>
-                      영근터 쓰레기 처리 안내
-                    </NL.title>
-                    <NL.category>
-                      Notice
-                    </NL.category>
-                  </NL.content>
-                  <NL.content>
-                    <NL.box>
-                      <NL.img_exImg src={exImg} alt="exImg" /> 
-                    </NL.box>
-                    <NL.title>
-                      영근터 쓰레기 처리 안내
-                    </NL.title>
-                    <NL.category>
-                      Notice
-                    </NL.category>
-                  </NL.content>
-                  <NL.content>
-                    <NL.box>
-                      <NL.img_exImg src={exImg} alt="exImg" /> 
-                    </NL.box>
-                    <NL.title>
-                      영근터 쓰레기 처리 안내
-                    </NL.title>
-                    <NL.category>
-                      Notice
-                    </NL.category>
-                  </NL.content>
-                  <NL.content>
-                    <NL.box>
-                      <NL.img_exImg src={exImg} alt="exImg" /> 
-                    </NL.box>
-                    <NL.title>
-                      영근터 쓰레기 처리 안내
-                    </NL.title>
-                    <NL.category>
-                      Notice
-                    </NL.category>
-                  </NL.content>
-                  <NL.content>
-                    <NL.box>
-                      <NL.img_exImg src={exImg} alt="exImg" /> 
-                    </NL.box>
-                    <NL.title>
-                      영근터 쓰레기 처리 안내
-                    </NL.title>
-                    <NL.category>
-                      Notice
-                    </NL.category>
-                  </NL.content>
-                  
+                  {notice.map((item) => (
+                    <Link to={`/notice/${item.id}`} key={item.id}>
+                      <NL.content>
+                        <NL.box>
+                          <NL.img_exImg src={(item.images && item.images.length > 0) ? item.images[0].imageUrl : exImg} alt="exImg" />
+                        </NL.box>
+                        <NL.title>{item.title}</NL.title>
+                        <NL.category>{item.category.name}</NL.category>
+                      </NL.content>
+                    </Link>
+                  ))}
                 </NL.content_wrap>
-                
+                <NL.PaginationContainer>
+                  <Pagination
+                    activePage={currentPage}
+                    itemsCountPerPage={6}
+                    totalItemsCount={totalNum}
+                    pageRangeDisplayed={5}
+                    onChange={handlePageChange}
+                    prevPageText={'<'}
+                    nextPageText={'>'}
+                    firstPageText={''}  // 첫 페이지로 이동하는 이중 화살표 삭제
+                    lastPageText={''}   // 마지막 페이지로 이동하는 이중 화살표 삭제
+                  />
+                </NL.PaginationContainer>
                 <Footer />
               </NL.Notice>
             </C.Phone>
