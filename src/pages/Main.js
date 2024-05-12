@@ -6,6 +6,8 @@ import PcTitle from "../components/PcTitle";
 import Footer from "../components/Footer";
 import Shortcut from '../components/Shortcut';
 
+import bg from "../img/bg_360x440.png";
+
 function Main() {
   return (
     <>
@@ -18,6 +20,7 @@ function Main() {
           <M.Background>
             <C.Phone>
               <M.Main>
+                <div className='bg-box'><img className='bg' src={bg} alt='bg'/></div>
                 <Shortcut/>
                 <Footer/>
               </M.Main>
