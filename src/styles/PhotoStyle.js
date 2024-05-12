@@ -52,6 +52,10 @@ export const FrameCenter = styled.div`
   display: flex;
   justify-content: center;
 
+  @media (min-width: 384px) {
+    margin-bottom: 32px;
+  }
+
   @media (min-width: 400px) {
     margin-bottom: 48px;
   }
