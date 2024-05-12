@@ -263,7 +263,7 @@ function TimeTable() {
                                             handleDayChange("5/23 Thu")
                                         }
                                         onTouchStart={() =>
-                                            handleDayChange("5/2 Thu")
+                                            handleDayChange("5/23 Thu")
                                         }
                                     >
                                         5/23 Thu
