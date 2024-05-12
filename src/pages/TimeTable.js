@@ -41,7 +41,7 @@ function TimeTable() {
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
                     </T.DayBooth>
-                    <div style={{ height: "68px" }}></div>
+                    <div style={{ height: "67px" }}></div>
                     <T.DayBooth>
                         <T.Bold>야간 수익 사업</T.Bold>
                         <T.Time>16:00~19:30</T.Time>
@@ -110,7 +110,7 @@ function TimeTable() {
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
                     </T.DayBooth>
-                    <div style={{ height: "68px" }}></div>
+                    <div style={{ height: "67px" }}></div>
                     <T.DayBooth>
                         <T.Bold>야간 수익 사업</T.Bold>
                         <T.Time>16:00~19:30</T.Time>
@@ -168,7 +168,7 @@ function TimeTable() {
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
                     </T.DayBooth>
-                    <div style={{ height: "68px" }}></div>
+                    <div style={{ height: "67px" }}></div>
                     <T.DayBooth>
                         <T.Bold>야간 수익 사업</T.Bold>
                         <T.Time>16:00~19:30</T.Time>
@@ -200,7 +200,7 @@ function TimeTable() {
                             <T.Bold>영화 상영</T.Bold>
                             <T.Time>15:00~17:30</T.Time>
                         </T.Movie>
-                        <div style={{ height: "47px" }}></div>
+                        <div style={{ height: "46px" }}></div>
                         <T.Content>
                             <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
                             <T.Time>18:30~19:30</T.Time>
@@ -211,7 +211,7 @@ function TimeTable() {
                             </T.BoldTop5>
                             <T.Time>19:30~21:00</T.Time>
                         </T.Dj>
-                        <div style={{ height: "16.5px" }}></div>
+                        <div style={{ height: "18px" }}></div>
                         <T.Celeb2Fire>
                             <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
                             <T.InlineTimeF>21:30~22:00</T.InlineTimeF>
@@ -285,6 +285,7 @@ function TimeTable() {
                                         5/24 Fri
                                     </T.FriButton>
                                 </T.DayBox>
+                                <br />
 
                                 {selectedDay === "5/22 Wed" && (
                                     <Day1TimeTable />
@@ -346,7 +347,9 @@ function TimeTable() {
                                     </T.TimeLine>
                                 </T.BackgroundBox>
                                 <br />
-
+                                <br />
+                                <br />
+                                <br />
                                 {/*여기 부분 작업!*/}
 
                                 <Footer />
