@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import * as S from "../styles/ShortStyle";
 
+import bg from "../img/bg_360x440.png";
 import logo from "../img/splash_logo_202x220.png"
 import rock from "../img/rock_94x140.png"
 import beachball from "../img/beachball_41x41.png"
@@ -13,6 +14,7 @@ import parasol from "../img/parasol_58x46.png"
 function Shortcut() {
     return (
         <S.All>
+            <S.BgBox><img className='bg' src={bg} alt='bg'/></S.BgBox>
             <S.Logo>
                 <div><img src={logo} alt="찬란 로고"/></div>
             </S.Logo>
