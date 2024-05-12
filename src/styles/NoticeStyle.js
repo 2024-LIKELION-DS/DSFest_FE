@@ -11,43 +11,38 @@ export const Background = styled.div`
 
 export const Notice = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: calc(100vh - 183px);
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
   }
 `;
 export const img_wrap = styled.div`
-  display:flex;
-  justify-content:right;
-  margin-right:1rem;
- 
+  display: flex;
+  justify-content: right;
+  margin-right: 1rem;
 `;
 export const img_boat = styled.img`
-width: 37px;
-height: 44px;
-margin-right:2rem;
+  width: 37px;
+  height: 44px;
+  margin-right: 2rem;
 `;
 
-export const wrap = styled.div`
-
-`;
+export const wrap = styled.div``;
 export const content_wrap = styled.div`
-  display:flex;
-  text-align:center;
-  justify-content:center;
-  align-items:center;
-  /*height:26.5rem;*/ 고정 높이 설정, 필요하다면 제거할 수 있음 */
-  padding-right:0.5rem;
-  padding-left:0.5rem;
-  padding-bottom:1.4rem;
-  margin-right:0.5rem;
-  
-  `;
-  
-  
-  export const box_wrap = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /*height:26.5rem; 고정 높이 설정, 필요하다면 제거할 수 있음 */
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1.4rem;
+  margin-right: 0.5rem;
+`;
+
+export const box_wrap = styled.div`
   display: flex; /* flexbox를 사용하여 내부 아이템을 정렬 */
   flex-direction: column; /* 아이템을 세로로 정렬 */
   justify-content: left; /* 좌측 정렬 */
@@ -55,60 +50,54 @@ export const content_wrap = styled.div`
   border: 4px solid white; /* 테두리 설정 */
   border-radius: 12px; /* 테두리 둥근 설정 */
   width: 100%; /* 부모 요소의 너비를 따름 */
-  
+
   padding: 1rem; /* 패딩 설정 */
   box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
-
-  `;
-
+`;
 
 export const List = styled.div`
-fontSize: 12px;
-font-family: "AppleSDGothicNeo";
-font-Weight: 400;
-color:white;
-opacity: 0.8;
+  fontsize: 12px;
+  font-family: "AppleSDGothicNeo";
+  font-weight: 400;
+  color: white;
+  opacity: 0.8;
 `;
 
 export const Title = styled.div`
-fontSize: 15px;
-font-family: "AppleSDGothicNeo";
-font-Weight: 800;
-color:white;
-margin-top:1rem;
-margin-bottom:1rem;
+  fontsize: 15px;
+  font-family: "AppleSDGothicNeo";
+  font-weight: 800;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const Context = styled.div`
-fontSize: 15px;
-font-family: "AppleSDGothicNeo";
-font-Weight: 500;
-color:white;
-opacity: 0.8;
-margin-bottom:1rem;
+  fontsize: 15px;
+  font-family: "AppleSDGothicNeo";
+  font-weight: 500;
+  color: white;
+  opacity: 0.8;
+  margin-bottom: 1rem;
 `;
 
 //이미지
 
-
 export const img_wrap2 = styled.div`
-display: flex;
+  display: flex;
   justify-content: center; // 이미지를 중앙 정렬
   align-items: center; // 수직 방향도 중앙 정렬
   width: 100%;
   position: relative; // 상대적 위치 설정
   box-sizing: border-box;
-  margin-bottom:3rem;
-  
-
+  margin-bottom: 3rem;
 `;
 
 export const img_exImg = styled.img`
-width: 328px;
-height: 328px;
-border: 4px solid white; /* 테두리 설정 */
-border-radius: 12px; /* 테두리 둥근 설정 */
-
+  width: 328px;
+  height: 328px;
+  border: 4px solid white; /* 테두리 설정 */
+  border-radius: 12px; /* 테두리 둥근 설정 */
 `;
 
 //arrow이미지
@@ -125,7 +114,7 @@ export const button = styled.div`
 // 왼쪽 화살표 스타일
 export const leftArrowImg = styled.img`
   cursor: pointer; // 커서를 포인터로 변경
-  margin-left:1.7rem;
+  margin-left: 1.7rem;
   width: 2rem;
   height: 2rem;
 `;
@@ -133,7 +122,7 @@ export const leftArrowImg = styled.img`
 // 오른쪽 화살표 스타일
 export const rightArrowImg = styled.img`
   cursor: pointer;
-  margin-right:1.7rem;
+  margin-right: 1.7rem;
   width: 2rem;
   height: 2rem;
 `;
@@ -170,5 +159,3 @@ export const rightArrowImg = styled.img`
 //   display: ${({ show }) => (show ? 'block' : 'none')};
 //   z-index: 1000;
 // `;
-
-
