@@ -50,7 +50,7 @@ function Splash() {
     // 날짜별 테마 바꾸기
     const currentDate = new Date();
     const SecondDate = new Date(2024, 4, 23);
-    const LastDate = new Date(2024, 4, 13);
+    const LastDate = new Date(2024, 4, 24);
 
     if (currentDate.toDateString() === LastDate.toDateString()) {
         return (
