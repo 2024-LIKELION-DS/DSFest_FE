@@ -11,21 +11,14 @@ import star from "../img/star_94x320.png"
 import beach from "../img/beach_215x215.png"
 import parasol from "../img/parasol_58x46.png"
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 import 'animate.css';
 
 function Shortcut() {
-
-    useEffect(() => {
-        AOS.init();
-    },[])
-
     return (
         <S.All>
             <S.BgBox><img className='bg' src={bg} alt='bg'/></S.BgBox>
             <S.Logo>
-                <div><img src={logo} alt="찬란 로고"/></div>
+                <NavLink to="/"><div><img src={logo} alt="찬란 로고"/></div></NavLink>
             </S.Logo>
             <S.ShortcutArea>
                 <NavLink to="/notice">

@@ -31,6 +31,7 @@ export const Logo = styled.div`
     justify-content: center;
     margin-top: 72px;
     margin-bottom: 27px;
+    position: relative;
     & div {
         width: 150px;
         height: 150px;
