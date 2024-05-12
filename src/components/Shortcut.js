@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import * as S from "../styles/ShortStyle";
 
@@ -11,7 +11,16 @@ import star from "../img/star_94x320.png"
 import beach from "../img/beach_215x215.png"
 import parasol from "../img/parasol_58x46.png"
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import 'animate.css';
+
 function Shortcut() {
+
+    useEffect(() => {
+        AOS.init();
+    },[])
+
     return (
         <S.All>
             <S.BgBox><img className='bg' src={bg} alt='bg'/></S.BgBox>
