@@ -48,6 +48,15 @@ export const PhotoDownImg = styled.img`
   cursor: pointer;
 `;
 
+export const FrameCenter = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const CaptureFrame = styled.div`
+  width: 360px;
+`;
+
 export const FrameBox = styled.div`
   text-align: center;
   height: 579px;

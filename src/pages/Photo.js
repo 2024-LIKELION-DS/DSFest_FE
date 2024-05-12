@@ -21,10 +21,6 @@ function Photo() {
     setImagePreviews(updatedPreviews);
   };
 
-  function isSafari() {
-    return /AppleWebKit/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent);
-  }
-
   const ref = useRef();
 
   const onCaptureClick = async () => {
@@ -66,32 +62,34 @@ function Photo() {
                     <P.PhotoDownImg src={PhotoDown} alt="다운로드" onClick={onCaptureClick} />
                   </P.TextSpace>
                 </P.PhotoSpace>
-                <div ref={ref}>
-                  <P.FrameBox>
-                    <P.Frame src={PhotoBg} alt="프레임" />
-                  </P.FrameBox>
-                  <P.PhotoFrame>
-                    <P.PhotoPosBox>
-                      <P.PhotoPos>
-                        <P.PhotoPosOne>
-                          <PhotoBox index={0} setImagePreview={setImagePreview} imagePreview={imagePreviews[0]} />
-                        </P.PhotoPosOne>
-                        <P.PhotoPosTwo>
-                          <PhotoBox index={1} setImagePreview={setImagePreview} imagePreview={imagePreviews[1]} />
-                        </P.PhotoPosTwo>
-                        <P.PhotoPosThree>
-                          <PhotoBox index={2} setImagePreview={setImagePreview} imagePreview={imagePreviews[2]} />
-                        </P.PhotoPosThree>
-                        <P.PhotoPosFour>
-                          <PhotoBox index={3} setImagePreview={setImagePreview} imagePreview={imagePreviews[3]} />
-                        </P.PhotoPosFour>
-                      </P.PhotoPos>
-                    </P.PhotoPosBox>
-                  </P.PhotoFrame>
-                  <P.FrameStyle>
-                    <P.FrameImg src={PhotoFS} alt="프레임 스타일" />
-                  </P.FrameStyle>
-                </div>
+                <P.FrameCenter>
+                  <P.CaptureFrame ref={ref}>
+                    <P.FrameBox>
+                      <P.Frame src={PhotoBg} alt="프레임" />
+                    </P.FrameBox>
+                    <P.PhotoFrame>
+                      <P.PhotoPosBox>
+                        <P.PhotoPos>
+                          <P.PhotoPosOne>
+                            <PhotoBox index={0} setImagePreview={setImagePreview} imagePreview={imagePreviews[0]} />
+                          </P.PhotoPosOne>
+                          <P.PhotoPosTwo>
+                            <PhotoBox index={1} setImagePreview={setImagePreview} imagePreview={imagePreviews[1]} />
+                          </P.PhotoPosTwo>
+                          <P.PhotoPosThree>
+                            <PhotoBox index={2} setImagePreview={setImagePreview} imagePreview={imagePreviews[2]} />
+                          </P.PhotoPosThree>
+                          <P.PhotoPosFour>
+                            <PhotoBox index={3} setImagePreview={setImagePreview} imagePreview={imagePreviews[3]} />
+                          </P.PhotoPosFour>
+                        </P.PhotoPos>
+                      </P.PhotoPosBox>
+                    </P.PhotoFrame>
+                    <P.FrameStyle>
+                      <P.FrameImg src={PhotoFS} alt="프레임 스타일" />
+                    </P.FrameStyle>
+                  </P.CaptureFrame>
+                </P.FrameCenter>
                 <Footer />
               </P.Photo>
             </C.Phone>
