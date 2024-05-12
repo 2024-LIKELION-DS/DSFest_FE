@@ -8,6 +8,20 @@ export const All = styled.div`
     margin-bottom: 72px;
 `;
 
+export const BgBox = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 9/11;
+    & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+`;
+
 export const Logo = styled.div`
     width: 100%;
     display: flex;
@@ -141,6 +155,7 @@ export const Map = styled.div`
     border: 4px solid #FFFFFF;
     box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     transition: border 0.3s ease, background 0.3s ease;
+    position: relative;
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
         background: rgba(255, 255, 255, 0.10);
@@ -168,6 +183,7 @@ export const Review = styled.div`
     border: 4px solid #FFFFFF;
     box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     transition: border 0.3s ease, background 0.3s ease;
+    position: relative;
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
         background: rgba(255, 255, 255, 0.10);
@@ -204,6 +220,9 @@ export const Photo = styled.div`
         right: 0;
         width: 58px;
         height: 46px;
+    }
+    & .parasol:hover {
+        opacity: 1;
     }
     & .beach {
         position: absolute;
