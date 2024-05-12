@@ -22,9 +22,8 @@ export const Wrapper = styled.div`
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
-    margin-bottom: 50px;
-    position: static;
-    height: 1000px;
+    margin-bottom: 10px;
+    height: 600px;
 `;
 
 export const Booth = styled.div`
@@ -102,7 +101,8 @@ export const FriButton = styled.button`
 
 export const DayBooth = styled.div`
     width: 126px;
-    height: 153px;
+
+    height: 152px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -157,7 +157,7 @@ export const Top = styled.span`
     display: block;
     color: white;
     font-size: 9pt;
-    margin-top: 8px;
+
     margin-bottom: 15px;
     margin-left: 3.5px;
     font-family: "AppleSDGothicNeo";
@@ -192,17 +192,15 @@ export const InlineTimeF = styled.span`
 `;
 export const Movie = styled.div`
     width: 126px;
+    margin-top: 2px;
     height: 107px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
-    @media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-        height: 105px;
-    }
 `;
 export const StuPerform = styled.div`
     width: 126px;
-    height: 108px;
+    height: 107px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -217,7 +215,7 @@ export const Celeb1 = styled.div`
 `;
 export const Celeb2Fire = styled.div`
     width: 126px;
-    height: 23px;
+    height: 24px;
     display: flex;
     border-radius: 8px;
     border: 2px solid white;
@@ -225,7 +223,7 @@ export const Celeb2Fire = styled.div`
 `;
 export const SongFest = styled.div`
     width: 126px;
-    height: 82px;
+    height: 81px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -239,7 +237,7 @@ export const Content = styled.div`
 `;
 export const Dj = styled.div`
     width: 126px;
-    height: 62px;
+    height: 61.5px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -262,24 +260,20 @@ export const TimeLine = styled.div`
     font-weight: 500;
 `;
 export const BackgroundBox = styled.div`
-    position: relative;
-    margin-top: -1030px;
+    position: static;
+    width: 100%;
+    height: 600px;
+    margin-top: -600px;
 `;
 export const PcDiv = styled.div`
-    height: 180px;
+    height: 178px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    @media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-        height: 172px;
-    }
 `;
 export const Day2PcDiv = styled.div`
-    height: 337px;
+    height: 336px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    @media screen and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-        height: 320px;
-    }
 `;
