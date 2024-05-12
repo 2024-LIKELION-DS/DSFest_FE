@@ -19,6 +19,9 @@ export const BgBox = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    animation: pulse;
+    animation-duration: 5s;
     }
 `;
 
@@ -56,6 +59,8 @@ export const Notice = styled.div`
     transition: background-color 0.3s ease;
     &:hover {
         background-color: rgba(255, 255, 255, 0.7);
+        animation: pulse;
+        animation-duration: 2s;
     }
     & .rock {
         position: absolute;
@@ -96,7 +101,9 @@ export const TimeTable = styled.div`
     transition: border 0.3s ease, background 0.3s ease;
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #654FE9; /* hover 시 배경색 변경 */
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), #654FE9;
+        animation: pulse;
+        animation-duration: 2s;
     }
     & .beachball {
         position: absolute;
@@ -159,6 +166,8 @@ export const Map = styled.div`
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
         background: rgba(255, 255, 255, 0.10);
+        animation: pulse;
+        animation-duration: 2s;
     }
     & div {
         font-family: Prompt;
@@ -187,6 +196,8 @@ export const Review = styled.div`
     &:hover {
         border: 4px solid rgba(255, 255, 255, 0.50);
         background: rgba(255, 255, 255, 0.10);
+        animation: pulse;
+        animation-duration: 2s;
     }
     & div {
         font-family: Prompt;
@@ -211,8 +222,10 @@ export const Photo = styled.div`
     box-shadow: 0px 4px 4px 0px rgba(47, 123, 209, 0.25);
     position: relative;
     transition: opacity 0.3s ease;
-    & :hover {
+    &:hover {
         opacity: 0.7;
+        animation: pulse;
+        animation-duration: 2s;
     }
     & .parasol {
         position: absolute;
