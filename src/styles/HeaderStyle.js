@@ -1,4 +1,52 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const menuBarAnimation = keyframes`
+  0% {
+    transform: translateY(8px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+`;
+
+const menuBarAnimation2 = keyframes`
+  0% {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+`;
+
+const activeMenuBarAnimation1 = keyframes`
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(8px) rotate(0);
+  }
+  100% {
+    transform: translateY(8px) rotate(45deg);
+  }
+`;
+
+const activeMenuBarAnimation2 = keyframes`
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0);
+  }
+  100% {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+`;
 
 export const Header = styled.div`
   display: flex;
@@ -21,6 +69,55 @@ export const HeaderMenu = styled.div`
   background-color: ${(props) => (props.$isVisible ? "rgba(255, 255, 255, 0.8)" : "none")};
   border-radius: 12px;
   box-shadow: ${(props) => (props.$isVisible ? "0 4px 4px rgba(47, 123, 209, 0.25)" : "none")};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+`;
+
+export const MenuTrigger = styled.a`
+  position: relative;
+  width: 25px;
+  height: 19px;
+  display: inline-block;
+  transition: all 0.4s;
+  box-sizing: border-box;
+
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    /* background-color:  */
+    background-color: ${(props) => (props.$isVisible ? "#448BDB;" : "#fff;")};
+    transition: all 0.4s;
+  }
+
+  span:nth-of-type(1) {
+    top: 0;
+    animation: ${menuBarAnimation} 0.75s forwards;
+  }
+
+  span:nth-of-type(2) {
+    top: 8px;
+  }
+
+  span:nth-of-type(3) {
+    bottom: 0;
+    animation: ${menuBarAnimation2} 0.75s forwards;
+  }
+
+  &.active-7 span:nth-of-type(1) {
+    animation: ${activeMenuBarAnimation1} 0.75s forwards;
+  }
+
+  &.active-7 span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  &.active-7 span:nth-of-type(3) {
+    animation: ${activeMenuBarAnimation2} 0.75s forwards;
+  }
 `;
 
 export const DropdownContainer = styled.div`

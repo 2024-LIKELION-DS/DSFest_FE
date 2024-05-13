@@ -3,8 +3,16 @@ import { useNavigate } from "react-router-dom";
 import * as H from "../styles/HeaderStyle";
 
 import headerLogo from "../img/header_logo_48px.png";
-import headerMenu from "../img/header_icon_menu_30px.png";
-import headerClickMenu from "../img/header_icon_menu_click_30px.png";
+
+function MenuTrigger({ onClick, isActive, isVisible }) {
+  return (
+    <H.MenuTrigger onClick={onClick} className={isActive ? "active-7" : ""} $isVisible={isVisible}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </H.MenuTrigger>
+  );
+}
 
 function Header() {
   const navigate = useNavigate();
@@ -29,8 +37,9 @@ function Header() {
           <img src={headerLogo} alt="찬란" />
         </H.HeaderLogo>
         <H.HeaderMenu onClick={handleMenuClick} $isVisible={isDropdownVisible}>
-          <img src={isDropdownVisible ? headerClickMenu : headerMenu} alt="메뉴" />
+          <MenuTrigger onClick={handleMenuClick} isActive={isDropdownVisible} isVisible={isDropdownVisible} />
         </H.HeaderMenu>
+
         {isDropdownVisible && (
           <>
             <H.Background onClick={closeMenuClick} />
