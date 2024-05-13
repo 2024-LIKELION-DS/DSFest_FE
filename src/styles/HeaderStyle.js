@@ -72,7 +72,7 @@ export const HeaderMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.4s;
+  transition: all 0.5s;
 `;
 
 export const MenuTrigger = styled.a`
@@ -80,7 +80,7 @@ export const MenuTrigger = styled.a`
   width: 25px;
   height: 19px;
   display: inline-block;
-  transition: all 0.4s;
+  transition: all 0.5s;
   box-sizing: border-box;
 
   span {
@@ -88,14 +88,13 @@ export const MenuTrigger = styled.a`
     left: 0;
     width: 100%;
     height: 2.5px;
-    /* background-color:  */
     background-color: ${(props) => (props.$isVisible ? "#448BDB;" : "#fff;")};
-    transition: all 0.4s;
+    transition: all 0.5s;
   }
 
   span:nth-of-type(1) {
     top: 0;
-    animation: ${menuBarAnimation} 0.75s forwards;
+    animation: ${menuBarAnimation} 1s forwards;
   }
 
   span:nth-of-type(2) {
@@ -104,11 +103,11 @@ export const MenuTrigger = styled.a`
 
   span:nth-of-type(3) {
     bottom: 0;
-    animation: ${menuBarAnimation2} 0.75s forwards;
+    animation: ${menuBarAnimation2} 1s forwards;
   }
 
   &.active-7 span:nth-of-type(1) {
-    animation: ${activeMenuBarAnimation1} 0.75s forwards;
+    animation: ${activeMenuBarAnimation1} 1s forwards;
   }
 
   &.active-7 span:nth-of-type(2) {
@@ -116,7 +115,7 @@ export const MenuTrigger = styled.a`
   }
 
   &.active-7 span:nth-of-type(3) {
-    animation: ${activeMenuBarAnimation2} 0.75s forwards;
+    animation: ${activeMenuBarAnimation2} 1s forwards;
   }
 `;
 
