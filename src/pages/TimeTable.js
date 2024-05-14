@@ -237,20 +237,27 @@ function TimeTable() {
                                 <Header />
 
                                 <C.PageTitle>
-                                    <div>
+                                    <div
+                                        style={{
+                                            position: "relative",
+                                            display: "inline-block",
+                                            zIndex: "1",
+                                        }}
+                                    >
                                         <img
                                             src={title_parasol_29px}
                                             alt="parasol"
                                             style={{
                                                 width: "29px",
                                                 height: "29px",
-                                                marginRight: "161px",
-                                                position: "relative",
-                                                top: "10px",
+                                                marginRight: "10px",
+                                                position: "absolute",
+                                                marginLeft: "5px",
+                                                marginTop: "-20px",
                                             }}
                                         />
+                                        TIME TABLE
                                     </div>
-                                    TIME TABLE
                                 </C.PageTitle>
 
                                 <br />
