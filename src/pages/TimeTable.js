@@ -9,6 +9,7 @@ import styled from "styled-components";
 
 import React, { useState, useEffect } from "react";
 import boat_37x44 from "../img/boat_37x44.png";
+import title_parasol_29px from "../img/title_parasol_29px.png";
 
 function TimeTable() {
     const [selectedDay, setSelectedDay] = useState("5/22 Wed");
@@ -234,7 +235,24 @@ function TimeTable() {
                         <C.Phone>
                             <T.TimeTable>
                                 <Header />
-                                <C.PageTitle>TIME TABLE</C.PageTitle>
+
+                                <C.PageTitle>
+                                    <div>
+                                        <img
+                                            src={title_parasol_29px}
+                                            alt="parasol"
+                                            style={{
+                                                width: "29px",
+                                                height: "29px",
+                                                marginRight: "161px",
+                                                position: "relative",
+                                                top: "10px",
+                                            }}
+                                        />
+                                    </div>
+                                    TIME TABLE
+                                </C.PageTitle>
+
                                 <br />
                                 <T.DayBox>
                                     <T.WedButton
