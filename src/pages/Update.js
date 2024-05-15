@@ -12,8 +12,8 @@ function Update() {
     const [formData, setFormData] = useState([]);
     const [title, setTitle] = useState("");
     const { id } = useParams();
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
     const handlePado = () => {
         navigate("/");
     };
@@ -30,21 +30,25 @@ function Update() {
     };
 
     //텍스트 작성
-    const handleInputChange = (event) => {
+    const handleInputChange = (event, index) => {
         const { name, value } = event.target;
-        setFormData({
-            ...formData,
+        const updatedItems = [...formData]; // 기존 배열을 복사합니다.
+        updatedItems[index] = {
+            ...updatedItems[index],
             [name]: value,
-        });
+        };
+        setFormData(updatedItems);
     };
 
     //카테고리 선택
-    const handleSelectChange = (event) => {
+    const handleSelectChange = (event, index) => {
         const { name, value } = event.target;
-        setFormData({
-            ...formData,
+        const updatedItems = [...formData]; // 기존 배열을 복사합니다.
+        updatedItems[index] = {
+            ...updatedItems[index],
             [name]: value,
-        });
+        };
+        setFormData(updatedItems);
     };
 
     //api 불러오기
@@ -62,15 +66,17 @@ function Update() {
     }, [id]);
 
     //api 수정
-    const handleUpdate = async (id) => {
+    const handleUpdate = async (id, updatedData) => {
         try {
             const url = `${API_KEY}/admin/update/${id}`;
-            const response = await axios.put(url);
+            const response = await axios.put(url, updatedData);
             alert("수정되었습니다.");
+            getFromData();
         } catch (error) {
             console.error("수정 중 오류가 발생했습니다:", error);
         }
     };
+
     return (
         <>
             <U.Background>
@@ -79,7 +85,7 @@ function Update() {
                     <U.Box>
                         <U.BoxTitle>공지사항 관리자 페이지</U.BoxTitle>
                         <U.Form onSubmit={handleUpdate}>
-                            {formData.map((item) => (
+                            {formData.map((item, index) => (
                                 <U.FormBox key={item.id}>
                                     <U.FromCategory>
                                         <U.FormTag>분류</U.FormTag>
@@ -117,7 +123,9 @@ function Update() {
                                             name="title"
                                             placeholder="Enter title"
                                             value={item.title}
-                                            onChange={handleInputChange}
+                                            onChange={(event) =>
+                                                handleInputChange(event, index)
+                                            }
                                         />
                                     </U.FromContainer>
                                     <U.FromContainer>
@@ -126,7 +134,9 @@ function Update() {
                                             name="content"
                                             placeholder="Enter content"
                                             value={item.content}
-                                            onChange={handleInputChange}
+                                            onChange={(event) =>
+                                                handleInputChange(event, index)
+                                            }
                                         />
                                     </U.FromContainer>
                                     <U.FromContainer>
