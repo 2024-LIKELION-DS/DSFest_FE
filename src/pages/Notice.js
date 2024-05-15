@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import Modal from "./Modal"; // 모달 컴포넌트 임포트
 import * as C from "../styles/CommonStyle";
 import * as N from "../styles/NoticeStyle";
 
 import PcTitle from "../components/PcTitle";
-import Header from "../components/Header";
+import NoticeHeader from "../components/NoticeHeader";
 import Footer from "../components/Footer";
 
 import boatImg from "../img/boat_37x44.png";
@@ -15,6 +15,9 @@ import leftArrowImg from "../img/leftArrowImg.png";
 import rightArrowImg from "../img/rightArrowImg.png";
 
 function Notice() {
+  const location = useLocation();
+  const fromPage = location.state?.fromPage || 1;
+
   const [notice, setNotice] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
@@ -69,7 +72,7 @@ function Notice() {
           <N.Background>
             <C.Phone>
               <N.Notice>
-                <Header />
+                <NoticeHeader fromPage={fromPage} />
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <N.wrap>
                   <N.img_wrap>
