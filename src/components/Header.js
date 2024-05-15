@@ -44,7 +44,7 @@ function Header() {
           <>
             <H.Background onClick={closeMenuClick} />
             <H.DropdownContainer $isVisible={isDropdownVisible}>
-              <H.DropdownItem onClick={() => handleNavLinkClick("/notice")}>Notice</H.DropdownItem>
+              <H.DropdownItem onClick={() => handleNavLinkClick("/noticeList")}>Notice</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/map")}>Map</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/review")}>Review</H.DropdownItem>
               <H.DropdownItem onClick={() => handleNavLinkClick("/timetable")}>Time Table</H.DropdownItem>
