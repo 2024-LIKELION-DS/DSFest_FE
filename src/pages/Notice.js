@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useRef, useState  } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import Modal from './Modal'; // 모달 컴포넌트 임포트
 import * as C from "../styles/CommonStyle";
 import * as N from "../styles/NoticeStyle";
@@ -74,20 +74,18 @@ const containerRef = useRef(null);
                 <Header />
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <N.wrap>
-                <N.img_wrap>
-                <N.img_boat src={boatImg} alt="Boat" />
-                </N.img_wrap>
-                <N.content_wrap>
-                {notice.map((item) => (
-                  <N.box_wrap key={item.id}>
-                    <N.List>{item.category.name}</N.List>
-                    <N.Title>{item.title}</N.Title>
-                    <N.Context>{item.content}
-                    </N.Context>
-                    
-                  </N.box_wrap>
-                ))}
-                </N.content_wrap>
+                  <N.img_wrap>
+                    <N.img_boat src={boatImg} alt="Boat" />
+                  </N.img_wrap>
+                  <N.content_wrap>
+                    {notice.map((item) => (
+                      <N.box_wrap key={item.id}>
+                        <N.List>{item.category.name}</N.List>
+                        <N.Title>{item.title}</N.Title>
+                        <N.Context>{item.content}</N.Context>
+                      </N.box_wrap>
+                    ))}
+                  </N.content_wrap>
                 </N.wrap>
                 
                 {notice.length > 0 && notice[0].images && notice[0].images.length > 0 &&  (
@@ -101,7 +99,7 @@ const containerRef = useRef(null);
                         {notice.length > 0 && notice[0].images && notice[0].images.length > 1 && (
                         <N.button>
                           <N.leftArrowImg src={leftArrowImg} alt="leftarrowImg" onClick={handlePrevious} 
-                          show={notice[0].images.length > 1 && currentImageIndex > 1}
+                          show={notice[0].images.length > 1 && currentImageIndex > 0}
                           />
                           <N.rightArrowImg src={rightArrowImg} alt="rightarrowImg" onClick={handleNext} 
                           show={notice[0].images.length > 1 && currentImageIndex < notice[0].images.length - 1}
@@ -114,6 +112,7 @@ const containerRef = useRef(null);
                 
                 <Footer />
               </N.Notice>
+              <Footer />
             </C.Phone>
           </N.Background>
         </C.Area>
