@@ -1,12 +1,9 @@
 import React from "react";
 import * as C from "../styles/CommonStyle";
 import * as M from "../styles/ModalStyle";
-
 import PcTitle from "../components/PcTitle";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
-function Modal() {
+function Modal({ onClose, imageUrl, imageCount, currentIndex }) {
   return (
     <>
       <C.Page>
@@ -18,12 +15,9 @@ function Modal() {
           <M.Background>
             <C.Phone>
               <M.Modal>
-                <Header />
-                <C.PageTitle>REVIEW</C.PageTitle>
-                여기 부분 작업!
-                <br />
-                기존 코드 절대 수정하면 안 됩니다
-                {/* <Footer /> */}
+                <M.text>{currentIndex} / {imageCount}</M.text>
+                <M.CloseButton onClick={onClose}>X</M.CloseButton>
+                <img src={imageUrl} alt="Modal Content" style={{ width: '100%', height: 'auto', maxHeight: '80vh', objectFit: 'contain', display: 'block', margin: 'auto' }} />
               </M.Modal>
             </C.Phone>
           </M.Background>

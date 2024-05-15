@@ -128,6 +128,8 @@ export const leftArrowImg = styled.img`
   margin-left:1.7rem;
   width: 2rem;
   height: 2rem;
+  visibility: ${({ show }) => (show ? 'visible' : 'hidden')}; // show prop에 따라 visibility 조정
+
 `;
 
 // 오른쪽 화살표 스타일
@@ -136,6 +138,8 @@ export const rightArrowImg = styled.img`
   margin-right:1.7rem;
   width: 2rem;
   height: 2rem;
+  visibility: ${({ show }) => (show ? 'visible' : 'hidden')}; // show prop에 따라 visibility 조정
+
 `;
 
 // 이미지 감싸는 컨테이너
