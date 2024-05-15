@@ -17,6 +17,10 @@ function List() {
         navigate("/");
     };
 
+    const handleWrite = () => {
+        navigate("/pado/admin/post");
+    };
+
     //api 불러오기
     const getList = async () => {
         try {
@@ -85,7 +89,7 @@ function List() {
                                 ))}
                             </L.List>
                         </L.BoxList>
-                        <L.BoxButton>글쓰기</L.BoxButton>
+                        <L.BoxButton onClick={handleWrite}>글쓰기</L.BoxButton>
                     </L.Box>
                 </L.AdminList>
             </L.Background>

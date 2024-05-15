@@ -52,13 +52,30 @@ export const Box = styled.div`
     }
 `;
 
+export const BoxWrap = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+`;
+
+export const BoxBack = styled.img`
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+`;
+
 export const BoxTitle = styled.div`
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    margin-top: 1.5rem;
+    margin-right: 4.4rem;
     @media (hover: hover) and (pointer: fine) {
         font-size: 40px;
+        margin-right: 24.1rem;
     }
 `;
 
@@ -84,7 +101,7 @@ export const FormTag = styled.div`
 export const FromCategory = styled.div`
     display: flex;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     @media screen and (max-height: 700px) {
         margin-bottom: 7px;
     }

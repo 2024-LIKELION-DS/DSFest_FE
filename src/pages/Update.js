@@ -5,6 +5,8 @@ import axios from "axios";
 
 import Logo from "../img/header_logo_48px.png";
 import Footer from "../components/Footer";
+/*import Back from "../img/back_30x30.png";*/
+import Back from "../img/tube_32x12.png"; //브랜치에 이미지가 없어서 임시로 다른 이미지로 해둠!
 
 const API_KEY = process.env.REACT_APP_API;
 
@@ -15,6 +17,10 @@ function Update() {
     const navigate = useNavigate();
     const handlePado = () => {
         navigate("/");
+    };
+
+    const handleBack = () => {
+        navigate("/pado/admin");
     };
 
     //파일 첨부
@@ -77,10 +83,11 @@ function Update() {
             const url = `${API_KEY}/admin/update/${id}`;
             const response = await axios.put(url, updatedData, {
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "multipart/form-data",
                 },
             });
             alert("수정되었습니다.");
+            navigate("/pado/admin");
         } catch (error) {
             console.error("수정 중 오류가 발생했습니다:", error);
         }
@@ -92,7 +99,15 @@ function Update() {
                 <U.Update>
                     <U.Logo src={Logo} alt="Your Logo" onClick={handlePado} />
                     <U.Box>
-                        <U.BoxTitle>공지사항 관리자 페이지</U.BoxTitle>
+                        <U.BoxWrap>
+                            <U.BoxBack
+                                src={Back}
+                                alt="뒤로가기"
+                                onClick={handleBack}
+                            />
+                            <U.BoxTitle>공지사항 관리자 페이지</U.BoxTitle>
+                        </U.BoxWrap>
+
                         <U.Form onSubmit={(event) => handleUpdate(event, id)}>
                             {formData.map((item, index) => (
                                 <U.FormBox key={item.id}>
