@@ -205,6 +205,32 @@ export const Content = styled.textarea`
     }
 `;
 
+export const FormImg = styled.div`
+    margin-top: -5px;
+    padding: 10px;
+    padding-left: 2px;
+    width: 200px;
+
+    @media all and (min-width: 1024px) {
+        width: 720px;
+    }
+
+    @media all and (min-width: 768px) and (max-width: 1023px) {
+        width: 600px;
+    }
+
+    @media all and (min-width: 620px) and (max-width: 768px) {
+        width: 500px;
+    }
+    @media all and (max-width: 620px) {
+        width: 300px;
+    }
+
+    @media all and (max-width: 480px) {
+        width: 190px;
+    }
+`;
+
 export const FormButton = styled.div`
     text-align: center;
     margin-bottom: 10px;

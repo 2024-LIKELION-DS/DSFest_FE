@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import * as L from "../styles/ListStyle";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -18,27 +18,26 @@ function List() {
     };
 
     //api 불러오기
+    const getList = async () => {
+        try {
+            const url = `${API_KEY}/admin/read`;
+            const response = await axios.get(url);
+            setItems(response.data.data);
+        } catch (error) {
+            console.error("데이터를 불러오는 중 오류가 발생했습니다:", error);
+        }
+    };
     useEffect(() => {
-        const fetchList = async () => {
-            try {
-                const url = `${API_KEY}/admin/read`;
-                const response = await axios.get(url);
-                setItems(response.data.data);
-            } catch (error) {
-                console.error(
-                    "데이터를 불러오는 중 오류가 발생했습니다:",
-                    error
-                );
-            }
-        };
-        fetchList();
+        getList();
     }, []);
 
     //api 삭제
     const handleDelete = async (id) => {
         try {
-            const url = `${API_KEY}/delete/${id}`;
-            const response = await axios.delete(url);
+            await axios.delete(`${API_KEY}/admin/delete/${id}`);
+            const filteredItems = items.filter((item) => item.id !== id);
+            setItems(filteredItems);
+
             alert("삭제되었습니다.");
         } catch (error) {
             console.error("삭제 중 오류가 발생했습니다:", error);
@@ -65,12 +64,16 @@ function List() {
                                                 <Link
                                                     to={`update/${item.id}`}
                                                     key={item.id}
+                                                    style={{
+                                                        textDecoration: "none",
+                                                        color: "white",
+                                                    }}
                                                 >
                                                     수정
                                                 </Link>
                                             </L.ListButton>
                                             <L.ListButton
-                                                onClick={() =>
+                                                onClick={(e) =>
                                                     handleDelete(item.id)
                                                 }
                                             >
