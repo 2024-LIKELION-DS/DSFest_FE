@@ -37,7 +37,6 @@ function List() {
             await axios.delete(`${API_KEY}/admin/delete/${id}`);
             const filteredItems = items.filter((item) => item.id !== id);
             setItems(filteredItems);
-
             alert("삭제되었습니다.");
         } catch (error) {
             console.error("삭제 중 오류가 발생했습니다:", error);

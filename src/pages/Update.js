@@ -66,7 +66,6 @@ function Update() {
         try {
             const url = `${API_KEY}/admin/update/${id}`;
             const response = await axios.put(url);
-
             alert("수정되었습니다.");
         } catch (error) {
             console.error("수정 중 오류가 발생했습니다:", error);
