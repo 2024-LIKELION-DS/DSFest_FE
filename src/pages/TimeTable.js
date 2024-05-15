@@ -10,6 +10,8 @@ import styled from "styled-components";
 import React, { useState, useEffect } from "react";
 import boat_37x44 from "../img/boat_37x44.png";
 import title_parasol_29px from "../img/title_parasol_29px.png";
+import cloud_143x144 from "../img/12_cloud_143x144.png";
+import cloud_102x74 from "../img/12_cloud_102x74.png";
 
 function TimeTable() {
     const [selectedDay, setSelectedDay] = useState("5/22 Wed");
@@ -373,7 +375,33 @@ function TimeTable() {
                                 )}
                                 {/*여기 부분 작업!*/}
                                 <br />
-                                <br />
+                                <div style={{ position: "relative" }}>
+                                    <img
+                                        src={cloud_102x74}
+                                        alt="cloudL"
+                                        style={{
+                                            width: "102px",
+                                            height: "74px",
+                                            float: "left",
+                                            position: "absolute",
+                                            left: "-20px",
+                                            top: "-180px",
+                                        }}
+                                    />
+                                    <br />
+                                    <img
+                                        src={cloud_143x144}
+                                        alt="cloudR"
+                                        style={{
+                                            width: "143px",
+                                            height: "144px",
+                                            float: "right",
+                                            position: "absolute",
+                                            right: "0",
+                                            top: "-150px",
+                                        }}
+                                    />
+                                </div>
                             </T.TimeTable>
                             <Footer />
                         </C.Phone>
