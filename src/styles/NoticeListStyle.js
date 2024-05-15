@@ -10,32 +10,31 @@ export const Background = styled.div`
 
 export const Notice = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: calc(100vh - 183px);
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
-    height: 100%;
+    min-height: calc(100% - 183px);
   }
 `;
 
 export const img_wrap = styled.div`
-  display:flex;
-  justify-content:right;
-  margin-right:1rem;
- 
+  display: flex;
+  justify-content: right;
+  margin-right: 1rem;
 `;
 export const img_boat = styled.img`
-width: 37px;
-height: 44px;
-margin-right:2rem;
+  width: 37px;
+  height: 44px;
+  margin-right: 2rem;
 `;
 
 export const content_wrap = styled.div`
-  /*height:26.5rem;*//* 고정 높이 설정, 필요하다면 제거할 수 있음 */
-  text-align:center;
+  /*height:26.5rem;*/ /* 고정 높이 설정, 필요하다면 제거할 수 있음 */
+  text-align: center;
   display: grid;
-  grid-template-columns: auto auto ;
-  grid-template-rows: auto auto auto ;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
   gap: 20px;
   width: 100%;
   max-width: 1200px;
@@ -43,60 +42,54 @@ export const content_wrap = styled.div`
   justify-content: center; /* 모든 그리드 아이템을 가로축 중앙에 정렬 */
   align-items: center; /* 모든 그리드 아이템을 세로축 중앙에 정렬 */
 
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 `;
 
 export const content = styled.div`
-  text-align:left;
-  
+  text-align: left;
 `;
-
-
 
 export const box = styled.div`
   display: flex; /* flexbox를 사용하여 내부 아이템을 정렬 */
   flex-direction: column; /* 아이템을 세로로 정렬 */
   justify-content: center; /* 좌측 정렬 */
   align-items: center; /* 아이템들을 시작점에서 정렬 */
-  
-  overflow-x:hidden;
-  overflow-y:hidden;
-  width: 156px;
-  height:156px;
-  padding:0px;
-  `;
 
-  export const img_exImg = styled.img`
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 156px;
+  height: 156px;
+  padding: 0px;
+`;
+
+export const img_exImg = styled.img`
   border: 4px solid white; /* 테두리 설정 */
   border-radius: 12px; /* 테두리 둥근 설정 */
   box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
-  
+
   width: 156px;
   height: 156px;
-  
-  
-  `;
+`;
 
-  /* 제목 & 카테고리*/
-  export const title = styled.div`
-  fontSize: 15px;
+/* 제목 & 카테고리*/
+export const title = styled.div`
+  fontsize: 15px;
   font-family: "AppleSDGothicNeo";
-  font-Weight: 800;
-  color:white;
-  margin-top:1rem;
-  
-  `;
+  font-weight: 800;
+  color: white;
+  margin-top: 1rem;
+`;
 
-  export const category = styled.div`
-  fontSize: 12px;
+export const category = styled.div`
+  fontsize: 12px;
   font-family: "AppleSDGothicNeo";
-  font-Weight: 400;
-  color:white;
+  font-weight: 400;
+  color: white;
   opacity: 0.8;
-  `;
+`;
 
-  /*페이지네이션*/
-  export const PaginationContainer = styled.div`
+/*페이지네이션*/
+export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 60px;
@@ -131,7 +124,8 @@ export const box = styled.div`
         color: white;
         font-size: 1rem;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
           color: #986d9e;
         }
       }
