@@ -65,6 +65,40 @@ export const BoxTitle = styled.div`
     }
 `;
 
+export const BoxLine = styled.div`
+    background-color: #cccccc;
+    width: 300px;
+    height: 1px;
+    margin-top: 10px;
+    display: flex;
+    @media (hover: hover) and (pointer: fine) {
+        width: 918px;
+    }
+`;
+
+export const BoxButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-family: "AppleSDGothicNeo";
+    font-style: normal;
+    font-size: 18px;
+    border: 0px;
+    background-color: #448bdb;
+    border-radius: 16px;
+    width: 120px;
+    height: 36px;
+    margin-top: auto;
+    margin-bottom: 13px;
+    @media (hover: hover) and (pointer: fine) {
+        width: 155.83px;
+        height: 55px;
+        font-size: 25px;
+    }
+`;
+
 export const BoxList = styled.div`
     display: flex;
     width: 300.24px;
@@ -83,7 +117,8 @@ export const List = styled.ul`
 export const ListItem = styled.li`
     display: flex;
     justify-content: space-between;
-    margin-top: 26px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 `;
 
 export const ListCategory = styled.div`

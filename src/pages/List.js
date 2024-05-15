@@ -50,6 +50,7 @@ function List() {
                     <L.Logo src={Logo} alt="찬란" onClick={handlePado} />
                     <L.Box>
                         <L.BoxTitle>공지사항 관리자 페이지</L.BoxTitle>
+                        <L.BoxLine></L.BoxLine>
                         <L.BoxList>
                             <L.List>
                                 {items.map((item) => (
@@ -79,10 +80,12 @@ function List() {
                                                 삭제
                                             </L.ListButton>
                                         </L.ButtonWrap>
+                                        <L.BoxLine></L.BoxLine>
                                     </L.ListItem>
                                 ))}
                             </L.List>
                         </L.BoxList>
+                        <L.BoxButton>글쓰기</L.BoxButton>
                     </L.Box>
                 </L.AdminList>
             </L.Background>

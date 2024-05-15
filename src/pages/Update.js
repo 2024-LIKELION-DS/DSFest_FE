@@ -10,7 +10,6 @@ const API_KEY = process.env.REACT_APP_API;
 
 function Update() {
     const [formData, setFormData] = useState([]);
-    const [title, setTitle] = useState("");
     const { id } = useParams();
 
     const navigate = useNavigate();
@@ -19,20 +18,26 @@ function Update() {
     };
 
     //파일 첨부
-    const handleFileChange = (event) => {
+    const handleFileChange = (event, index) => {
         const newImages = event.target.files;
         if (newImages && newImages.length > 0) {
-            setFormData((prevFormData) => ({
-                ...prevFormData,
-                images: Array.from(newImages),
+            const updatedFormData = [...formData];
+            const updatedImages = Array.from(newImages).map((image, i) => ({
+                id: updatedFormData[index].images[i].id,
+                imageUrl: URL.createObjectURL(image),
             }));
+            updatedFormData[index] = {
+                ...updatedFormData[index],
+                images: updatedImages,
+            };
+            setFormData(updatedFormData);
         }
     };
 
     //텍스트 작성
     const handleInputChange = (event, index) => {
         const { name, value } = event.target;
-        const updatedItems = [...formData]; // 기존 배열을 복사합니다.
+        const updatedItems = [...formData];
         updatedItems[index] = {
             ...updatedItems[index],
             [name]: value,
@@ -43,7 +48,7 @@ function Update() {
     //카테고리 선택
     const handleSelectChange = (event, index) => {
         const { name, value } = event.target;
-        const updatedItems = [...formData]; // 기존 배열을 복사합니다.
+        const updatedItems = [...formData];
         updatedItems[index] = {
             ...updatedItems[index],
             [name]: value,
@@ -66,12 +71,16 @@ function Update() {
     }, [id]);
 
     //api 수정
-    const handleUpdate = async (id, updatedData) => {
+    const handleUpdate = async (event, id, updatedData) => {
+        event.preventDefault();
         try {
             const url = `${API_KEY}/admin/update/${id}`;
-            const response = await axios.put(url, updatedData);
+            const response = await axios.put(url, updatedData, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
             alert("수정되었습니다.");
-            getFromData();
         } catch (error) {
             console.error("수정 중 오류가 발생했습니다:", error);
         }
@@ -84,7 +93,7 @@ function Update() {
                     <U.Logo src={Logo} alt="Your Logo" onClick={handlePado} />
                     <U.Box>
                         <U.BoxTitle>공지사항 관리자 페이지</U.BoxTitle>
-                        <U.Form onSubmit={handleUpdate}>
+                        <U.Form onSubmit={(event) => handleUpdate(event, id)}>
                             {formData.map((item, index) => (
                                 <U.FormBox key={item.id}>
                                     <U.FromCategory>
@@ -146,7 +155,12 @@ function Update() {
                                                 id="fileInput"
                                                 type="file"
                                                 multiple
-                                                onChange={handleFileChange}
+                                                onChange={(event) =>
+                                                    handleFileChange(
+                                                        event,
+                                                        index
+                                                    )
+                                                }
                                             />
                                         </U.FormImg>
                                     </U.FromContainer>
