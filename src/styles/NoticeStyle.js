@@ -2,7 +2,7 @@ import styled from "styled-components";
 import boatImg from "../img/boat_37x44.png";
 
 export const Background = styled.div`
-  background: linear-gradient(to bottom, #448bdb 0%, #6aacf3 100%);
+  background: linear-gradient(180deg, #448BDB 0%, #6AACF3 100%);
 
   @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
     border-radius: 12px;
@@ -36,10 +36,11 @@ export const content_wrap = styled.div`
   justify-content: center;
   align-items: center;
   /*height:26.5rem; 고정 높이 설정, 필요하다면 제거할 수 있음 */
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 0.1rem;
+  padding-left: 0.7rem;
   padding-bottom: 1.4rem;
   margin-right: 0.5rem;
+  margin-top:-0.1rem;
 `;
 
 export const box_wrap = styled.div`
@@ -56,7 +57,7 @@ export const box_wrap = styled.div`
 `;
 
 export const List = styled.div`
-  fontsize: 12px;
+  font-size:12px;
   font-family: "AppleSDGothicNeo";
   font-weight: 400;
   color: white;
@@ -64,21 +65,21 @@ export const List = styled.div`
 `;
 
 export const Title = styled.div`
-  fontsize: 15px;
+  font-size: 15px;
   font-family: "AppleSDGothicNeo";
   font-weight: 800;
   color: white;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 `;
 
 export const Context = styled.div`
-  fontsize: 15px;
+  font-size: 15px;
   font-family: "AppleSDGothicNeo";
   font-weight: 500;
   color: white;
   opacity: 0.8;
-  margin-bottom: 1rem;
+  
 `;
 
 //이미지
