@@ -50,7 +50,7 @@ function Admin() {
             console.log("Response from createWriting:", responseData);
             // TODO: 서버 응답에 대한 처리 추가
             // 일단 notice 페이지로 이동하게 처리해둘게요~~~~
-            navigate("/notice");
+            navigate("/pado/admin");
         } catch (error) {
             console.error("Error:", error);
         }
