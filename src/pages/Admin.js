@@ -67,6 +67,10 @@ function Admin() {
     async function createWriting(formData) {
         try {
             const formDataToSend = new FormData();
+            formDataToSend.append("categoryName", formData.categoryName);
+            formDataToSend.append("title", formData.title);
+            formDataToSend.append("content", formData.content);
+
             // FormData에 필드들을 직접 추가
             formDataToSend.append(
                 "noticeDTO",
@@ -80,7 +84,7 @@ function Admin() {
             // multipartFiles 필드 추가
             if (formData.images && formData.images.length > 0) {
                 for (const image of formData.images) {
-                    formDataToSend.append("multipartFiles", image);
+                    formDataToSend.append("images", image);
                 }
             }
 
@@ -91,13 +95,12 @@ function Admin() {
                 },
             });
 
-            console.log("데이터와 함께 폼 제출:", formDataToSend);
-            console.log("응답:", response.data);
+            console.log("Form submitted with data:", formDataToSend);
+            console.log("Response:", response.data);
 
             return response.data;
         } catch (error) {
-            console.error("에러:", error);
-            alert("모든 항목을 필수로 입력해주세요.");
+            console.error("Error:", error);
             throw error;
         }
     }

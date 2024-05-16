@@ -22,7 +22,7 @@ export const Background = styled.div`
     }
 `;
 
-export const Admin = styled.div`
+export const Update = styled.div`
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -30,7 +30,7 @@ export const Admin = styled.div`
     align-items: center;
 `;
 
-export const ALogo = styled.img`
+export const Logo = styled.img`
     width: 120px;
     height: 120px;
     margin-top: 26px;
@@ -52,77 +52,86 @@ export const Box = styled.div`
     }
 `;
 
-export const FormBox = styled.div`
+export const BoxWrap = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+`;
+
+export const BoxBack = styled.img`
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+`;
+
+export const BoxTitle = styled.div`
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 4.4rem;
+    @media (hover: hover) and (pointer: fine) {
+        font-size: 40px;
+        margin-right: 24.1rem;
+    }
+`;
+
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
 
-export const BackIcon = styled.img`
-    width: 30px;
-    height: 30px;
-    float: left;
-    margin-left: 15px;
-    margin-top: px;
-`;
+export const FormBox = styled.div``;
 
-export const FormTitle = styled.div`
-    font-size: 20pt;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px;
+export const FormTag = styled.div`
+    color: #448bdb;
+    width: 50px;
+    margin-top: 8px;
     height: 30px;
-    font-family: Prompt;
-`;
-
-export const LabelBox = styled.div`
     display: flex;
-    flex-direction: row; /* Change from row to column */
-    align-items: flex-start; /* Align items to the start */
-    margin-bottom: 20px;
-    font-family: Prompt;
+    justify-content: center;
+    text-align: center;
+`;
 
+export const FromCategory = styled.div`
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 10px;
     @media screen and (max-height: 700px) {
         margin-bottom: 7px;
     }
 `;
 
-export const LabelTag = styled.div`
-    color: #448bdb;
-    width: 35px;
-    margin-top: 10px;
-    margin-right: 10px;
-    font-family: Prompt;
-    font-weight: bold;
-`;
-
-export const Selection = styled.select`
+export const Category = styled.select`
     color: #448bdb;
     width: 100px;
     padding: 10px;
     border: 0px;
     font-weight: bold;
     border-radius: 16px;
-    font-family: Prompt;
+
     background-color: rgba(255, 255, 255, 0.5);
     &:focus {
         outline: 1.5px solid #448bdb;
     }
 `;
 
-export const Opt = styled.option`
+export const Option = styled.option`
     color: #448bdb;
     font-weight: bold;
-    font-family: Prompt;
 `;
 
-export const Square = styled.div`
-    margin: 15px;
-`;
-
-export const BlankDiv = styled.div`
+export const FromContainer = styled.div`
+    margin-top: -5px;
     padding: 10px;
+    padding-left: 2px;
+    display: flex;
+    flex-direction: row;
 
     @media all and (min-width: 1024px) {
         width: 720px;
@@ -144,14 +153,15 @@ export const BlankDiv = styled.div`
     }
 `;
 
-export const InputTitle = styled.input`
+export const Title = styled.input`
     border: 0;
     padding: 10px;
     margin-top: 5px;
+    height: 15px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
-    width: calc(100% - 80px);
-    font-family: Prompt;
+    width: 100%;
+    box-sizing: border-box;
 
     &:focus {
         outline: 1.5px solid #448bdb;
@@ -178,14 +188,14 @@ export const InputTitle = styled.input`
     }
 `;
 
-export const InputDetail = styled.textarea`
+export const Content = styled.textarea`
     border: 0;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
-    width: calc(100% - 80px);
-    min-height: 130px;
-    font-family: Prompt;
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
 
     &:focus {
         outline: 1.5px solid #448bdb;
@@ -212,27 +222,50 @@ export const InputDetail = styled.textarea`
     }
 `;
 
-export const SubmitButton = styled.button`
-    width: 90px;
-    height: 30px;
-    border: 0px;
-    background-color: #448bdb;
-    border-radius: 16px;
-    color: white;
-    display: inline-block;
-    font-weight: bold;
-    font-family: Prompt;
-    font-size: 10pt;
+export const FormImg = styled.div`
+    margin-top: -5px;
+    padding: 10px;
+    padding-left: 2px;
+    width: 200px;
+
+    @media all and (min-width: 1024px) {
+        width: 720px;
+    }
+
+    @media all and (min-width: 768px) and (max-width: 1023px) {
+        width: 600px;
+    }
+
+    @media all and (min-width: 620px) and (max-width: 768px) {
+        width: 500px;
+    }
+    @media all and (max-width: 620px) {
+        width: 300px;
+    }
+
+    @media all and (max-width: 480px) {
+        width: 190px;
+    }
 `;
 
-export const ButtonDiv = styled.div`
+export const FormButton = styled.div`
     text-align: center;
     margin-bottom: 10px;
-
     @media screen and (min-height: 830px) {
         margin: 30px;
     }
     @media screen and (min-height: 830px) {
         margin: 50px;
     }
+`;
+
+export const Button = styled.button`
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background-color: #448bdb;
+    border-radius: 16px;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
 `;
