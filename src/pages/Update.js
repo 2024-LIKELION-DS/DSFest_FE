@@ -8,29 +8,30 @@ import Footer from "../components/Footer";
 /*import Back from "../img/back_30x30.png";*/
 import Back from "../img/tube_32x12.png"; //브랜치에 이미지가 없어서 임시로 다른 이미지로 해둠!
 
-const API_KEY = process.env.REACT_APP_API;
+const API_KEY = process.env.REACT_APP_APP;
 
 function Update() {
     const [formData, setFormData] = useState([]);
     const { id } = useParams();
 
-    //다른페이지로 이동
     const navigate = useNavigate();
     const handlePado = () => {
         navigate("/");
     };
+
     const handleBack = () => {
         navigate("/pado/admin");
     };
 
-    //파일 첨부(기존이미지 대체)
+    // 파일 첨부
     const handleFileChange = (event, index) => {
         const newImages = event.target.files;
         if (newImages && newImages.length > 0) {
             const updatedFormData = [...formData];
             const updatedImages = Array.from(newImages).map((image, i) => ({
-                id: updatedFormData[index].images[i].id,
+                id: updatedFormData[index].images[i]?.id,
                 imageUrl: URL.createObjectURL(image),
+                file: image // 파일 객체 추가
             }));
             updatedFormData[index] = {
                 ...updatedFormData[index],
@@ -76,17 +77,37 @@ function Update() {
         getFromData();
     }, [id]);
 
-    //api 수정
-    const handleUpdate = async (event, id, updatedData) => {
+    // API 수정
+    const handleUpdate = async (event, id) => {
         event.preventDefault();
         try {
+            const updatedData = formData[0]; // assuming only one item needs to be updated
+            const formDataToSend = new FormData();
+
+            formDataToSend.append('noticeDTO', JSON.stringify({
+                title: updatedData.title,
+                content: updatedData.content,
+                categoryName: updatedData.category.name,
+            }));
+
+            if (updatedData.images && updatedData.images.length > 0) {
+                for (const image of updatedData.images) {
+                    if (image.file) {
+                        formDataToSend.append("multipartFiles", image.file);
+                    }
+                }
+            }
+
             const url = `${API_KEY}/admin/update/${id}`;
-            await axios.put(url, updatedData, {
+            const response = await axios.put(url, formDataToSend, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             });
-            getFromData();
+
+            console.log("데이터와 함께 폼 제출:", formDataToSend);
+            console.log("응답:", response.data);
+
             alert("수정되었습니다.");
             navigate("/pado/admin");
         } catch (error) {
