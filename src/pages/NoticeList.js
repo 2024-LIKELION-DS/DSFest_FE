@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import Pagination from 'react-js-pagination';
 import * as C from "../styles/CommonStyle";
 import * as NL from "../styles/NoticeListStyle";
@@ -13,6 +13,10 @@ import boatImg from "../img/boat_37x44.png";
 import exImg from "../img/exImg.png";
 
 function NoticeList() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const page = searchParams.get("page");
   const [notice, setNotice] = useState([]);  // 공지사항 목록을 저장하는 상태
   const [totalNum, setTotalNum] = useState(0);  // 전체 공지사항 수를 저장하는 상태
   const [currentPage, setCurrentPage] = useState(1);  // 현재 페이지 번호를 저장하는 상태
@@ -31,10 +35,11 @@ function NoticeList() {
       }
     };
     fetchNotice();
-  }, [currentPage]);  // currentPage가 변경될 때마다 API를 호출
+  }, [currentPage]); // currentPage가 변경될 때마다 API를 호출
 
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);  // 페이지 번호 변경
+    setCurrentPage(pageNumber); // 페이지 번호 변경
+    navigate(`/noticeList?page=${pageNumber}`); // URL을 업데이트하여 현재 페이지 번호를 반영
   };
 
   return (
@@ -56,10 +61,13 @@ function NoticeList() {
                 <NL.content_wrap>
                   <NL.content_wrap2 itemsCount={notice.length}>
                     {notice.map((item) => (
-                    <Link to={`/notice/${item.id}`} key={item.id}>
+                    <Link to={`/notice/${item.id}`} key={item.id} state={{ fromPage: currentPage }}>
                       <NL.content>
                         <NL.box>
-                          <NL.img_exImg src={(item.images && item.images.length > 0) ? item.images[0].imageUrl : exImg} alt="exImg" />
+                          <NL.img_exImg
+                            src={item.images && item.images.length > 0 ? item.images[0].imageUrl : exImg}
+                            alt="exImg"
+                          />
                         </NL.box>
                         <NL.title>{item.title}</NL.title>
                         <NL.category>{item.category.name}</NL.category>
@@ -75,14 +83,14 @@ function NoticeList() {
                     totalItemsCount={totalNum}
                     pageRangeDisplayed={5}
                     onChange={handlePageChange}
-                    prevPageText={'<'}
-                    nextPageText={'>'}
-                    firstPageText={''}  // 첫 페이지로 이동하는 이중 화살표 삭제
-                    lastPageText={''}   // 마지막 페이지로 이동하는 이중 화살표 삭제
+                    prevPageText={"<"}
+                    nextPageText={">"}
+                    firstPageText={""} // 첫 페이지로 이동하는 이중 화살표 삭제
+                    lastPageText={""} // 마지막 페이지로 이동하는 이중 화살표 삭제
                   />
                 </NL.PaginationContainer>
-                <Footer />
               </NL.Notice>
+              <Footer />
             </C.Phone>
           </NL.Background>
         </C.Area>

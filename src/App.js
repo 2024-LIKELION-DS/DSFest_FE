@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Splash />} />
         <Route exact path="/main" element={<Main />} />
-        <Route exact path="/notice/:id" element={<Notice />} /> 
+        <Route exact path="/notice/:id" element={<Notice />} />
         <Route exact path="/noticeList" element={<NoticeList />} />
         <Route exact path="/timetable" element={<TimeTable />} />
         <Route exact path="/map" element={<Map />} />
