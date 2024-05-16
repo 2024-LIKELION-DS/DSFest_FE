@@ -9,12 +9,16 @@ export const Background = styled.div`
 `;
 
 export const Modal = styled.div`
+  position: relative;
+  top:0px;
   display:flex;
   justify-content:center;
   width: 50vw;
   height: 50vh;
 
   @media (hover: hover) and (pointer: fine) {
+    position: relative;
+    top:0px;
     width: 100%;
     height: 100%;
   }

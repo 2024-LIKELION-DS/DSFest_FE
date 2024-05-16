@@ -109,8 +109,6 @@ const containerRef = useRef(null);
                         )}
                   </N.img_wrap2>
                 )}
-                
-                <Footer />
               </N.Notice>
               <Footer />
             </C.Phone>

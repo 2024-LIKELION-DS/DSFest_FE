@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
@@ -16,6 +16,7 @@ function NoticeList() {
   const [notice, setNotice] = useState([]);  // 공지사항 목록을 저장하는 상태
   const [totalNum, setTotalNum] = useState(0);  // 전체 공지사항 수를 저장하는 상태
   const [currentPage, setCurrentPage] = useState(1);  // 현재 페이지 번호를 저장하는 상태
+  const [hideBoat, setHideBoat] = useState(false);  // 보트 이미지 숨기기 상태
 
   useEffect(() => {
     const fetchNotice = async () => {
@@ -24,6 +25,7 @@ function NoticeList() {
         const response = await axios.get(url);
         setNotice(response.data.data);  // 공지사항 데이터를 상태에 저장
         setTotalNum(response.data.totalNum);  // 전체 공지사항 수를 상태에 저장
+        setHideBoat(response.data.data.length === 1);  // 요소가 하나일 때 보트 이미지 숨기기 상태 설정
       } catch (error) {
         console.error("공지사항 데이터를 불러오는 중 오류가 발생했습니다:", error);
       }
@@ -48,11 +50,12 @@ function NoticeList() {
               <NL.Notice>
                 <Header />
                 <C.PageTitle>NOTICE</C.PageTitle>
-                <NL.img_wrap>
+                <NL.img_wrap hide={hideBoat}>
                   <NL.img_boat src={boatImg} alt="Boat" />
                 </NL.img_wrap>
                 <NL.content_wrap>
-                  {notice.map((item) => (
+                  <NL.content_wrap2 itemsCount={notice.length}>
+                    {notice.map((item) => (
                     <Link to={`/notice/${item.id}`} key={item.id}>
                       <NL.content>
                         <NL.box>
@@ -63,6 +66,7 @@ function NoticeList() {
                       </NL.content>
                     </Link>
                   ))}
+                  </NL.content_wrap2>
                 </NL.content_wrap>
                 <NL.PaginationContainer>
                   <Pagination
