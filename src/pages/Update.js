@@ -14,11 +14,11 @@ function Update() {
     const [formData, setFormData] = useState([]);
     const { id } = useParams();
 
+    //다른페이지로 이동
     const navigate = useNavigate();
     const handlePado = () => {
         navigate("/");
     };
-
     const handleBack = () => {
         navigate("/pado/admin");
     };
@@ -81,7 +81,7 @@ function Update() {
         event.preventDefault();
         try {
             const url = `${API_KEY}/admin/update/${id}`;
-            const response = await axios.put(url, updatedData, {
+            await axios.put(url, updatedData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
