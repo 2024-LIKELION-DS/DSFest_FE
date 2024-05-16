@@ -150,19 +150,19 @@ export const Top = styled.div`
     color: white;
     font-size: 10pt;
     height: 10px;
-    margin-left: 80px;
+
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
+    margin-left: 10px;
 `;
-
 export const Top2 = styled.div`
     display: block;
     color: white;
     font-size: 10pt;
-    height: 15px;
-    margin-left: 85px;
+    height: 10px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
+    margin-right: 70px;
 `;
 
 export const Time = styled.p`
@@ -194,7 +194,7 @@ export const InlineTimeF = styled.span`
 export const Movie = styled.div`
     width: 126px;
     height: 114px;
-    margin-top: 184px;
+    margin-top: 186px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -229,7 +229,7 @@ export const SongFest = styled.div`
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
-    margin-top: 253.93px;
+    margin-top: 302.93px;
 `;
 export const Content = styled.div`
     width: 126px;

@@ -151,7 +151,7 @@ function TimeTable() {
                             <T.InlineTime>20:30~21:00</T.InlineTime>
                         </T.Celeb2Fire>
 
-                        <div style={{ height: "140px" }}></div>
+                        <div style={{ height: "100px" }}></div>
                     </div>
                 </T.Young>
             </T.Wrapper>
@@ -209,7 +209,7 @@ function TimeTable() {
                             <T.Bold>영화 상영</T.Bold>
                             <T.Time>15:00~17:30</T.Time>
                         </T.Movie>
-                        <div style={{ height: "46px" }}></div>
+                        <div style={{ height: "48px" }}></div>
                         <T.Content>
                             <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
                             <T.Time>18:30~19:30</T.Time>
@@ -243,7 +243,6 @@ function TimeTable() {
                         <C.Phone>
                             <T.TimeTable>
                                 <Header />
-
                                 <C.PageTitle>
                                     <div
                                         style={{
@@ -267,7 +266,6 @@ function TimeTable() {
                                         TIME TABLE
                                     </div>
                                 </C.PageTitle>
-
                                 <br />
                                 <T.DayBox>
                                     <T.WedButton
@@ -318,16 +316,15 @@ function TimeTable() {
                                         5/24 Fri
                                     </T.FriButton>
                                 </T.DayBox>
-
                                 <div
                                     style={{
-                                        marginTop: "15px",
-
                                         display: "flex",
+                                        marginTop: "5px",
+                                        justifyContent: "center",
                                     }}
                                 >
-                                    <T.Top>Booth Zone</T.Top>
-                                    <T.Top2>영근터</T.Top2>
+                                    <T.Top2>Booth Zone</T.Top2>
+                                    <T.Top>영근터</T.Top>
                                 </div>
                                 <T.BackgroundBox>
                                     <T.TimeLine>
