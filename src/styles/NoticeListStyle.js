@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Background = styled.div`
-  background: linear-gradient(to bottom, #3177c6 6%, #83beff 46%, #ffffff 94%);
+  background: linear-gradient(180deg, #448bdb 0%, #6aacf3 100%);
 
   @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
     border-radius: 12px;
@@ -20,9 +20,16 @@ export const Notice = styled.div`
 
 export const img_wrap = styled.div`
   display: flex;
-  justify-content: right;
-  margin-right: 1rem;
+  opacity: ${(props) => (props.hide ? "0" : "1")};
+  justify-content: center;
 `;
+
+export const ImgSpace = styled.div`
+  width: 360px;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export const img_boat = styled.img`
   width: 37px;
   height: 44px;
@@ -30,19 +37,26 @@ export const img_boat = styled.img`
 `;
 
 export const content_wrap = styled.div`
-  /*height:26.5rem;*/ /* 고정 높이 설정, 필요하다면 제거할 수 있음 */
   text-align: center;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto;
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
+  display: flex;
+  height: 670px;
   margin: 0 auto;
-  justify-content: center; /* 모든 그리드 아이템을 가로축 중앙에 정렬 */
-  align-items: center; /* 모든 그리드 아이템을 세로축 중앙에 정렬 */
+  padding: 0;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 25px;
+`;
 
-  margin-bottom: 3rem;
+export const content_wrap2 = styled.div`
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 328px;
+  margin-top: -0.1rem;
+  align-items: center;
+  padding: 0;
 `;
 
 export const content = styled.div`
@@ -50,11 +64,10 @@ export const content = styled.div`
 `;
 
 export const box = styled.div`
-  display: flex; /* flexbox를 사용하여 내부 아이템을 정렬 */
-  flex-direction: column; /* 아이템을 세로로 정렬 */
-  justify-content: center; /* 좌측 정렬 */
-  align-items: center; /* 아이템들을 시작점에서 정렬 */
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 156px;
@@ -63,36 +76,39 @@ export const box = styled.div`
 `;
 
 export const img_exImg = styled.img`
-  border: 4px solid white; /* 테두리 설정 */
-  border-radius: 12px; /* 테두리 둥근 설정 */
-  box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
-
+  border: 4px solid white;
+  border-radius: 12px;
+  box-sizing: border-box;
   width: 156px;
   height: 156px;
 `;
 
-/* 제목 & 카테고리*/
 export const title = styled.div`
-  fontsize: 15px;
+  font-size: 15px;
   font-family: "AppleSDGothicNeo";
   font-weight: 800;
   color: white;
   margin-top: 1rem;
+  margin-left: 0.3rem;
+  width: calc(156px - 0.6rem);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 export const category = styled.div`
-  fontsize: 12px;
+  font-size: 12px;
   font-family: "AppleSDGothicNeo";
   font-weight: 400;
   color: white;
   opacity: 0.8;
+  margin-left: 0.3rem;
 `;
 
-/*페이지네이션*/
 export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 
   ul {
     list-style: none;
@@ -110,6 +126,8 @@ export const PaginationContainer = styled.div`
       justify-content: center;
       align-items: center;
       font-size: small;
+      font-family: "AppleSDGothicNeo";
+      font-weight: 500;
 
       &:first-child {
         border-radius: 5px 0 0 5px;
@@ -123,19 +141,23 @@ export const PaginationContainer = styled.div`
         text-decoration: none;
         color: white;
         font-size: 1rem;
+        transition: ease-in-out 200ms;
 
         &:hover,
         &.active {
           color: #986d9e;
+          transition: ease-in-out 200ms;
         }
       }
 
       &.active a {
         color: #986d9e !important;
+        transition: ease-in-out 200ms;
       }
 
       &.active {
         background-color: none !important;
+        transition: ease-in-out 200ms;
       }
     }
   }

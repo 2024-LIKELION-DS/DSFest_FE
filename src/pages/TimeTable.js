@@ -38,8 +38,6 @@ function TimeTable() {
         return (
             <T.Wrapper>
                 <T.Booth>
-                    <T.Top>Booth Zone</T.Top>
-
                     <T.DayBooth>
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
@@ -51,7 +49,6 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -61,21 +58,25 @@ function TimeTable() {
                                 : "translateY(50px)",
                         }}
                     >
-                        <T.PcDiv>
+                        <div>
                             <img
                                 src={boat_37x44}
                                 alt="Boat"
                                 style={{
                                     width: "37px",
                                     height: "44px",
+                                    display: "flex",
+                                    marginTop: "-44px",
+                                    position: "absolute",
+                                    right: "0",
                                 }}
                             />
-                        </T.PcDiv>
-
+                        </div>
                         <T.Movie>
                             <T.Bold>영화 상영</T.Bold>
                             <T.Time>15:00~17:30</T.Time>
                         </T.Movie>
+
                         <T.StuPerform>
                             <T.Bold>
                                 재학생 및 <br />
@@ -107,8 +108,6 @@ function TimeTable() {
         return (
             <T.Wrapper>
                 <T.Booth>
-                    <T.Top>Booth Zone</T.Top>
-
                     <T.DayBooth>
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
@@ -120,7 +119,6 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -130,22 +128,30 @@ function TimeTable() {
                                 : "translateY(50px)",
                         }}
                     >
-                        <T.Day2PcDiv>
+                        <div>
                             <img
                                 src={boat_37x44}
                                 alt="Boat"
-                                style={{ width: "37px", height: "44px" }}
+                                style={{
+                                    width: "37px",
+                                    height: "44px",
+                                    marginTop: "-44px",
+                                    position: "absolute",
+                                    right: "0",
+                                }}
                             />
-                        </T.Day2PcDiv>
+                        </div>
                         <T.SongFest>
                             <T.Bold>운현가요제</T.Bold>
                             <T.Time>18:30~20:30</T.Time>
                         </T.SongFest>
+
                         <T.Celeb2Fire>
                             <T.InlineBold>연예인 공연</T.InlineBold>
                             <T.InlineTime>20:30~21:00</T.InlineTime>
                         </T.Celeb2Fire>
-                        <div style={{ height: "47px" }}></div>
+
+                        <div style={{ height: "100px" }}></div>
                     </div>
                 </T.Young>
             </T.Wrapper>
@@ -165,8 +171,6 @@ function TimeTable() {
         return (
             <T.Wrapper>
                 <T.Booth>
-                    <T.Top>Booth Zone</T.Top>
-
                     <T.DayBooth>
                         <T.Bold>주간 수익 사업</T.Bold>
                         <T.Time>11:00~14:30</T.Time>
@@ -178,7 +182,6 @@ function TimeTable() {
                     </T.DayBooth>
                 </T.Booth>
                 <T.Young>
-                    <T.Top>영근터</T.Top>
                     <div
                         style={{
                             transition: "all 0.5s ease",
@@ -188,22 +191,25 @@ function TimeTable() {
                                 : "translateY(50px)",
                         }}
                     >
-                        <T.PcDiv>
+                        <div>
                             <img
                                 src={boat_37x44}
                                 alt="Boat"
                                 style={{
                                     width: "37px",
                                     height: "44px",
+                                    display: "flex",
+                                    marginTop: "-44px",
+                                    position: "absolute",
+                                    right: "0",
                                 }}
                             />
-                        </T.PcDiv>
-
+                        </div>
                         <T.Movie>
                             <T.Bold>영화 상영</T.Bold>
                             <T.Time>15:00~17:30</T.Time>
                         </T.Movie>
-                        <div style={{ height: "46px" }}></div>
+                        <div style={{ height: "48px" }}></div>
                         <T.Content>
                             <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
                             <T.Time>18:30~19:30</T.Time>
@@ -214,7 +220,7 @@ function TimeTable() {
                             </T.BoldTop5>
                             <T.Time>19:30~21:00</T.Time>
                         </T.Dj>
-                        <div style={{ height: "19px" }}></div>
+                        <div style={{ height: "20px" }}></div>
                         <T.Celeb2Fire>
                             <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
                             <T.InlineTimeF>21:30~22:00</T.InlineTimeF>
@@ -237,7 +243,6 @@ function TimeTable() {
                         <C.Phone>
                             <T.TimeTable>
                                 <Header />
-
                                 <C.PageTitle>
                                     <div
                                         style={{
@@ -261,7 +266,6 @@ function TimeTable() {
                                         TIME TABLE
                                     </div>
                                 </C.PageTitle>
-
                                 <br />
                                 <T.DayBox>
                                     <T.WedButton
@@ -312,8 +316,15 @@ function TimeTable() {
                                         5/24 Fri
                                     </T.FriButton>
                                 </T.DayBox>
-                                <br />
-
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "space-evenly",
+                                    }}
+                                >
+                                    <T.Top2>Booth Zone</T.Top2>
+                                    <T.Top>영근터</T.Top>
+                                </div>
                                 <T.BackgroundBox>
                                     <T.TimeLine>
                                         11:00
