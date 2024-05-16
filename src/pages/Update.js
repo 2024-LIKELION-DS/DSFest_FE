@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 /*import Back from "../img/back_30x30.png";*/
 import Back from "../img/tube_32x12.png"; //브랜치에 이미지가 없어서 임시로 다른 이미지로 해둠!
 
-const API_KEY = process.env.REACT_APP_APP;
+const API_KEY = process.env.REACT_APP_API;
 
 function Update() {
     const [formData, setFormData] = useState([]);
