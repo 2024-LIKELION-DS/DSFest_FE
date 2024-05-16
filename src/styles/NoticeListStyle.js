@@ -11,8 +11,6 @@ export const Background = styled.div`
 export const Notice = styled.div`
   width: 100vw;
   min-height: calc(100vh - 183px);
-  position: relative;
-  top: 2px;
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
