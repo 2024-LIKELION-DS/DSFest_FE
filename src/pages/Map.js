@@ -14,6 +14,9 @@ import MapImgC from "../img/boothC.png";
 import MapImgD from "../img/boothD.png";
 import MapImgE from "../img/boothE.png";
 
+import cloudLeft from "../img/3_cloud_104x75.png";
+import cloudRight from "../img/3_cloud_131x144.png";
+
 import { useState, useEffect } from "react";
 
 function ExpandableContent({
@@ -42,7 +45,7 @@ function ExpandableContent({
     }, [showLessText]);
 
     // 이미지 경로 배열
-    const imagePaths = [MapImgA, MapImgB, MapImgC, MapImgD, MapImgE];
+    const imagePaths = [MapImg, MapImgA, MapImgB, MapImgC, MapImgD, MapImgE];
     const handleButtonClick = (index) => {
         // 이미 활성화된 버튼을 다시 클릭하는 경우 첫 번째 이미지로 돌아갑니다.
         if (index === activeIndex) {
@@ -158,35 +161,35 @@ function ExpandableContent({
                     flexDirection: "column",
                 }}
             >
-                <button style={btnStyle} onClick={() => handleButtonClick(0)}>
+                <button style={btnStyle} onClick={() => handleButtonClick(1)}>
                     <div style={{ margin: "2%" }}>
                         <div style={textInBtnStyle}>BOOTH-A </div>
 
                         {a}
                     </div>
                 </button>
-                <button style={btnStyle} onClick={() => handleButtonClick(1)}>
+                <button style={btnStyle} onClick={() => handleButtonClick(2)}>
                     <div style={{ margin: "2%" }}>
                         <div style={textInBtnStyle}> BOOTH-B</div>
 
                         {b}
                     </div>
                 </button>
-                <button style={btnStyle} onClick={() => handleButtonClick(2)}>
+                <button style={btnStyle} onClick={() => handleButtonClick(3)}>
                     <div style={{ margin: "2%" }}>
                         <div style={textInBtnStyle}>BOOTH-C</div>
 
                         {c}
                     </div>
                 </button>
-                <button style={btnStyle} onClick={() => handleButtonClick(3)}>
+                <button style={btnStyle} onClick={() => handleButtonClick(4)}>
                     <div style={{ margin: "2%" }}>
                         <div style={textInBtnStyle}> BOOTH-D</div>
 
                         {d}
                     </div>
                 </button>
-                <button style={btnStyle} onClick={() => handleButtonClick(4)}>
+                <button style={btnStyle} onClick={() => handleButtonClick(5)}>
                     <div style={{ margin: "2%" }}>
                         <div style={textInBtnStyle}> BOOTH-E </div>
 
@@ -216,13 +219,31 @@ function Map() {
                             <Mp.Map>
                                 <Header />
                                 <C.PageTitle>MAP</C.PageTitle>
+                                <Mp.CloudLeft>
+                                    <img
+                                        src={cloudLeft}
+                                        alt="배경 구름"
+                                        width={102}
+                                        style={{ marginLeft: "-28px" }}
+                                    />
+                                </Mp.CloudLeft>
+
                                 <Mp.MapTitle>[근화제 부스 지도]</Mp.MapTitle>
+                                <Mp.CloudRight>
+                                    <img src={cloudRight} alt="배경 구름" />
+                                </Mp.CloudRight>
                                 <Mp.Mapimgs>
                                     <Mp.Mapimg src={mapImg}></Mp.Mapimg>
                                 </Mp.Mapimgs>
+
                                 <Mp.Mapline></Mp.Mapline>
                                 <Mp.MapInfo>
                                     <Mp.Infobox>
+                                        <Mp.Infotext>
+                                            * 부스를 누르면 지도에서 부스별
+                                            위치를 확인할 수 있습니다.
+                                        </Mp.Infotext>
+
                                         <ExpandableContent
                                             showMoreText="5월 22일 수요일 - 낮 부스"
                                             showLessText="1일차"

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as H from "../styles/HeaderStyle";
 
-import headerLogo from "../img/header_logo_48px.png";
+import headerBack from "../img/header_back_30px.png";
 
 function MenuTrigger({ onClick, isActive, isVisible }) {
   return (
@@ -14,7 +14,7 @@ function MenuTrigger({ onClick, isActive, isVisible }) {
   );
 }
 
-function Header() {
+function NoticeHeader({ fromPage }) {
   const navigate = useNavigate();
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -30,12 +30,16 @@ function Header() {
     setDropdownVisible(false);
   };
 
+  const handleBack = () => {
+    navigate(`/noticeList?page=${fromPage}`, { state: { fromPage } });
+  };
+
   return (
     <>
       <H.Header>
-        <H.HeaderLogo onClick={() => handleNavLinkClick("/main")}>
-          <img src={headerLogo} alt="찬란" />
-        </H.HeaderLogo>
+        <H.HeaderLogoBack onClick={handleBack}>
+          <img src={headerBack} alt="뒤로가기" />
+        </H.HeaderLogoBack>
         <H.HeaderMenu onClick={handleMenuClick} $isVisible={isDropdownVisible}>
           <MenuTrigger onClick={handleMenuClick} isActive={isDropdownVisible} isVisible={isDropdownVisible} />
         </H.HeaderMenu>
@@ -57,4 +61,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default NoticeHeader;

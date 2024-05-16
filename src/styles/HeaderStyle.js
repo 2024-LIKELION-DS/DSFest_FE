@@ -53,11 +53,18 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 52px 24px 7px 24px;
+  height: 48px;
 `;
 
 export const HeaderLogo = styled.div`
   width: 48px;
   height: 48px;
+  cursor: pointer;
+`;
+
+export const HeaderLogoBack = styled.div`
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 `;
 

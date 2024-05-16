@@ -11,7 +11,8 @@ export const Background = styled.div`
 export const Map = styled.div`
     width: 100vw;
     min-height: calc(100vh - 183px);
-
+    display: flex;
+    flex-direction: column;
     @media (hover: hover) and (pointer: fine) {
         width: 100%;
         min-height: 100%;
@@ -75,7 +76,6 @@ export const MapInfo = styled.div`
     display: flex;
     justify-content: center;
     margin: 10px;
-    margin-top: 8%;
     flex-direction: column;
     align-items: center;
 `;
@@ -83,7 +83,33 @@ export const Infobox = styled.div`
     display: flex;
     justify-content: center;
     margin: 10px;
-    margin-top: 8%;
     flex-direction: column;
     max-width: 450px;
+`;
+
+export const CloudLeft = styled.div`
+    display: flex;
+    width: 74px;
+    height: 74px;
+    overflow: hidden;
+    margin-bottom: -1rem;
+    margin-top: -2rem;
+    @media (hover: hover) and (pointer: fine) {
+        left: 40.6rem;
+    }
+`;
+
+export const CloudRight = styled.div`
+    display: flex;
+    width: 80px;
+    height: 90px;
+    align-self: flex-end;
+    margin-top: -6rem;
+`;
+
+export const Infotext = styled.div`
+    color: white;
+    font-size: 0.7rem;
+    display: flex;
+    margin-left: 10px;
 `;

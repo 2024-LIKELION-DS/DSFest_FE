@@ -25,6 +25,7 @@ export const Booth = styled.div`
 export const Young = styled.div`
     width: 126px;
     padding-left: 10px;
+    margin-top: 0;
 `;
 
 export const DayBox = styled.div`
@@ -93,7 +94,7 @@ export const FriButton = styled.button`
 export const DayBooth = styled.div`
     width: 126px;
 
-    height: 152px;
+    height: 161.345px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -138,21 +139,30 @@ export const InlineBoldF = styled.b`
     display: inline-block;
     margin-left: 12px;
     margin-right: 5px;
-    margin-top: 2px;
+    margin-top: 1.5px;
     color: white;
     font-size: 9pt;
     font-family: "AppleSDGothicNeo";
     font-weight: 800;
 `;
-export const Top = styled.span`
+export const Top = styled.div`
     display: block;
     color: white;
-    font-size: 9pt;
+    font-size: 10pt;
+    height: 10px;
 
-    margin-bottom: 15px;
-    margin-left: 3.5px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
+    margin-left: 10px;
+`;
+export const Top2 = styled.div`
+    display: block;
+    color: white;
+    font-size: 10pt;
+    height: 10px;
+    font-family: "AppleSDGothicNeo";
+    font-weight: 500;
+    margin-right: 70px;
 `;
 
 export const Time = styled.p`
@@ -183,18 +193,19 @@ export const InlineTimeF = styled.span`
 `;
 export const Movie = styled.div`
     width: 126px;
-    margin-top: 2px;
-    height: 105px;
+    height: 114px;
+    margin-top: 186px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
 `;
 export const StuPerform = styled.div`
     width: 126px;
-    height: 109px;
+    height: 114px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
 `;
 export const Celeb1 = styled.div`
     width: 126px;
@@ -214,10 +225,11 @@ export const Celeb2Fire = styled.div`
 `;
 export const SongFest = styled.div`
     width: 126px;
-    height: 81px;
+    height: 86.34px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 302.93px;
 `;
 export const Content = styled.div`
     width: 126px;
@@ -228,50 +240,41 @@ export const Content = styled.div`
 `;
 export const Dj = styled.div`
     width: 126px;
-    height: 61.5px;
+    height: 66px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
 `;
-export const Line = styled.hr`
-    width: 100%;
-    border-color: rgba(255, 255, 255, 0.4);
-    display: inline-block;
-
+export const Line = styled.div`
+    height: 10px;
+    width: calc(100% - 8px);
+    margin-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 15px;
+    z-index: 999;
     margin-left: 8px;
 `;
 export const TimeLine = styled.div`
     margin-left: 8px;
+    margin-right: 8px;
     color: white;
     font-size: 8pt;
     display: flex;
-    padding: 15px;
-    display: tabel-cell;
+
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
 `;
+
 export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
     margin-bottom: 10px;
-    margin-top: -610px;
+    margin-top: -593px;
 `;
 export const BackgroundBox = styled.div`
     width: 100%;
     height: 600px;
     margin-top: 15px;
-`;
-export const PcDiv = styled.div`
-    height: 178.6px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-`;
-export const Day2PcDiv = styled.div`
-    height: 335px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
 `;

@@ -14,7 +14,7 @@ export const Photo = styled.div`
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
-    height: 100%;
+    min-height: calc(100% - 183px);
   }
 `;
 
@@ -58,6 +58,10 @@ export const FrameCenter = styled.div`
 
   @media (min-width: 400px) {
     margin-bottom: 48px;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (min-width: 400px) and (min-width: 384px) {
+    margin-bottom: 0;
   }
 `;
 
