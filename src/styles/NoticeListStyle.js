@@ -126,6 +126,8 @@ export const PaginationContainer = styled.div`
       justify-content: center;
       align-items: center;
       font-size: small;
+      font-family: "AppleSDGothicNeo";
+      font-weight: 500;
 
       &:first-child {
         border-radius: 5px 0 0 5px;
@@ -139,19 +141,23 @@ export const PaginationContainer = styled.div`
         text-decoration: none;
         color: white;
         font-size: 1rem;
+        transition: ease-in-out 200ms;
 
         &:hover,
         &.active {
           color: #986d9e;
+          transition: ease-in-out 200ms;
         }
       }
 
       &.active a {
         color: #986d9e !important;
+        transition: ease-in-out 200ms;
       }
 
       &.active {
         background-color: none !important;
+        transition: ease-in-out 200ms;
       }
     }
   }
