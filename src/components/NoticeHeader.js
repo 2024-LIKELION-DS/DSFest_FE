@@ -36,7 +36,7 @@ function NoticeHeader({ fromPage }) {
 
   return (
     <>
-      <H.Header style={{ height: "48px" }}>
+      <H.Header>
         <H.HeaderLogoBack onClick={handleBack}>
           <img src={headerBack} alt="뒤로가기" />
         </H.HeaderLogoBack>

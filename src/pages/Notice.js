@@ -76,7 +76,9 @@ function Notice() {
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <N.wrap>
                   <N.img_wrap>
-                    <N.img_boat src={boatImg} alt="Boat" />
+                    <N.ImgSpace>
+                      <N.img_boat src={boatImg} alt="Boat" />
+                    </N.ImgSpace>
                   </N.img_wrap>
                   <N.content_wrap>
                     {notice.map((item) => (

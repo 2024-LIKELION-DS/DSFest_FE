@@ -2,7 +2,7 @@ import styled from "styled-components";
 import boatImg from "../img/boat_37x44.png";
 
 export const Background = styled.div`
-  background: linear-gradient(180deg, #448BDB 0%, #6AACF3 100%);
+  background: linear-gradient(180deg, #448bdb 0%, #6aacf3 100%);
 
   @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
     border-radius: 12px;
@@ -20,9 +20,15 @@ export const Notice = styled.div`
 `;
 export const img_wrap = styled.div`
   display: flex;
-  justify-content: right;
-  margin-right: 1rem;
+  justify-content: center;
 `;
+
+export const ImgSpace = styled.div`
+  width: 360px;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export const img_boat = styled.img`
   width: 37px;
   height: 44px;
@@ -40,7 +46,7 @@ export const content_wrap = styled.div`
   padding-left: 0.7rem;
   padding-bottom: 1.4rem;
   margin-right: 0.5rem;
-  margin-top:-0.1rem;
+  margin-top: -0.1rem;
 `;
 
 export const box_wrap = styled.div`
@@ -50,14 +56,14 @@ export const box_wrap = styled.div`
   align-items: start; /* 아이템들을 시작점에서 정렬 */
   border: 4px solid white; /* 테두리 설정 */
   border-radius: 12px; /* 테두리 둥근 설정 */
-  width: 100%; /* 부모 요소의 너비를 따름 */
+  width: 328px; /* 부모 요소의 너비를 따름 */
 
   padding: 1rem; /* 패딩 설정 */
   box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
 `;
 
 export const List = styled.div`
-  font-size:12px;
+  font-size: 12px;
   font-family: "AppleSDGothicNeo";
   font-weight: 400;
   color: white;
@@ -79,7 +85,6 @@ export const Context = styled.div`
   font-weight: 500;
   color: white;
   opacity: 0.8;
-  
 `;
 
 //이미지
@@ -118,8 +123,7 @@ export const leftArrowImg = styled.img`
   margin-left: 1.7rem;
   width: 2rem;
   height: 2rem;
-  visibility: ${({ show }) => (show ? 'visible' : 'hidden')}; // show prop에 따라 visibility 조정
-
+  visibility: ${({ show }) => (show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
 `;
 
 // 오른쪽 화살표 스타일
@@ -128,8 +132,7 @@ export const rightArrowImg = styled.img`
   margin-right: 1.7rem;
   width: 2rem;
   height: 2rem;
-  visibility: ${({ show }) => (show ? 'visible' : 'hidden')}; // show prop에 따라 visibility 조정
-
+  visibility: ${({ show }) => (show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
 `;
 
 // 이미지 감싸는 컨테이너

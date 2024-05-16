@@ -53,6 +53,7 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 52px 24px 7px 24px;
+  height: 48px;
 `;
 
 export const HeaderLogo = styled.div`

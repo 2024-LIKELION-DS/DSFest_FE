@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
-import Pagination from 'react-js-pagination';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import Pagination from "react-js-pagination";
 import * as C from "../styles/CommonStyle";
 import * as NL from "../styles/NoticeListStyle";
 
@@ -17,19 +17,19 @@ function NoticeList() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const page = searchParams.get("page");
-  const [notice, setNotice] = useState([]);  // 공지사항 목록을 저장하는 상태
-  const [totalNum, setTotalNum] = useState(0);  // 전체 공지사항 수를 저장하는 상태
-  const [currentPage, setCurrentPage] = useState(1);  // 현재 페이지 번호를 저장하는 상태
-  const [hideBoat, setHideBoat] = useState(false);  // 보트 이미지 숨기기 상태
+  const [notice, setNotice] = useState([]); // 공지사항 목록을 저장하는 상태
+  const [totalNum, setTotalNum] = useState(0); // 전체 공지사항 수를 저장하는 상태
+  const [currentPage, setCurrentPage] = useState(page || 1); // 현재 페이지 번호를 저장하는 상태
+  const [hideBoat, setHideBoat] = useState(false); // 보트 이미지 숨기기 상태
 
   useEffect(() => {
     const fetchNotice = async () => {
       try {
         const url = `${process.env.REACT_APP_API}/admin/read?page=${currentPage}&size=6`;
         const response = await axios.get(url);
-        setNotice(response.data.data);  // 공지사항 데이터를 상태에 저장
-        setTotalNum(response.data.totalNum);  // 전체 공지사항 수를 상태에 저장
-        setHideBoat(response.data.data.length === 1);  // 요소가 하나일 때 보트 이미지 숨기기 상태 설정
+        setNotice(response.data.data); // 공지사항 데이터를 상태에 저장
+        setTotalNum(response.data.totalNum); // 전체 공지사항 수를 상태에 저장
+        setHideBoat(response.data.data.length === 1); // 요소가 하나일 때 보트 이미지 숨기기 상태 설정
       } catch (error) {
         console.error("공지사항 데이터를 불러오는 중 오류가 발생했습니다:", error);
       }
@@ -56,24 +56,26 @@ function NoticeList() {
                 <Header />
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <NL.img_wrap hide={hideBoat}>
-                  <NL.img_boat src={boatImg} alt="Boat" />
+                  <NL.ImgSpace>
+                    <NL.img_boat src={boatImg} alt="Boat" />
+                  </NL.ImgSpace>
                 </NL.img_wrap>
                 <NL.content_wrap>
                   <NL.content_wrap2 itemsCount={notice.length}>
                     {notice.map((item) => (
-                    <Link to={`/notice/${item.id}`} key={item.id} state={{ fromPage: currentPage }}>
-                      <NL.content>
-                        <NL.box>
-                          <NL.img_exImg
-                            src={item.images && item.images.length > 0 ? item.images[0].imageUrl : exImg}
-                            alt="exImg"
-                          />
-                        </NL.box>
-                        <NL.title>{item.title}</NL.title>
-                        <NL.category>{item.category.name}</NL.category>
-                      </NL.content>
-                    </Link>
-                  ))}
+                      <Link to={`/notice/${item.id}`} key={item.id} state={{ fromPage: currentPage }}>
+                        <NL.content>
+                          <NL.box>
+                            <NL.img_exImg
+                              src={item.images && item.images.length > 0 ? item.images[0].imageUrl : exImg}
+                              alt="exImg"
+                            />
+                          </NL.box>
+                          <NL.title>{item.title}</NL.title>
+                          <NL.category>{item.category.name}</NL.category>
+                        </NL.content>
+                      </Link>
+                    ))}
                   </NL.content_wrap2>
                 </NL.content_wrap>
                 <NL.PaginationContainer>

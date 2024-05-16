@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Background = styled.div`
-  background: linear-gradient(180deg, #448BDB 0%, #6AACF3 100%);
+  background: linear-gradient(180deg, #448bdb 0%, #6aacf3 100%);
 
   @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
     border-radius: 12px;
@@ -12,7 +12,7 @@ export const Notice = styled.div`
   width: 100vw;
   min-height: calc(100vh - 183px);
   position: relative;
-  top:2px;
+  top: 2px;
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
@@ -21,9 +21,15 @@ export const Notice = styled.div`
 `;
 
 export const img_wrap = styled.div`
-  display: ${(props) => (props.hide ? 'none' : 'flex')};
-  justify-content: right;
-  margin-right: 1rem;
+  display: flex;
+  opacity: ${(props) => (props.hide ? "0" : "1")};
+  justify-content: center;
+`;
+
+export const ImgSpace = styled.div`
+  width: 360px;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 export const img_boat = styled.img`
@@ -35,27 +41,22 @@ export const img_boat = styled.img`
 export const content_wrap = styled.div`
   text-align: center;
   display: flex;
-  width: 100%;
-  max-width: 1200px;
+  height: 670px;
   margin: 0 auto;
   padding: 0;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 3rem;
+  align-items: flex-start;
+  margin-bottom: 25px;
 `;
 
 export const content_wrap2 = styled.div`
-  text-align: ${(props) => (props.itemsCount === 1 ? 'left' : 'center')};
-  display: grid;
-  justify-content: ${(props) => (props.itemsCount === 1 ? 'flex-start' : 'space-around')};
-  grid-template-columns: ${(props) => (props.itemsCount === 1 ? '1fr' : 'auto auto')};
-  grid-template-rows: auto auto auto;
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin-left: ${(props) => (props.itemsCount === 1 ? '0.8rem' : '6rem')};
-  margin-right: 6rem;
-  margin-top: ${(props) => (props.itemsCount === 1 ? '3rem' : '-0.1rem')};
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 328px;
+  margin-top: -0.1rem;
   align-items: center;
   padding: 0;
 `;
@@ -90,7 +91,11 @@ export const title = styled.div`
   font-weight: 800;
   color: white;
   margin-top: 1rem;
-  margin-left:0.3rem;
+  margin-left: 0.3rem;
+  width: calc(156px - 0.6rem);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 export const category = styled.div`
@@ -99,13 +104,13 @@ export const category = styled.div`
   font-weight: 400;
   color: white;
   opacity: 0.8;
-  margin-left:0.3rem;
+  margin-left: 0.3rem;
 `;
 
 export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 
   ul {
     list-style: none;
