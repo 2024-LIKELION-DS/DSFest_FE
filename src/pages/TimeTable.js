@@ -319,8 +319,7 @@ function TimeTable() {
                                 <div
                                     style={{
                                         display: "flex",
-                                        marginTop: "5px",
-                                        justifyContent: "center",
+                                        justifyContent: "space-evenly",
                                     }}
                                 >
                                     <T.Top2>Booth Zone</T.Top2>

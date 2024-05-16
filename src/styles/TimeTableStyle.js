@@ -150,10 +150,10 @@ export const Top = styled.div`
     color: white;
     font-size: 10pt;
     height: 10px;
-
+    width: 80px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
-    margin-left: 10px;
+    margin-top: 10px;
 `;
 export const Top2 = styled.div`
     display: block;
@@ -162,9 +162,9 @@ export const Top2 = styled.div`
     height: 10px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
-    margin-right: 70px;
+    width: 80px;
+    margin-top: 10px;
 `;
-
 export const Time = styled.p`
     margin-left: 12px;
     margin-top: 2px;
@@ -172,6 +172,7 @@ export const Time = styled.p`
     font-size: 8pt;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
+    margin-left: 5px;
 `;
 export const InlineTime = styled.span`
     display: block;
