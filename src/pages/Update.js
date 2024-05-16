@@ -23,7 +23,7 @@ function Update() {
         navigate("/pado/admin");
     };
 
-    //파일 첨부
+    //파일 첨부(기존이미지 대체)
     const handleFileChange = (event, index) => {
         const newImages = event.target.files;
         if (newImages && newImages.length > 0) {
@@ -86,6 +86,7 @@ function Update() {
                     "Content-Type": "multipart/form-data",
                 },
             });
+            getFromData();
             alert("수정되었습니다.");
             navigate("/pado/admin");
         } catch (error) {
