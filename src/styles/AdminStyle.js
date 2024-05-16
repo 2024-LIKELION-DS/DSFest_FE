@@ -25,7 +25,6 @@ export const Background = styled.div`
 export const Admin = styled.div`
     width: 100vw;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,37 +51,50 @@ export const Box = styled.div`
         margin-bottom: 54px;
     }
 `;
+
 export const FormBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
-export const FormTitle = styled.p`
-    margin: 20px;
+
+export const BackIcon = styled.img`
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 15px;
+    margin-top: px;
+`;
+
+export const FormTitle = styled.div`
     font-size: 20pt;
     font-weight: bold;
     text-align: center;
-    @media screen and (max-height: 700px) {
-        margin: 10px;
-    }
-`;
-export const LabelTag = styled.div`
-    color: #448bdb;
-    width: 50px;
-    margin-top: 8px;
+    margin: 10px;
     height: 30px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    font-family: Prompt;
 `;
 
 export const LabelBox = styled.div`
     display: flex;
+    flex-direction: row; /* Change from row to column */
+    align-items: flex-start; /* Align items to the start */
     margin-bottom: 20px;
+    font-family: Prompt;
+
     @media screen and (max-height: 700px) {
         margin-bottom: 7px;
     }
+`;
+
+export const LabelTag = styled.div`
+    color: #448bdb;
+    width: 35px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-family: Prompt;
+    font-weight: bold;
 `;
 
 export const Selection = styled.select`
@@ -92,7 +104,7 @@ export const Selection = styled.select`
     border: 0px;
     font-weight: bold;
     border-radius: 16px;
-
+    font-family: Prompt;
     background-color: rgba(255, 255, 255, 0.5);
     &:focus {
         outline: 1.5px solid #448bdb;
@@ -102,13 +114,15 @@ export const Selection = styled.select`
 export const Opt = styled.option`
     color: #448bdb;
     font-weight: bold;
+    font-family: Prompt;
 `;
-export const Square = styled.div``;
+
+export const Square = styled.div`
+    margin: 15px;
+`;
 
 export const BlankDiv = styled.div`
-    margin-top: -5px;
     padding: 10px;
-    padding-left: 2px;
 
     @media all and (min-width: 1024px) {
         width: 720px;
@@ -129,14 +143,15 @@ export const BlankDiv = styled.div`
         width: 235px;
     }
 `;
+
 export const InputTitle = styled.input`
     border: 0;
     padding: 10px;
     margin-top: 5px;
-    height: 15px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
-    width: 100%;
+    width: calc(100% - 80px);
+    font-family: Prompt;
 
     &:focus {
         outline: 1.5px solid #448bdb;
@@ -168,8 +183,9 @@ export const InputDetail = styled.textarea`
     padding: 10px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
-    width: 100%;
-    min-height: 100px;
+    width: calc(100% - 80px);
+    min-height: 130px;
+    font-family: Prompt;
 
     &:focus {
         outline: 1.5px solid #448bdb;
@@ -194,23 +210,25 @@ export const InputDetail = styled.textarea`
   @media all and (max-width: 480px) {
       max-width: 235px;
   }
-
 `;
 
 export const SubmitButton = styled.button`
-    width: 100px;
-    height: 40px;
+    width: 90px;
+    height: 30px;
     border: 0px;
     background-color: #448bdb;
     border-radius: 16px;
     color: white;
     display: inline-block;
     font-weight: bold;
+    font-family: Prompt;
+    font-size: 10pt;
 `;
 
 export const ButtonDiv = styled.div`
     text-align: center;
     margin-bottom: 10px;
+
     @media screen and (min-height: 830px) {
         margin: 30px;
     }

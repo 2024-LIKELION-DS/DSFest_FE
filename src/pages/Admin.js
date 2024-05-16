@@ -5,6 +5,7 @@ import axios from "axios";
 
 import Logo from "../img/header_logo_48px.png";
 import Footer from "../components/Footer";
+import Back from "../img/back_30x30.png";
 
 const API_KEY = process.env.REACT_APP_API; // 환경변수에 저장된 API 키 불러오기
 
@@ -67,29 +68,32 @@ function Admin() {
         try {
             const formDataToSend = new FormData();
             // FormData에 필드들을 직접 추가
-            formDataToSend.append('noticeDTO', JSON.stringify({
-                title: formData.title,
-                content: formData.content,
-                categoryName: formData.categoryName,
-            }));
-    
+            formDataToSend.append(
+                "noticeDTO",
+                JSON.stringify({
+                    title: formData.title,
+                    content: formData.content,
+                    categoryName: formData.categoryName,
+                })
+            );
+
             // multipartFiles 필드 추가
             if (formData.images && formData.images.length > 0) {
                 for (const image of formData.images) {
                     formDataToSend.append("multipartFiles", image);
                 }
             }
-    
+
             const url = `${API_KEY}/admin`; // URL 조립 방식 변경
             const response = await axios.post(url, formDataToSend, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             });
-    
+
             console.log("데이터와 함께 폼 제출:", formDataToSend);
             console.log("응답:", response.data);
-    
+
             return response.data;
         } catch (error) {
             console.error("에러:", error);
@@ -97,7 +101,6 @@ function Admin() {
             throw error;
         }
     }
-    
 
     return (
         <>
@@ -106,17 +109,14 @@ function Admin() {
                     <A.ALogo src={Logo} alt="찬란" onClick={handlePado} />
                     <A.Box>
                         <form onSubmit={handleSubmit}>
+                            <A.BackIcon src={Back} alt="back" />
+
                             <A.FormTitle>공지사항 관리자 페이지</A.FormTitle>
+
                             <A.FormBox>
                                 <A.Square>
                                     <A.LabelBox style={{ marginBottom: "3px" }}>
-                                        <A.LabelTag
-                                            style={{
-                                                marginTop: "7px",
-                                            }}
-                                        >
-                                            분류
-                                        </A.LabelTag>
+                                        <A.LabelTag>분류</A.LabelTag>
                                         <A.BlankDiv>
                                             <A.Selection
                                                 name="categoryName"
