@@ -5,8 +5,7 @@ import axios from "axios";
 
 import Logo from "../img/header_logo_48px.png";
 import Footer from "../components/Footer";
-/*import Back from "../img/back_30x30.png";*/
-import Back from "../img/tube_32x12.png"; //브랜치에 이미지가 없어서 임시로 다른 이미지로 해둠!
+import Back from "../img/back_30x30.png";
 
 const API_KEY = process.env.REACT_APP_API;
 
@@ -31,7 +30,7 @@ function Update() {
             const updatedImages = Array.from(newImages).map((image, i) => ({
                 id: updatedFormData[index].images[i]?.id,
                 imageUrl: URL.createObjectURL(image),
-                file: image // 파일 객체 추가
+                file: image, // 파일 객체 추가
             }));
             updatedFormData[index] = {
                 ...updatedFormData[index],
@@ -59,6 +58,9 @@ function Update() {
         updatedItems[index] = {
             ...updatedItems[index],
             [name]: value,
+            category: {
+                name: value, // 옵션의 값을 카테고리 이름으로 설정
+            },
         };
         setFormData(updatedItems);
     };
@@ -84,11 +86,14 @@ function Update() {
             const updatedData = formData[0]; // assuming only one item needs to be updated
             const formDataToSend = new FormData();
 
-            formDataToSend.append('noticeDTO', JSON.stringify({
-                title: updatedData.title,
-                content: updatedData.content,
-                categoryName: updatedData.category.name,
-            }));
+            formDataToSend.append(
+                "noticeDTO",
+                JSON.stringify({
+                    title: updatedData.title,
+                    content: updatedData.content,
+                    categoryName: updatedData.category.name,
+                })
+            );
 
             if (updatedData.images && updatedData.images.length > 0) {
                 for (const image of updatedData.images) {
@@ -135,7 +140,12 @@ function Update() {
                                 <U.FormBox key={item.id}>
                                     <U.FromCategory>
                                         <U.FormTag>분류</U.FormTag>
-                                        <U.Category>
+                                        <U.Category
+                                            name="categoryName"
+                                            onChange={(event) =>
+                                                handleSelectChange(event, index)
+                                            }
+                                        >
                                             <U.Option
                                                 value={item.category.name}
                                                 name="category"
@@ -167,7 +177,7 @@ function Update() {
                                         <U.FormTag>제목</U.FormTag>
                                         <U.Title
                                             name="title"
-                                            placeholder="Enter title"
+                                            placeholder="내용을 입력하세요"
                                             value={item.title}
                                             onChange={(event) =>
                                                 handleInputChange(event, index)
@@ -178,7 +188,7 @@ function Update() {
                                         <U.FormTag>내용</U.FormTag>
                                         <U.Content
                                             name="content"
-                                            placeholder="Enter content"
+                                            placeholder="내용을 입력하세요"
                                             value={item.content}
                                             onChange={(event) =>
                                                 handleInputChange(event, index)

@@ -75,7 +75,7 @@ export const BoxTitle = styled.div`
     margin-right: 4.4rem;
     @media (hover: hover) and (pointer: fine) {
         font-size: 40px;
-        margin-right: 24.1rem;
+        margin-right: 31.1rem;
     }
 `;
 
