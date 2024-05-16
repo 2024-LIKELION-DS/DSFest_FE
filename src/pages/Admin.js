@@ -16,6 +16,9 @@ function Admin() {
         navigate("/");
     };
 
+    const handleBackClick = () => {
+        navigate("/pado/admin");
+    };
     // 초기 상태값을 빈 문자열로 설정
     const [formData, setFormData] = useState({
         title: "",
@@ -49,7 +52,7 @@ function Admin() {
             const responseData = await createWriting(formData);
             console.log("Response from createWriting:", responseData);
             // TODO: 서버 응답에 대한 처리 추가
-            // 일단 notice 페이지로 이동하게 처리해둘게요~~~~
+
             navigate("/pado/admin");
         } catch (error) {
             console.error("Error:", error);
@@ -112,7 +115,12 @@ function Admin() {
                     <A.ALogo src={Logo} alt="찬란" onClick={handlePado} />
                     <A.Box>
                         <form onSubmit={handleSubmit}>
-                            <A.BackIcon src={Back} alt="back" />
+                            <A.BackIcon
+                                style={{ cursor: "pointer" }}
+                                onClick={handleBackClick}
+                                src={Back}
+                                alt="back"
+                            />
 
                             <A.FormTitle>공지사항 관리자 페이지</A.FormTitle>
 
