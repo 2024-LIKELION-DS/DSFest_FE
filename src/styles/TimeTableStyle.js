@@ -26,6 +26,7 @@ export const Young = styled.div`
     width: 126px;
     padding-left: 10px;
     margin-top: 0;
+    height: 600px;
 `;
 
 export const DayBox = styled.div`
@@ -149,10 +150,11 @@ export const Top = styled.div`
     color: white;
     font-size: 10pt;
     height: 10px;
-    width: 80px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
-    margin-top: 10px;
+    margin-left: 25px;
+    width: 120px;
+    margin-top: 12px;
 `;
 export const Top2 = styled.div`
     display: block;
@@ -161,8 +163,9 @@ export const Top2 = styled.div`
     height: 10px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
-    width: 80px;
-    margin-top: 10px;
+    margin-left: 40px;
+    width: 120px;
+    margin-top: 12px;
 `;
 export const Time = styled.p`
     margin-left: 12px;
@@ -270,11 +273,12 @@ export const Wrapper = styled.div`
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
-    margin-bottom: 10px;
-    margin-top: -593px;
+
+    margin-top: -578px;
 `;
+
 export const BackgroundBox = styled.div`
     width: 100%;
-    height: 600px;
+    height: 585px;
     margin-top: 15px;
 `;
