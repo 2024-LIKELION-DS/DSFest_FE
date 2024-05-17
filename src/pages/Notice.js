@@ -10,7 +10,6 @@ import NoticeHeader from "../components/NoticeHeader";
 import Footer from "../components/Footer";
 
 import boatImg from "../img/boat_37x44.png";
-
 import leftArrowImg from "../img/arrow_L.png";
 import rightArrowImg from "../img/arrow_R.png";
 
@@ -56,12 +55,14 @@ function Notice() {
   const handleNext = () => {
     if (notice.length > 0 && notice[0].images) {
       setCurrentImageIndex((prev) => (prev + 1) % notice[0].images.length);
+      setCurrentImage(notice[0].images[(currentImageIndex + 1) % notice[0].images.length].imageUrl);
     }
   };
 
   const handlePrevious = () => {
     if (notice.length > 0 && notice[0].images) {
       setCurrentImageIndex((prev) => (prev - 1 + notice[0].images.length) % notice[0].images.length);
+      setCurrentImage(notice[0].images[(currentImageIndex - 1 + notice[0].images.length) % notice[0].images.length].imageUrl);
     }
   };
 
@@ -144,9 +145,11 @@ function Notice() {
                   <Modal
                     onClose={closeModal}
                     imageUrl={currentImage}
-                    imageCount={notice[0]?.imageNum}
+                    imageCount={notice[0]?.images.length}
                     currentIndex={currentImageIndex + 1}
                     noticeHeight={noticeHeight}
+                    onSwipeLeft={handleNext}
+                    onSwipeRight={handlePrevious}
                   />
                 )}
               </N.Notice>
@@ -155,7 +158,6 @@ function Notice() {
           </N.Background>
         </C.Area>
       </C.Page>
-      
     </>
   );
 }
