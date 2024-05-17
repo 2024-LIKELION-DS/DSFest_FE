@@ -62,7 +62,9 @@ function Notice() {
   const handlePrevious = () => {
     if (notice.length > 0 && notice[0].images) {
       setCurrentImageIndex((prev) => (prev - 1 + notice[0].images.length) % notice[0].images.length);
-      setCurrentImage(notice[0].images[(currentImageIndex - 1 + notice[0].images.length) % notice[0].images.length].imageUrl);
+      setCurrentImage(
+        notice[0].images[(currentImageIndex - 1 + notice[0].images.length) % notice[0].images.length].imageUrl
+      );
     }
   };
 
@@ -78,6 +80,24 @@ function Notice() {
     setIsModalOpen(false);
   };
 
+  const renderContentWithLinks = (content) => {
+    const urlPattern = /https?:\/\/[^\s]+/g;
+    const parts = content.split(urlPattern);
+    const urls = content.match(urlPattern) || [];
+
+    return parts.reduce((acc, part, index) => {
+      acc.push(<span key={`part-${index}`}>{part}</span>);
+      if (index < urls.length) {
+        acc.push(
+          <a key={`url-${index}`} href={urls[index]} target="_blank" rel="noopener noreferrer">
+            {urls[index]}
+          </a>
+        );
+      }
+      return acc;
+    }, []);
+  };
+
   return (
     <>
       <C.Page>
@@ -88,7 +108,7 @@ function Notice() {
           </C.Title>
           <N.Background>
             <C.Phone>
-              <N.Notice >
+              <N.Notice>
                 <NoticeHeader fromPage={fromPage} />
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <N.wrap>
@@ -103,7 +123,7 @@ function Notice() {
                         <N.List>{item.category.name}</N.List>
                         <N.Title>{item.title}</N.Title>
                         <N.Context>
-                          {item.content.split("\n").map((line, index) => (
+                          {renderContentWithLinks(item.content).map((line, index) => (
                             <React.Fragment key={index}>
                               {line}
                               <br />

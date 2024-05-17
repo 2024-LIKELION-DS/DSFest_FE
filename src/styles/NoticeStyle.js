@@ -12,7 +12,6 @@ export const Background = styled.div`
 export const Notice = styled.div`
   width: 100vw;
   min-height: calc(100vh - 183px);
-  
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
@@ -46,10 +45,10 @@ export const content_wrap = styled.div`
   padding-right: 0.1rem;
   padding-left: 0.7rem;
   padding-bottom: 1.4rem;
-  
-  margin-left:-0.55rem;
+
+  margin-left: -0.55rem;
   margin-top: -0.1rem;
-  display: ${({ isModalOpen }) => (isModalOpen ? "none" : "")}; 
+  display: ${({ isModalOpen }) => (isModalOpen ? "none" : "")};
 `;
 
 export const box_wrap = styled.div`
@@ -59,7 +58,7 @@ export const box_wrap = styled.div`
   align-items: start; /* 아이템들을 시작점에서 정렬 */
   border: 4px solid white; /* 테두리 설정 */
   border-radius: 12px; /* 테두리 둥근 설정 */
-  width:335.5px; /* 부모 요소의 너비를 따름 */
+  width: 335.5px; /* 부모 요소의 너비를 따름 */
 
   padding: 1rem; /* 패딩 설정 */
   box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
@@ -90,6 +89,15 @@ export const Context = styled.div`
   color: white;
   opacity: 0.8;
   text-align: left;
+  width: 100%;
+
+  a {
+    display: inline-block;
+    width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 //이미지
