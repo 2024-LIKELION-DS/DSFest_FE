@@ -221,8 +221,8 @@ export const Button = styled.button`
     font-weight: bold;
     margin-top: 30px;
     @media (hover: hover) and (pointer: fine) {
-        width: 10.3vw;
-        height: 3.7vw;
+        width: 8.3vw;
+        height: 2.7vw;
         font-size: 1.4vw;
     }
 `;
