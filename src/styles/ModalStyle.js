@@ -8,8 +8,10 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: calc(100% + 200px);
+  height: calc(100% + 10rem);
+  overflow: hidden; 
 
+  
   @media (hover: hover) and (pointer: fine) {
     width: 360px;
     height: 100%;
