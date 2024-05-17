@@ -8,7 +8,7 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(100% + 183px);
 
   @media (hover: hover) and (pointer: fine) {
     width: 360px;
@@ -33,6 +33,7 @@ export const ModalImg = styled.img`
   max-height: 80vh;
   object-fit: contain;
   display: block;
+  margin-bottom: 183px;
 `;
 
 export const text = styled.div`
