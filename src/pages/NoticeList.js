@@ -25,7 +25,7 @@ function NoticeList() {
   useEffect(() => {
     const fetchNotice = async () => {
       try {
-        const url = `${process.env.REACT_APP_API}/admin/read?page=${currentPage}&size=6`;
+        const url = `${process.env.REACT_APP_API}/user/read?page=${currentPage}&size=6`;
         const response = await axios.get(url);
         setNotice(response.data.data); // 공지사항 데이터를 상태에 저장
         setTotalNum(response.data.totalNum); // 전체 공지사항 수를 상태에 저장

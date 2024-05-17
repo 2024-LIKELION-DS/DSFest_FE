@@ -27,7 +27,7 @@ function Notice() {
   useEffect(() => {
     const fetchNotice = async () => {
       try {
-        const url = `${process.env.REACT_APP_API}/admin/read/${id}`;
+        const url = `${process.env.REACT_APP_API}/user/read/${id}`;
         const response = await axios.get(url);
         setNotice(response.data.data || []);
       } catch (error) {
