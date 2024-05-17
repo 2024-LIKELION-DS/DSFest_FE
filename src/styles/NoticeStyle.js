@@ -68,6 +68,7 @@ export const List = styled.div`
   font-weight: 400;
   color: white;
   opacity: 0.8;
+  text-align: left;
 `;
 
 export const Title = styled.div`
