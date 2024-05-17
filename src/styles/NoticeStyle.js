@@ -77,6 +77,7 @@ export const Title = styled.div`
   color: white;
   margin-top: 1rem;
   margin-bottom: 0.7rem;
+  text-align: left;
 `;
 
 export const Context = styled.div`
