@@ -222,7 +222,7 @@ function Admin() {
                                     <A.LabelBox>
                                         <A.LabelTag>첨부</A.LabelTag>
                                         <br />
-                                        <A.BlankDiv>
+                                        <div>
                                             <input
                                                 id="fileInput"
                                                 type="file"
@@ -232,7 +232,7 @@ function Admin() {
                                                 }
                                             />
                                             {/* 이미지 미리보기 */}
-                                        </A.BlankDiv>
+                                        </div>
                                         {formData.images.map((image, index) => (
                                             <img
                                                 key={index}
@@ -241,7 +241,7 @@ function Admin() {
                                                 style={{
                                                     width: "80px",
                                                     height: "80px",
-
+                                                    margin: "2px",
                                                     objectFit: "cover",
                                                 }}
                                             />
