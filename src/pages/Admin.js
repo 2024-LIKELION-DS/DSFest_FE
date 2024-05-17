@@ -104,7 +104,6 @@ function Admin() {
             [name]: value,
         });
     };
-
     const handleFileChange = (event) => {
         const images = event.target.files; // 이미지 파일 가져오기
         if (images && images.length > 0) {
@@ -116,9 +115,13 @@ function Admin() {
                 ...formData,
                 images: imageArrays,
             });
+        } else {
+            setFormData({
+                ...formData,
+                images: [],
+            });
         }
     };
-
     return (
         <>
             <A.Background>
