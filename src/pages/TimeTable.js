@@ -48,6 +48,7 @@ function TimeTable() {
                         <T.Time>16:00~19:30</T.Time>
                     </T.DayBooth>
                 </T.Booth>
+
                 <T.Young>
                     <div
                         style={{
@@ -150,8 +151,6 @@ function TimeTable() {
                             <T.InlineBold>연예인 공연</T.InlineBold>
                             <T.InlineTime>20:30~21:00</T.InlineTime>
                         </T.Celeb2Fire>
-
-                        <div style={{ height: "100px" }}></div>
                     </div>
                 </T.Young>
             </T.Wrapper>
@@ -316,10 +315,11 @@ function TimeTable() {
                                         5/24 Fri
                                     </T.FriButton>
                                 </T.DayBox>
+
                                 <div
                                     style={{
                                         display: "flex",
-                                        justifyContent: "space-evenly",
+                                        justifyContent: "center",
                                     }}
                                 >
                                     <T.Top2>Booth Zone</T.Top2>
@@ -396,7 +396,7 @@ function TimeTable() {
                                             float: "left",
                                             position: "absolute",
                                             left: "-20px",
-                                            top: "-180px",
+                                            top: "-230px",
                                         }}
                                     />
                                     <br />
@@ -409,7 +409,7 @@ function TimeTable() {
                                             float: "right",
                                             position: "absolute",
                                             right: "0",
-                                            top: "-150px",
+                                            top: "-260px",
                                         }}
                                     />
                                 </div>
