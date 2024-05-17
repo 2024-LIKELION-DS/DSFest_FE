@@ -139,7 +139,7 @@ export const InlineBoldF = styled.b`
     display: inline-block;
     margin-left: 12px;
     margin-right: 5px;
-    margin-top: 1.5px;
+    margin-top: 3px;
     color: white;
     font-size: 9pt;
     font-family: "AppleSDGothicNeo";
@@ -172,7 +172,7 @@ export const Time = styled.p`
     font-size: 8pt;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
-    margin-left: 5px;
+    margin-left: 12px;
 `;
 export const InlineTime = styled.span`
     display: block;
