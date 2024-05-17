@@ -97,27 +97,6 @@ function Admin() {
         }
     }
 
-    useEffect(() => {
-        // 예를 들어, postId를 사용하여 해당 포스트 정보를 가져오고
-        // 해당 포스트에 대한 정보를 formData로 설정할 수 있습니다.
-        const fetchPostData = async () => {
-            try {
-                const response = await axios.get(`${API_KEY}/posts/${postId}`);
-                const postData = response.data;
-                setFormData({
-                    categoryName: postData.categoryName,
-                    title: postData.title,
-                    content: postData.content,
-                    images: postData.images,
-                });
-            } catch (error) {
-                console.error("Error fetching post data:", error);
-            }
-        };
-
-        fetchPostData();
-    }, [postId]);
-
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -146,19 +125,19 @@ function Admin() {
                 <A.Admin>
                     <A.ALogo src={Logo} alt="찬란" onClick={handlePado} />
                     <A.Box>
-                        <A.BackIcon
-                            style={{ cursor: "pointer" }}
-                            onClick={handleBackClick}
-                            src={Back}
-                            alt="back"
-                        />
                         <form onSubmit={handleSubmit}>
-                            <A.FormTitle>공지사항 관리자 페이지</A.FormTitle>
-
+                            <A.BackIcon
+                                onClick={handleBackClick}
+                                src={Back}
+                                alt="back"
+                            />
+                            <A.BoxWrap>
+                                <A.BoxTitle>공지사항 관리자 페이지</A.BoxTitle>
+                            </A.BoxWrap>
                             <A.FormBox>
                                 <A.Square>
                                     {/* 분류 */}
-                                    <A.LabelBox style={{ marginBottom: "3px" }}>
+                                    <A.LabelBox>
                                         <A.LabelTag>분류</A.LabelTag>
                                         <A.BlankDiv>
                                             <A.Selection
@@ -219,9 +198,9 @@ function Admin() {
                                     </A.LabelBox>
 
                                     {/* 이미지 첨부 */}
-                                    <A.LabelBox>
+                                    <A.LabelBox style={{ width: "250px" }}>
                                         <A.LabelTag>첨부</A.LabelTag>
-                                        <br />
+
                                         <div>
                                             <input
                                                 id="fileInput"
@@ -230,24 +209,30 @@ function Admin() {
                                                 onChange={(event) =>
                                                     handleFileChange(event)
                                                 }
+                                                style={{
+                                                    marginTop: "10px",
+                                                }}
                                             />
                                             {/* 이미지 미리보기 */}
                                         </div>
+                                    </A.LabelBox>
+                                    <br />
+                                    <A.PhotoWrap>
                                         {formData.images.map((image, index) => (
                                             <img
                                                 key={index}
                                                 src={image.imageUrl}
                                                 alt={`preview-${index}`}
                                                 style={{
-                                                    width: "80px",
-                                                    height: "80px",
+                                                    width: "65px",
+                                                    height: "65px",
                                                     margin: "2px",
                                                     objectFit: "cover",
                                                 }}
                                             />
                                         ))}
-                                    </A.LabelBox>
-
+                                    </A.PhotoWrap>
+                                    <br />
                                     {/* 완료 버튼 */}
                                     <A.ButtonDiv>
                                         <A.SubmitButton type="submit">
