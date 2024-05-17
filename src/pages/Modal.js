@@ -1,10 +1,10 @@
 import React from "react";
 import * as M from "../styles/ModalStyle";
 
-function Modal({ onClose, imageUrl, imageCount, currentIndex }) {
+function Modal({ onClose, imageUrl, imageCount, currentIndex,noticeHeight }) {
   return (
     <>
-      <M.Modal>
+      <M.Modal noticeHeight={noticeHeight}>
         <M.text>
           {currentIndex} / {imageCount}
         </M.text>

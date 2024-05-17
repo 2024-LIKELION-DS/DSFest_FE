@@ -22,6 +22,7 @@ function Notice() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // 현재 이미지 인덱스 상태
+  const [noticeHeight, setNoticeHeight] = useState(0);
   const { id } = useParams();
 
   useEffect(() => {
@@ -38,8 +39,15 @@ function Notice() {
   }, [id]);
 
   useEffect(() => {
+    // notice 페이지 높이 계산
+    if (containerRef.current) {
+      setNoticeHeight(containerRef.current.offsetHeight);
+    }
+  }, [notice]);
+
+  useEffect(() => {
     // 모달 상태가 변경될 때 푸터의 스타일을 조절합니다.
-    const footer = document.querySelector("footer");
+    const footer = document.querySelector("Footer");
     if (footer) {
       footer.style.display = isModalOpen ? "none" : "block";
     }
@@ -79,7 +87,7 @@ function Notice() {
           </C.Title>
           <N.Background>
             <C.Phone>
-              <N.Notice>
+              <N.Notice >
                 <NoticeHeader fromPage={fromPage} />
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <N.wrap>
@@ -88,7 +96,7 @@ function Notice() {
                       <N.img_boat src={boatImg} alt="Boat" />
                     </N.ImgSpace>
                   </N.img_wrap>
-                  <N.content_wrap>
+                  <N.content_wrap isModalOpen={isModalOpen}>
                     {notice.map((item) => (
                       <N.box_wrap key={item.id}>
                         <N.List>{item.category.name}</N.List>
@@ -138,6 +146,7 @@ function Notice() {
                     imageUrl={currentImage}
                     imageCount={notice[0]?.imageNum}
                     currentIndex={currentImageIndex + 1}
+                    noticeHeight={noticeHeight}
                   />
                 )}
               </N.Notice>
@@ -146,14 +155,7 @@ function Notice() {
           </N.Background>
         </C.Area>
       </C.Page>
-      {isModalOpen && (
-        <Modal
-          onClose={closeModal}
-          imageUrl={currentImage}
-          imageCount={notice[0]?.imageNum}
-          currentIndex={currentImageIndex + 1}
-        />
-      )}
+      
     </>
   );
 }

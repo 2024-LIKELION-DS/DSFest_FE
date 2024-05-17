@@ -12,6 +12,7 @@ export const Background = styled.div`
 export const Notice = styled.div`
   width: 100vw;
   min-height: calc(100vh - 183px);
+  
 
   @media (hover: hover) and (pointer: fine) {
     width: 100%;
@@ -48,6 +49,7 @@ export const content_wrap = styled.div`
   margin-right: -4.9rem;
   margin-left: -5.5rem;
   margin-top: -0.1rem;
+  display: ${({ isModalOpen }) => (isModalOpen ? "none" : "")}; 
 `;
 
 export const box_wrap = styled.div`
