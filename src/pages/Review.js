@@ -118,7 +118,7 @@ function Review() {
                                             onChange={onChange}
                                             value={content}
                                             type="text"
-                                            placeholder="2024 근화제 <찬란> 재밌게 즐기셨나요?&#13;&#10;후기를 남겨주세요!"
+                                            placeholder="2024 근화제 <찬란> 재밌게 즐기셨나요?&#13;&#10;후기를 남겨주세요! (250자 이내)"
                                         ></R.WriteText>
                                         <R.WriteButton
                                             $hasText={content}
