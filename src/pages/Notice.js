@@ -54,15 +54,17 @@ function Notice() {
 
   const handleNext = () => {
     if (notice.length > 0 && notice[0].images) {
-      setCurrentImageIndex((prev) => (prev + 1) % notice[0].images.length);
-      setCurrentImage(notice[0].images[(currentImageIndex + 1) % notice[0].images.length].imageUrl);
+      const newIndex = (currentImageIndex + 1) % notice[0].images.length;
+      setCurrentImageIndex(newIndex);
+      setCurrentImage(notice[0].images[newIndex].imageUrl);
     }
   };
 
   const handlePrevious = () => {
     if (notice.length > 0 && notice[0].images) {
-      setCurrentImageIndex((prev) => (prev - 1 + notice[0].images.length) % notice[0].images.length);
-      setCurrentImage(notice[0].images[(currentImageIndex - 1 + notice[0].images.length) % notice[0].images.length].imageUrl);
+      const newIndex = (currentImageIndex - 1 + notice[0].images.length) % notice[0].images.length;
+      setCurrentImageIndex(newIndex);
+      setCurrentImage(notice[0].images[newIndex].imageUrl);
     }
   };
 
@@ -88,7 +90,7 @@ function Notice() {
           </C.Title>
           <N.Background>
             <C.Phone>
-              <N.Notice >
+              <N.Notice>
                 <NoticeHeader fromPage={fromPage} />
                 <C.PageTitle>NOTICE</C.PageTitle>
                 <N.wrap>
