@@ -11,8 +11,8 @@ import Footer from "../components/Footer";
 
 import boatImg from "../img/boat_37x44.png";
 
-import leftArrowImg from "../img/leftArrowImg.png";
-import rightArrowImg from "../img/rightArrowImg.png";
+import leftArrowImg from "../img/arrow_L.png";
+import rightArrowImg from "../img/arrow_R.png";
 
 function Notice() {
   const location = useLocation();
