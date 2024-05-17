@@ -97,27 +97,6 @@ function Admin() {
         }
     }
 
-    useEffect(() => {
-        // 예를 들어, postId를 사용하여 해당 포스트 정보를 가져오고
-        // 해당 포스트에 대한 정보를 formData로 설정할 수 있습니다.
-        const fetchPostData = async () => {
-            try {
-                const response = await axios.get(`${API_KEY}/posts/${postId}`);
-                const postData = response.data;
-                setFormData({
-                    categoryName: postData.categoryName,
-                    title: postData.title,
-                    content: postData.content,
-                    images: postData.images,
-                });
-            } catch (error) {
-                console.error("Error fetching post data:", error);
-            }
-        };
-
-        fetchPostData();
-    }, [postId]);
-
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -146,108 +125,126 @@ function Admin() {
                 <A.Admin>
                     <A.ALogo src={Logo} alt="찬란" onClick={handlePado} />
                     <A.Box>
-                        <A.BackIcon
-                            style={{ cursor: "pointer" }}
-                            onClick={handleBackClick}
-                            src={Back}
-                            alt="back"
-                        />
                         <form onSubmit={handleSubmit}>
-                            <A.FormTitle>공지사항 관리자 페이지</A.FormTitle>
-
+                            <A.BackIcon
+                                onClick={handleBackClick}
+                                src={Back}
+                                alt="back"
+                            />
+                            <A.BoxWrap>
+                                <A.BoxTitle>공지사항 관리자 페이지</A.BoxTitle>
+                            </A.BoxWrap>
                             <A.FormBox>
                                 <A.Square>
                                     {/* 분류 */}
-                                    <A.LabelBox style={{ marginBottom: "3px" }}>
-                                        <A.LabelTag>분류</A.LabelTag>
-                                        <A.BlankDiv>
-                                            <A.Selection
-                                                name="categoryName"
-                                                value={formData.categoryName}
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                        }}
+                                    >
+                                        <A.LabelBox>
+                                            <A.LabelTag>분류</A.LabelTag>
+                                            <A.BlankDiv>
+                                                <A.Selection
+                                                    name="categoryName"
+                                                    value={
+                                                        formData.categoryName
+                                                    }
+                                                    onChange={handleInputChange}
+                                                >
+                                                    <A.Opt
+                                                        value=""
+                                                        disabled
+                                                        selected
+                                                        hidden
+                                                    >
+                                                        선택
+                                                    </A.Opt>
+                                                    <A.Opt
+                                                        value="notice"
+                                                        name="notice"
+                                                    >
+                                                        Notice
+                                                    </A.Opt>
+                                                    <A.Opt
+                                                        value="program"
+                                                        name="program"
+                                                    >
+                                                        Program
+                                                    </A.Opt>
+                                                    <A.Opt
+                                                        value="event"
+                                                        name="event"
+                                                    >
+                                                        Event
+                                                    </A.Opt>
+                                                </A.Selection>
+                                            </A.BlankDiv>
+                                        </A.LabelBox>
+
+                                        {/* 제목 */}
+                                        <A.LabelBox>
+                                            <A.LabelTag>제목</A.LabelTag>
+                                            <A.InputTitle
+                                                name="title"
+                                                value={formData.title}
                                                 onChange={handleInputChange}
-                                            >
-                                                <A.Opt
-                                                    value=""
-                                                    disabled
-                                                    selected
-                                                    hidden
-                                                >
-                                                    선택
-                                                </A.Opt>
-                                                <A.Opt
-                                                    value="notice"
-                                                    name="notice"
-                                                >
-                                                    Notice
-                                                </A.Opt>
-                                                <A.Opt
-                                                    value="program"
-                                                    name="program"
-                                                >
-                                                    Program
-                                                </A.Opt>
-                                                <A.Opt
-                                                    value="event"
-                                                    name="event"
-                                                >
-                                                    Event
-                                                </A.Opt>
-                                            </A.Selection>
-                                        </A.BlankDiv>
-                                    </A.LabelBox>
+                                                placeholder="제목을 입력하세요"
+                                            ></A.InputTitle>
+                                        </A.LabelBox>
 
-                                    {/* 제목 */}
-                                    <A.LabelBox>
-                                        <A.LabelTag>제목</A.LabelTag>
-                                        <A.InputTitle
-                                            name="title"
-                                            value={formData.title}
-                                            onChange={handleInputChange}
-                                            placeholder="제목을 입력하세요"
-                                        ></A.InputTitle>
-                                    </A.LabelBox>
+                                        {/* 내용 */}
+                                        <A.LabelBox>
+                                            <A.LabelTag>내용</A.LabelTag>
+                                            <A.InputDetail
+                                                name="content"
+                                                value={formData.content}
+                                                onChange={handleInputChange}
+                                                placeholder="내용을 입력하세요"
+                                            ></A.InputDetail>
+                                        </A.LabelBox>
 
-                                    {/* 내용 */}
-                                    <A.LabelBox>
-                                        <A.LabelTag>내용</A.LabelTag>
-                                        <A.InputDetail
-                                            name="content"
-                                            value={formData.content}
-                                            onChange={handleInputChange}
-                                            placeholder="내용을 입력하세요"
-                                        ></A.InputDetail>
-                                    </A.LabelBox>
+                                        {/* 이미지 첨부 */}
+                                        <A.LabelBox>
+                                            <A.LabelTag>첨부</A.LabelTag>
 
-                                    {/* 이미지 첨부 */}
-                                    <A.LabelBox>
-                                        <A.LabelTag>첨부</A.LabelTag>
-                                        <br />
-                                        <div>
-                                            <input
-                                                id="fileInput"
-                                                type="file"
-                                                multiple
-                                                onChange={(event) =>
-                                                    handleFileChange(event)
-                                                }
-                                            />
-                                            {/* 이미지 미리보기 */}
-                                        </div>
+                                            <div>
+                                                <input
+                                                    style={{
+                                                        marginTop: "10px",
+                                                    }}
+                                                    id="fileInput"
+                                                    type="file"
+                                                    multiple
+                                                    onChange={(event) =>
+                                                        handleFileChange(event)
+                                                    }
+                                                />
+                                                {/* 이미지 미리보기 */}
+                                            </div>
+                                        </A.LabelBox>
+                                    </div>
+                                    <br />
+                                    <A.PhotoWrap>
                                         {formData.images.map((image, index) => (
                                             <img
                                                 key={index}
                                                 src={image.imageUrl}
                                                 alt={`preview-${index}`}
                                                 style={{
-                                                    width: "80px",
-                                                    height: "80px",
+                                                    width: "65px",
+                                                    height: "65px",
                                                     margin: "2px",
                                                     objectFit: "cover",
                                                 }}
                                             />
                                         ))}
-                                    </A.LabelBox>
+                                    </A.PhotoWrap>
 
+                                    <br />
                                     {/* 완료 버튼 */}
                                     <A.ButtonDiv>
                                         <A.SubmitButton type="submit">
