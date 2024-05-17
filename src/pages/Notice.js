@@ -93,7 +93,14 @@ function Notice() {
                       <N.box_wrap key={item.id}>
                         <N.List>{item.category.name}</N.List>
                         <N.Title>{item.title}</N.Title>
-                        <N.Context>{item.content}</N.Context>
+                        <N.Context>
+                          {item.content.split("\n").map((line, index) => (
+                            <React.Fragment key={index}>
+                              {line}
+                              <br />
+                            </React.Fragment>
+                          ))}
+                        </N.Context>
                       </N.box_wrap>
                     ))}
                   </N.content_wrap>

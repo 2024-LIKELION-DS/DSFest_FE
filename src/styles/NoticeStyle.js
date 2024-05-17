@@ -46,7 +46,7 @@ export const content_wrap = styled.div`
   padding-left: 0.7rem;
   padding-bottom: 1.4rem;
   margin-right: -4.9rem;
-  margin-left:-5.5rem;
+  margin-left: -5.5rem;
   margin-top: -0.1rem;
 `;
 
