@@ -124,7 +124,7 @@ export const PhotoWrap = styled.div`
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
-    width: 680px;
+    width: 80%;
 `;
 export const Selection = styled.select`
     color: #448bdb;
