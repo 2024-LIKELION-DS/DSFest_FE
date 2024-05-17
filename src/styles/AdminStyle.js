@@ -92,7 +92,7 @@ export const BoxTitle = styled.p`
 export const LabelBox = styled.div`
     display: flex;
     flex-direction: row; /* Change from row to column */
-
+    width: 100%;
     margin-bottom: 10px;
     font-family: Prompt;
     @media all and (min-width: 1024px) {
@@ -124,7 +124,7 @@ export const PhotoWrap = styled.div`
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
-    width: 80%;
+    width: 100%;
 `;
 export const Selection = styled.select`
     color: #448bdb;
