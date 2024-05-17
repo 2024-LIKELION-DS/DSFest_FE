@@ -34,6 +34,10 @@ export const ModalImg = styled.img`
   object-fit: contain;
   display: block;
   margin-bottom: 183px;
+
+  @media (hover: hover) and (pointer: fine) {
+    margin-bottom: 0;
+  }
 `;
 
 export const text = styled.div`
