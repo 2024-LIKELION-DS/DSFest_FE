@@ -20,7 +20,12 @@ function Admin() {
         navigate("/pado/admin");
     };
     // 초기 상태값을 빈 문자열로 설정
-    const [formData, setFormData] = useState([]);
+    const [formData, setFormData] = useState({
+        categoryName: "",
+        title: "",
+        content: "",
+        images: [],
+    });
 
     const handleFileChange = (event) => {
         const images = event.target.files; // 이미지 파일 가져오기
@@ -48,7 +53,17 @@ function Admin() {
         event.preventDefault();
         if (!formData.categoryName) {
             alert("카테고리를 선택해주세요.");
-            return; // 카테고리가 선택되지 않았을 경우 제출 중지
+            return;
+        }
+
+        if (!formData.title.trim()) {
+            alert("제목을 입력해주세요.");
+            return;
+        }
+
+        if (!formData.content.trim()) {
+            alert("내용을 입력해주세요.");
+            return;
         }
 
         try {
