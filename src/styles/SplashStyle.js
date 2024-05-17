@@ -32,6 +32,7 @@ export const Splash = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     @media (hover: hover) and (pointer: fine) {
         width: 100%;
@@ -339,6 +340,23 @@ export const LogoBox = styled.div`
     }
 `;
 
+const moveLogo = () => keyframes`
+    0% {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+`;
+
 export const Title = styled.img`
     width: 196px;
     height: 16px;
@@ -349,6 +367,7 @@ export const Logo = styled.img`
     width: 202px;
     height: 200px;
     margin-bottom: 40px;
+    animation: ${moveLogo} 3s ease-in-out forwards;
 `;
 
 export const Date = styled.img`
