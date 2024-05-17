@@ -88,6 +88,10 @@ export const BoxTitle = styled.p`
     font-weight: bold;
     font-size: 20px;
     text-align: center;
+    margin-top: 45px;
+    @media (hover: hover) and (pointer: fine) {
+        font-size: 2.65vw;
+    }
 `;
 export const LabelBox = styled.div`
     display: flex;
