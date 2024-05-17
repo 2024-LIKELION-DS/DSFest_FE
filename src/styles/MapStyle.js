@@ -20,7 +20,7 @@ export const Map = styled.div`
 `;
 
 export const Mapimg = styled.img`
-    width: 200px;
+    width: auto;
     height: 300px;
 `;
 

@@ -70,7 +70,7 @@ export const BoxTitle = styled.div`
     text-align: center;
     margin-top: 45px;
     @media (hover: hover) and (pointer: fine) {
-        font-size: 2.65vw;
+        font-size: 1.77vw;
     }
 `;
 
@@ -81,19 +81,19 @@ export const TopBoxLine = styled.div`
     margin-top: 30px;
     display: flex;
     @media (hover: hover) and (pointer: fine) {
-        width: calc(100vw - 100px - 100px);
-        margin-top: 70px;
+        width: 61.15vw;
+        margin-top: 4.8vw;
     }
 `;
 
 export const BoxLine = styled.div`
     background-color: #cccccc;
-    width: 100%;
+    width: 300px;
     height: 1px;
     margin-top: 10px;
     display: flex;
     @media (hover: hover) and (pointer: fine) {
-        width: calc(100vw - 100px - 100px);
+        width: 61.15vw;
     }
 `;
 
@@ -115,9 +115,9 @@ export const BoxButton = styled.button`
     margin-bottom: 13px;
 
     @media (hover: hover) and (pointer: fine) {
-        width: 12vw;
-        height: 7vh;
-        font-size: 1.5vw;
+        width: 10.3vw;
+        height: 3.7vw;
+        font-size: 1.4vw;
     }
 `;
 
@@ -126,11 +126,13 @@ export const BoxList = styled.div`
     width: 300.24px;
     align-items: center;
     @media (hover: hover) and (pointer: fine) {
-        width: calc(100vw - 100px - 100px);
+        width: 61.15vw;
     }
 `;
 
 export const List = styled.ul`
+    display: flex;
+    flex-direction: column;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -140,6 +142,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
     display: flex;
     justify-content: space-between;
+
     flex-wrap: wrap;
     margin-top: 10px;
 `;
@@ -154,8 +157,8 @@ export const ListCategory = styled.div`
     display: flex;
     align-items: center;
     @media (hover: hover) and (pointer: fine) {
-        font-size: 1.5vw;
-        width: 7vw;
+        font-size: 1.4vw;
+        width: 8vw;
     }
 `;
 
@@ -175,10 +178,10 @@ export const ListTitle = styled.div`
     }
 
     @media (hover: hover) and (pointer: fine) {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
 
         p {
-            width: 40vw;
+            width: 34vw;
         }
     }
 `;
@@ -189,7 +192,7 @@ export const ButtonWrap = styled.div`
     align-items: center;
     width: 91.24px;
     @media (hover: hover) and (pointer: fine) {
-        width: 12vw;
+        width: 16.8vw;
     }
 `;
 
@@ -211,8 +214,8 @@ export const ListButton = styled.button`
     padding: 0;
 
     @media (hover: hover) and (pointer: fine) {
-        font-size: 1.5vw;
-        width: 5.5vw;
-        height: 5vh;
+        font-size: 1.4vw;
+        width: 7.3vw;
+        height: 2.55vw;
     }
 `;
