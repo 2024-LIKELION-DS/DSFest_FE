@@ -70,7 +70,7 @@ export const BoxTitle = styled.div`
     text-align: center;
     margin-top: 45px;
     @media (hover: hover) and (pointer: fine) {
-        font-size: 1.77vw;
+        font-size: 1.55vw;
     }
 `;
 
