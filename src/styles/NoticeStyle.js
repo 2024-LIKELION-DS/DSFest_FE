@@ -81,12 +81,14 @@ export const Title = styled.div`
 `;
 
 export const Context = styled.div`
-  font-size: 15px;
-  font-family: "AppleSDGothicNeo";
-  font-weight: 500;
-  color: white;
-  opacity: 0.8;
-  text-align: left;
+  pre {
+    font-size: 15px;
+    font-family: "AppleSDGothicNeo";
+    font-weight: 500;
+    color: white;
+    opacity: 0.8;
+    text-align: left;
+  }
 `;
 
 //이미지

@@ -30,6 +30,7 @@ function Notice() {
         const url = `${process.env.REACT_APP_API}/user/read/${id}`;
         const response = await axios.get(url);
         setNotice(response.data.data || []);
+        console.log(notice);
       } catch (error) {
         console.error("공지사항 데이터를 불러오는 중 오류가 발생했습니다:", error);
       }
@@ -85,7 +86,9 @@ function Notice() {
                       <N.box_wrap key={item.id}>
                         <N.List>{item.category.name}</N.List>
                         <N.Title>{item.title}</N.Title>
-                        <N.Context>{item.content}</N.Context>
+                        <N.Context>
+                          <pre>{item.content}</pre>
+                        </N.Context>
                       </N.box_wrap>
                     ))}
                   </N.content_wrap>
