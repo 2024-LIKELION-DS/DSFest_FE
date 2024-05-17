@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Background = styled.div`
   background: black;
 
+  
+
   @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
     border-radius: 12px;
   }
@@ -13,15 +15,11 @@ export const Modal = styled.div`
   top:0px;
   display:flex;
   justify-content:center;
-  width: 50vw;
-  height: 50vh;
+  width: 100%;
+  height: 100%;
+  
 
-  @media (hover: hover) and (pointer: fine) {
-    position: relative;
-    top:0px;
-    width: 100%;
-    height: 100%;
-  }
+ 
 `;
 
 export const CloseButton = styled.button`
@@ -44,6 +42,3 @@ font-size: 24px;
 cursor: pointer;
 color: white;
 `;
-
-
-

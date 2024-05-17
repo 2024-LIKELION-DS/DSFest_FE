@@ -89,6 +89,14 @@ function Notice() {
                       </N.box_wrap>
                     ))}
                   </N.content_wrap>
+                  {window.innerWidth <800 && isModalOpen && (
+  <Modal
+    onClose={closeModal}
+    imageUrl={currentImage}
+    imageCount={notice[0]?.imageNum}
+    currentIndex={currentImageIndex + 1}
+  />
+)}
                 </N.wrap>
 
                 {notice.length > 0 && notice[0].images && notice[0].images.length > 0 && (
@@ -123,14 +131,14 @@ function Notice() {
           </N.Background>
         </C.Area>
       </C.Page>
-      {isModalOpen && (
-        <Modal
-          onClose={closeModal}
-          imageUrl={currentImage}
-          imageCount={notice[0]?.imageNum}
-          currentIndex={currentImageIndex + 1}
-        />
-      )}
+      {window.innerWidth >=801 && isModalOpen && (
+  <Modal
+    onClose={closeModal}
+    imageUrl={currentImage}
+    imageCount={notice[0]?.imageNum}
+    currentIndex={currentImageIndex + 1}
+  />
+)}
     </>
   );
 }
