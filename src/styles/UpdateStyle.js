@@ -178,7 +178,7 @@ export const Content = styled.textarea`
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
     width: 100%;
-    min-height: 100px;
+    min-height: 200px;
     box-sizing: border-box;
     resize: none;
     font-family: "Prompt";
@@ -219,6 +219,7 @@ export const Button = styled.button`
     color: white;
     display: inline-block;
     font-weight: bold;
+    margin-top: 30px;
     @media (hover: hover) and (pointer: fine) {
         width: 10.3vw;
         height: 3.7vw;
