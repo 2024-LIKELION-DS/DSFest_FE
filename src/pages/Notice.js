@@ -37,6 +37,14 @@ function Notice() {
     fetchNotice();
   }, [id]);
 
+  useEffect(() => {
+    // 모달 상태가 변경될 때 푸터의 스타일을 조절합니다.
+    const footer = document.querySelector("footer");
+    if (footer) {
+      footer.style.display = isModalOpen ? "none" : "block";
+    }
+  }, [isModalOpen]);
+
   const handleNext = () => {
     if (notice.length > 0 && notice[0].images) {
       setCurrentImageIndex((prev) => (prev + 1) % notice[0].images.length);
@@ -131,6 +139,14 @@ function Notice() {
           </N.Background>
         </C.Area>
       </C.Page>
+      {isModalOpen && (
+        <Modal
+          onClose={closeModal}
+          imageUrl={currentImage}
+          imageCount={notice[0]?.imageNum}
+          currentIndex={currentImageIndex + 1}
+        />
+      )}
     </>
   );
 }

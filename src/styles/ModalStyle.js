@@ -22,7 +22,7 @@ export const CloseButton = styled.button`
   right: 1rem; // 왼쪽에서 오른쪽으로 변경
   background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 1.4rem;
   cursor: pointer;
   color: white;
 `;
@@ -45,7 +45,7 @@ export const text = styled.div`
   top: 3rem; // 모달의 상단 오른쪽에 위치
   background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 1.4rem;
   cursor: pointer;
   color: white;
 `;

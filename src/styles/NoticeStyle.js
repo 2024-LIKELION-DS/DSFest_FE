@@ -45,7 +45,8 @@ export const content_wrap = styled.div`
   padding-right: 0.1rem;
   padding-left: 0.7rem;
   padding-bottom: 1.4rem;
-  margin-right: 0.5rem;
+  margin-right: -5rem;
+  margin-left:-5.5rem;
   margin-top: -0.1rem;
 `;
 
@@ -56,7 +57,7 @@ export const box_wrap = styled.div`
   align-items: start; /* 아이템들을 시작점에서 정렬 */
   border: 4px solid white; /* 테두리 설정 */
   border-radius: 12px; /* 테두리 둥근 설정 */
-  width: 328px; /* 부모 요소의 너비를 따름 */
+  width: 337px; /* 부모 요소의 너비를 따름 */
 
   padding: 1rem; /* 패딩 설정 */
   box-sizing: border-box; /* border 및 padding을 width 및 height 계산에 포함 */
