@@ -117,20 +117,20 @@ function Notice() {
                     )}
                   </N.img_wrap2>
                 )}
+                {isModalOpen && (
+                  <Modal
+                    onClose={closeModal}
+                    imageUrl={currentImage}
+                    imageCount={notice[0]?.imageNum}
+                    currentIndex={currentImageIndex + 1}
+                  />
+                )}
               </N.Notice>
               <Footer />
             </C.Phone>
           </N.Background>
         </C.Area>
       </C.Page>
-      {isModalOpen && (
-        <Modal
-          onClose={closeModal}
-          imageUrl={currentImage}
-          imageCount={notice[0]?.imageNum}
-          currentIndex={currentImageIndex + 1}
-        />
-      )}
     </>
   );
 }

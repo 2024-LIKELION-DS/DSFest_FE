@@ -114,7 +114,7 @@ export const button = styled.div`
   display: flex;
   position: absolute; // 가장 가까운 포지셔닝된 조상에 대해 상대적으로 위치
   bottom: 0.7rem; // 컨테이너의 하단에 정렬
-  width: 100%; // 너비를 이미지의 전체 너비로 설정
+  width: 360px; // 너비를 이미지의 전체 너비로 설정
   justify-content: space-between; // 요소들을 양 끝에 배치
   padding: 0 10px; // 좌우 패딩으로 화살표 여백 조절
 `;
@@ -136,36 +136,3 @@ export const rightArrowImg = styled.img`
   height: 2rem;
   visibility: ${({ show }) => (show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
 `;
-
-// 이미지 감싸는 컨테이너
-
-// export const button = styled.div`
-// display:float;
-// position: absolute; // 절대 위치
-//   bottom: 0; // 하단에 위치
-//   left: 50%; // 왼쪽에서 50% 위치에
-//   transform: translateX(-50%); // 중앙 정렬을 위해 X축 기준 50% 이동
-//   color: white; // 텍스트 색상
-//   font-size: 16px; // 폰트 크기
-
-// `;
-
-// const GalleryWrapper = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   width: 100%;
-// `;
-
-// const Image = styled.img`
-//   width: 328px;
-//   height: 328px;
-// `;
-
-// export const img_arrow = styled.img`
-//   cursor: pointer;
-//   width: 50px; // 화살표 이미지의 크기를 지정
-//   height: 50px; // 화살표 이미지의 높이를 지정
-//   display: ${({ show }) => (show ? 'block' : 'none')};
-//   z-index: 1000;
-// `;
