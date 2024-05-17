@@ -386,35 +386,33 @@ function TimeTable() {
                                 )}
                                 {/*여기 부분 작업!*/}
                                 <br />
-                                <div style={{ position: "relative" }}>
-                                    <img
-                                        src={cloud_102x74}
-                                        alt="cloudL"
-                                        style={{
-                                            width: "102px",
-                                            height: "74px",
-                                            float: "left",
-                                            position: "absolute",
-                                            left: "-20px",
-                                            top: "-230px",
-                                        }}
-                                    />
-                                    <br />
-                                    <img
-                                        src={cloud_143x144}
-                                        alt="cloudR"
-                                        style={{
-                                            width: "143px",
-                                            height: "144px",
-                                            float: "right",
-                                            position: "absolute",
-                                            right: "0",
-                                            top: "-260px",
-                                        }}
-                                    />
-                                </div>
+                                <Footer />
                             </T.TimeTable>
-                            <Footer />
+                            <div style={{ position: "relative" }}>
+                                <img
+                                    src={cloud_102x74}
+                                    alt="cloudL"
+                                    style={{
+                                        width: "102px",
+                                        height: "74px",
+                                        position: "absolute",
+                                        left: "-20px",
+                                        top: "-230px",
+                                    }}
+                                />
+                                <br />
+                                <img
+                                    src={cloud_143x144}
+                                    alt="cloudR"
+                                    style={{
+                                        width: "143px",
+                                        height: "144px",
+                                        position: "absolute",
+                                        right: "0",
+                                        top: "-260px",
+                                    }}
+                                />
+                            </div>
                         </C.Phone>
                     </T.Background>
                 </C.Area>
