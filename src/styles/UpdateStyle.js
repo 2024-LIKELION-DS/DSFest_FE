@@ -100,6 +100,9 @@ export const FormTag = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
+    @media (hover: hover) and (pointer: fine) {
+        font-size: 1.4vw;
+    }
 `;
 
 export const FromCategory = styled.div`
@@ -123,6 +126,12 @@ export const Category = styled.select`
     &:focus {
         outline: 1.5px solid #448bdb;
     }
+    @media (hover: hover) and (pointer: fine) {
+        font-size: 0.9vw;
+        width: 9.3vw;
+        height: 2.55vw;
+        padding: 0vw 0.7vw;
+    }
 `;
 
 export const Option = styled.option`
@@ -137,23 +146,8 @@ export const FromContainer = styled.div`
     display: flex;
     flex-direction: row;
 
-    @media all and (min-width: 1024px) {
-        width: 720px;
-    }
-
-    @media all and (min-width: 768px) and (max-width: 1023px) {
-        width: 600px;
-    }
-
-    @media all and (min-width: 620px) and (max-width: 768px) {
-        width: 500px;
-    }
-    @media all and (max-width: 620px) {
-        width: 300px;
-    }
-
-    @media all and (max-width: 480px) {
-        width: 235px;
+    @media (hover: hover) and (pointer: fine) {
+        width: 72vw;
     }
 `;
 
@@ -172,24 +166,9 @@ export const Title = styled.input`
         outline: 1.5px solid #448bdb;
     }
 
-    @media (min-width: 1023px) {
-        max-width: 720px;
-    }
-
-    @media (min-width: 768px) and (max-width: 1023px) {
-        max-width: 600px;
-    }
-
-    @media (min-width: 620px) and (max-width: 768px) {
-        max-width: 500px;
-    }
-
-    @media all and (max-width: 620px) {
-        max-width: 300px;
-    }
-
-    @media all and (max-width: 480px) {
-        max-width: 235px;
+    @media (hover: hover) and (pointer: fine) {
+        width: 70vw;
+        font-size: 1vw;
     }
 `;
 
@@ -208,25 +187,8 @@ export const Content = styled.textarea`
         outline: 1.5px solid #448bdb;
     }
     @media (hover: hover) and (pointer: fine) {
-        @media (min-width: 1023px) {
-            max-width: 720px;
-        }
-
-        @media (min-width: 768px) and (max-width: 1023px) {
-            max-width: 600px;
-        }
-
-        @media (min-width: 620px) and (max-width: 768px) {
-            max-width: 500px;
-        }
-
-        @media all and (max-width: 620px) {
-            max-width: 300px;
-        }
-
-        @media all and (max-width: 480px) {
-            max-width: 235px;
-        }
+        width: 70vw;
+        font-size: 1vw;
     }
 `;
 
@@ -235,25 +197,6 @@ export const FormImg = styled.div`
     padding: 10px;
     padding-left: 2px;
     width: 200px;
-
-    @media all and (min-width: 1024px) {
-        width: 720px;
-    }
-
-    @media all and (min-width: 768px) and (max-width: 1023px) {
-        width: 600px;
-    }
-
-    @media all and (min-width: 620px) and (max-width: 768px) {
-        width: 500px;
-    }
-    @media all and (max-width: 620px) {
-        width: 300px;
-    }
-
-    @media all and (max-width: 480px) {
-        width: 190px;
-    }
 `;
 
 export const FormButton = styled.div`
@@ -276,4 +219,9 @@ export const Button = styled.button`
     color: white;
     display: inline-block;
     font-weight: bold;
+    @media (hover: hover) and (pointer: fine) {
+        width: 10.3vw;
+        height: 3.7vw;
+        font-size: 1.4vw;
+    }
 `;
