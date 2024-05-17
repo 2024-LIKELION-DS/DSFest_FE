@@ -68,7 +68,6 @@ export const List = styled.div`
   font-weight: 400;
   color: white;
   opacity: 0.8;
-  text-align: left;
 `;
 
 export const Title = styled.div`
@@ -86,6 +85,7 @@ export const Context = styled.div`
   font-weight: 500;
   color: white;
   opacity: 0.8;
+  text-align: left;
 `;
 
 //이미지
