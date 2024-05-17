@@ -136,14 +136,13 @@ export const InlineBold = styled.b`
     font-weight: 800;
 `;
 export const InlineBoldF = styled.b`
-    display: inline-block;
     margin-left: 12px;
     margin-right: 5px;
-    margin-top: 3px;
     color: white;
     font-size: 9pt;
     font-family: "AppleSDGothicNeo";
     font-weight: 800;
+    align-self: center;
 `;
 export const Top = styled.div`
     display: block;
@@ -184,13 +183,12 @@ export const InlineTime = styled.span`
     font-weight: 500;
 `;
 export const InlineTimeF = styled.span`
-    display: block;
     color: white;
     font-size: 7pt;
     margin-left: 4px;
-    margin-top: 7px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
+    align-self: center;
 `;
 export const Movie = styled.div`
     width: 126px;
@@ -220,6 +218,7 @@ export const Celeb2Fire = styled.div`
     width: 126px;
     height: 23px;
     display: flex;
+    align-items: center;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
