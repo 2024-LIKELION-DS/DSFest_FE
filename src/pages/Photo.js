@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
+import saveAs from "file-saver";
 import * as C from "../styles/CommonStyle";
 import * as P from "../styles/PhotoStyle";
 
@@ -31,10 +32,15 @@ function Photo() {
     const captureImg = async () => {
       if (ref.current) {
         const canvas = await html2canvas(ref.current, { scale: 4 });
-        const element = document.createElement("a");
-        element.href = canvas.toDataURL("image/png");
-        element.download = "2024 근화제 찬란.png";
-        element.click();
+        // const element = document.createElement("a");
+        // element.href = canvas.toDataURL("image/png");
+        // element.download = "2024 근화제 찬란.png";
+        // element.click();
+        canvas.toBlob((blob) => {
+          if (blob !== null) {
+            saveAs(blob, "2024 근화제 찬란.png");
+          }
+        });
       }
     };
 
