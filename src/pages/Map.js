@@ -6,13 +6,13 @@ import PcTitle from "../components/PcTitle";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MapTitle from "../img/splash_1_sea_360x195.png";
-import MapImg from "../img/map_312x380.png";
+import MapImg from "../img/map_original_334x404.png";
 
-import MapImgA from "../img/boothA.png";
-import MapImgB from "../img/boothB.png";
-import MapImgC from "../img/boothC.png";
-import MapImgD from "../img/boothD.png";
-import MapImgE from "../img/boothE.png";
+import MapImgA from "../img/map_A_334x404.png";
+import MapImgB from "../img/map_B_334x404.png";
+import MapImgC from "../img/map_C_334x404.png";
+import MapImgD from "../img/map_D_334x404.png";
+import MapImgE from "../img/map_E_334x404.png";
 
 import DropDown from "../img/dropdown_40x20.png";
 import DropUp from "../img/dropup_40x20.png";
