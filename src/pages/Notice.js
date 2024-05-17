@@ -82,20 +82,28 @@ function Notice() {
 
   const renderContentWithLinks = (content) => {
     const urlPattern = /https?:\/\/[^\s]+/g;
-    const parts = content.split(urlPattern);
-    const urls = content.match(urlPattern) || [];
+    const parts = content.split("\n");
 
-    return parts.reduce((acc, part, index) => {
-      acc.push(<span key={`part-${index}`}>{part}</span>);
-      if (index < urls.length) {
-        acc.push(
-          <a key={`url-${index}`} href={urls[index]} target="_blank" rel="noopener noreferrer">
-            {urls[index]}
-          </a>
-        );
-      }
-      return acc;
-    }, []);
+    return parts.map((part, index) => {
+      const urls = part.match(urlPattern) || [];
+      const subParts = part.split(urlPattern);
+
+      return (
+        <React.Fragment key={`line-${index}`}>
+          {subParts.map((subPart, subIndex) => (
+            <React.Fragment key={`subPart-${subIndex}`}>
+              <span>{subPart}</span>
+              {subIndex < urls.length && (
+                <a href={urls[subIndex]} target="_blank" rel="noopener noreferrer">
+                  {urls[subIndex]}
+                </a>
+              )}
+            </React.Fragment>
+          ))}
+          <br />
+        </React.Fragment>
+      );
+    });
   };
 
   return (
@@ -122,14 +130,7 @@ function Notice() {
                       <N.box_wrap key={item.id}>
                         <N.List>{item.category.name}</N.List>
                         <N.Title>{item.title}</N.Title>
-                        <N.Context>
-                          {renderContentWithLinks(item.content).map((line, index) => (
-                            <React.Fragment key={index}>
-                              {line}
-                              <br />
-                            </React.Fragment>
-                          ))}
-                        </N.Context>
+                        <N.Context>{renderContentWithLinks(item.content)}</N.Context>
                       </N.box_wrap>
                     ))}
                   </N.content_wrap>
