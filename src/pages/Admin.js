@@ -233,6 +233,7 @@ function Admin() {
                                         ))}
                                     </A.PhotoWrap>
                                     <br />
+                                    <br />
                                     {/* 완료 버튼 */}
                                     <A.ButtonDiv>
                                         <A.SubmitButton type="submit">

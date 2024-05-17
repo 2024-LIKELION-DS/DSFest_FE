@@ -40,7 +40,7 @@ export const ALogo = styled.img`
 export const Box = styled.div`
     margin-top: 27px;
     width: 90vw;
-    height: calc(100vh - 26px - 120px - 32px);
+    min-height: calc(100vh - 26px - 120px - 32px);
     margin-bottom: 25px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
@@ -124,6 +124,7 @@ export const PhotoWrap = styled.div`
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
+    width: 680px;
 `;
 export const Selection = styled.select`
     color: #448bdb;
