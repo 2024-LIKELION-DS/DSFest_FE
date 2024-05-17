@@ -273,7 +273,6 @@ export const Wrapper = styled.div`
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
-
     margin-top: -578px;
 `;
 
