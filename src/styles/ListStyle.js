@@ -82,7 +82,7 @@ export const TopBoxLine = styled.div`
     display: flex;
     @media (hover: hover) and (pointer: fine) {
         width: 61.15vw;
-        margin-top: 70px;
+        margin-top: 4.8vw;
     }
 `;
 
