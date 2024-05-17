@@ -5,6 +5,7 @@ import axios from "axios";
 
 import Logo from "../img/header_logo_48px.png";
 import Footer from "../components/Footer";
+import Back from "../img/back_30x30.png";
 
 const API_KEY = process.env.REACT_APP_API; // 환경변수에 저장된 API 키 불러오기
 
@@ -15,20 +16,27 @@ function Admin() {
         navigate("/");
     };
 
+    const handleBackClick = () => {
+        navigate("/pado/admin");
+    };
     // 초기 상태값을 빈 문자열로 설정
     const [formData, setFormData] = useState({
+        categoryName: "",
         title: "",
         content: "",
-        categoryName: "",
+        images: [],
     });
 
     const handleFileChange = (event) => {
         const images = event.target.files; // 이미지 파일 가져오기
         if (images && images.length > 0) {
-            // 이미지 파일을 배열로 변환하여 formData에 추가
+            const imageArrays = Array.from(images).map((image) => ({
+                imageUrl: URL.createObjectURL(image),
+                file: image, // 파일 객체 추가
+            }));
             setFormData({
                 ...formData,
-                images: Array.from(images),
+                images: imageArrays,
             });
         }
     };
@@ -43,11 +51,27 @@ function Admin() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (!formData.categoryName) {
+            alert("카테고리를 선택해주세요.");
+            return;
+        }
+
+        if (!formData.title.trim()) {
+            alert("제목을 입력해주세요.");
+            return;
+        }
+
+        if (!formData.content.trim()) {
+            alert("내용을 입력해주세요.");
+            return;
+        }
 
         try {
             const responseData = await createWriting(formData);
             console.log("Response from createWriting:", responseData);
             // TODO: 서버 응답에 대한 처리 추가
+
+            navigate("/pado/admin");
         } catch (error) {
             console.error("Error:", error);
         }
@@ -68,9 +92,20 @@ function Admin() {
             formDataToSend.append("title", formData.title);
             formDataToSend.append("content", formData.content);
 
+            // FormData에 필드들을 직접 추가
+            formDataToSend.append(
+                "noticeDTO",
+                JSON.stringify({
+                    title: formData.title,
+                    content: formData.content,
+                    categoryName: formData.categoryName,
+                })
+            );
+
+            // multipartFiles 필드 추가
             if (formData.images && formData.images.length > 0) {
                 for (const image of formData.images) {
-                    formDataToSend.append("images", image);
+                    formDataToSend.append("multipartFiles", image.file);
                 }
             }
 
@@ -97,18 +132,19 @@ function Admin() {
                 <A.Admin>
                     <A.ALogo src={Logo} alt="찬란" onClick={handlePado} />
                     <A.Box>
+                        <A.BackIcon
+                            style={{ cursor: "pointer" }}
+                            onClick={handleBackClick}
+                            src={Back}
+                            alt="back"
+                        />
                         <form onSubmit={handleSubmit}>
                             <A.FormTitle>공지사항 관리자 페이지</A.FormTitle>
+
                             <A.FormBox>
                                 <A.Square>
                                     <A.LabelBox style={{ marginBottom: "3px" }}>
-                                        <A.LabelTag
-                                            style={{
-                                                marginTop: "7px",
-                                            }}
-                                        >
-                                            분류
-                                        </A.LabelTag>
+                                        <A.LabelTag>분류</A.LabelTag>
                                         <A.BlankDiv>
                                             <A.Selection
                                                 name="categoryName"
@@ -173,7 +209,9 @@ function Admin() {
                                                 id="fileInput"
                                                 type="file"
                                                 multiple
-                                                onChange={handleFileChange}
+                                                onChange={(event) =>
+                                                    handleFileChange(event)
+                                                }
                                             />
                                         </A.BlankDiv>
                                     </A.LabelBox>

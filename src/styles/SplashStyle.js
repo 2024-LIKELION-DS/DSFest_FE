@@ -21,8 +21,8 @@ export const BackgroundImg = styled.div`
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 `;
 
 export const Splash = styled.div`
@@ -33,7 +33,7 @@ export const Splash = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
+    @media (hover: hover) and (pointer: fine) {
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -79,6 +79,10 @@ export const FdaySun2 = styled.img`
     z-index: 5;
     right: 0;
     top: 0;
+
+    @media (hover: hover) and (pointer: fine) and (max-width: 1157px) {
+        right: -11.294px;
+    }
 `;
 
 export const FdaySun3 = styled.img`
@@ -193,7 +197,7 @@ export const SdaySun = styled.img`
         animation: ${moveSun(-130)} 2s ease-out forwards;
     }
 
-    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
+    @media (hover: hover) and (pointer: fine) {
         right: 150px;
         top: 670px;
         animation: ${moveSun(-55)} 2s ease-out forwards;
@@ -272,7 +276,7 @@ export const BackStar = styled.img`
     position: absolute;
     z-index: 1;
 
-    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
+    @media (hover: hover) and (pointer: fine) {
         width: 320px;
         height: 518px;
         margin: 0px 20px;
@@ -292,7 +296,7 @@ export const Beach = styled.img`
     left: 0;
     bottom: 0;
 
-    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
+    @media (hover: hover) and (pointer: fine) {
         width: 100%;
         height: auto;
         position: relative;
@@ -320,7 +324,7 @@ export const LogoBox = styled.div`
     height: auto;
     padding: 0;
 
-    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
+    @media (hover: hover) and (pointer: fine) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -400,7 +404,7 @@ export const CloudGroup = styled.div`
     z-index: 3;
     top: 55%;
 
-    @media (hover: hover) and (pointer: fine) and (min-width: 1157px) {
+    @media (hover: hover) and (pointer: fine) {
         width: 360px;
         display: flex;
         justify-content: space-between;
