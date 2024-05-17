@@ -127,7 +127,7 @@ export const MenuTrigger = styled.a`
 `;
 
 export const DropdownContainer = styled.div`
-  z-index: 25;
+  z-index: 2500;
   position: absolute;
   text-align: center;
   justify-content: center;
@@ -170,7 +170,7 @@ export const Background = styled.div`
   background-color: none;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 2000;
   display: flex;
   justify-content: center;
   align-items: center;

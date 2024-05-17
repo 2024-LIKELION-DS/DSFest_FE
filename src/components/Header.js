@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import * as H from "../styles/HeaderStyle";
 
 import headerLogo from "../img/header_logo_48px.png";
@@ -16,6 +16,7 @@ function MenuTrigger({ onClick, isActive, isVisible }) {
 
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   const handleNavLinkClick = (path) => {
@@ -23,12 +24,16 @@ function Header() {
   };
 
   const handleMenuClick = () => {
-    setDropdownVisible(true);
+    setDropdownVisible(!isDropdownVisible);
   };
 
   const closeMenuClick = () => {
     setDropdownVisible(false);
   };
+
+  useEffect(() => {
+    setDropdownVisible(false);
+  }, [location]);
 
   return (
     <>

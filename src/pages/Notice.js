@@ -27,7 +27,7 @@ function Notice() {
   useEffect(() => {
     const fetchNotice = async () => {
       try {
-        const url = `${process.env.REACT_APP_API}/admin/read/${id}`;
+        const url = `${process.env.REACT_APP_API}/user/read/${id}`;
         const response = await axios.get(url);
         setNotice(response.data.data || []);
       } catch (error) {
@@ -89,14 +89,6 @@ function Notice() {
                       </N.box_wrap>
                     ))}
                   </N.content_wrap>
-                  {window.innerWidth <800 && isModalOpen && (
-  <Modal
-    onClose={closeModal}
-    imageUrl={currentImage}
-    imageCount={notice[0]?.imageNum}
-    currentIndex={currentImageIndex + 1}
-  />
-)}
                 </N.wrap>
 
                 {notice.length > 0 && notice[0].images && notice[0].images.length > 0 && (
@@ -125,20 +117,28 @@ function Notice() {
                     )}
                   </N.img_wrap2>
                 )}
+                {isModalOpen && (
+                  <Modal
+                    onClose={closeModal}
+                    imageUrl={currentImage}
+                    imageCount={notice[0]?.imageNum}
+                    currentIndex={currentImageIndex + 1}
+                  />
+                )}
               </N.Notice>
               <Footer />
             </C.Phone>
           </N.Background>
         </C.Area>
       </C.Page>
-      {window.innerWidth >=801 && isModalOpen && (
-  <Modal
-    onClose={closeModal}
-    imageUrl={currentImage}
-    imageCount={notice[0]?.imageNum}
-    currentIndex={currentImageIndex + 1}
-  />
-)}
+      {isModalOpen && (
+        <Modal
+          onClose={closeModal}
+          imageUrl={currentImage}
+          imageCount={notice[0]?.imageNum}
+          currentIndex={currentImageIndex + 1}
+        />
+      )}
     </>
   );
 }

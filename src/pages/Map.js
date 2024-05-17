@@ -14,6 +14,9 @@ import MapImgC from "../img/boothC.png";
 import MapImgD from "../img/boothD.png";
 import MapImgE from "../img/boothE.png";
 
+import DropDown from "../img/dropdown_40x20.png";
+import DropUp from "../img/dropup_40x20.png";
+
 import cloudLeft from "../img/3_cloud_104x75.png";
 import cloudRight from "../img/3_cloud_131x144.png";
 
@@ -33,6 +36,7 @@ function ExpandableContent({
     const [activeIndex, setActiveIndex] = useState(null); // 활성화된 버튼의 인덱스를 추적하는 상태
 
     const [btnColor, setbtnColor] = useState("#FF9900");
+
     // 버튼 색상 설정
     useEffect(() => {
         if (showLessText === "2일차") {
@@ -45,6 +49,7 @@ function ExpandableContent({
     }, [showLessText]);
 
     // 이미지 경로 배열
+    const dropimg = [DropDown, DropUp];
     const imagePaths = [MapImg, MapImgA, MapImgB, MapImgC, MapImgD, MapImgE];
     const handleButtonClick = (index) => {
         // 이미 활성화된 버튼을 다시 클릭하는 경우 첫 번째 이미지로 돌아갑니다.
@@ -122,6 +127,7 @@ function ExpandableContent({
                         color: "#FFFFFF",
                         border: "none",
                         borderRadius: "13px",
+                        width: "45px",
                     }}
                 >
                     <div
@@ -147,6 +153,23 @@ function ExpandableContent({
                     }}
                 >
                     {showMoreText}
+                </div>
+                <div
+                    style={{
+                        height: "20px",
+
+                        alignContent: "center",
+                    }}
+                >
+                    <img
+                        style={{
+                            height: "5px",
+                            display: "flex",
+                            justifyContent: "center",
+                        }}
+                        src={isExpanded ? dropimg[1] : dropimg[0]}
+                        alt="dropdown icon"
+                    />
                 </div>
             </button>
 

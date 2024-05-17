@@ -62,18 +62,22 @@ export const FormBox = styled.div`
 export const BackIcon = styled.img`
     width: 30px;
     height: 30px;
-    float: left;
+    position: absolute;
     margin-left: 15px;
-    margin-top: px;
+    padding-top: 45px;
+    cursor: pointer;
 `;
 
 export const FormTitle = styled.div`
-    font-size: 20pt;
+    font-family: "Prompt";
+    font-style: normal;
     font-weight: bold;
+    font-size: 20px;
     text-align: center;
-    margin: 10px;
-    height: 30px;
-    font-family: Prompt;
+    margin-top: 45px;
+    @media (hover: hover) and (pointer: fine) {
+        font-size: 40px;
+    }
 `;
 
 export const LabelBox = styled.div`
@@ -151,7 +155,7 @@ export const InputTitle = styled.input`
     background-color: rgba(255, 255, 255, 0);
     border-radius: 16px;
     width: calc(100% - 80px);
-    font-family: Prompt;
+    font-family: "Prompt";
 
     &:focus {
         outline: 1.5px solid #448bdb;
@@ -186,6 +190,8 @@ export const InputDetail = styled.textarea`
     width: calc(100% - 80px);
     min-height: 130px;
     font-family: Prompt;
+    resize: none;
+    font-family: "Prompt";
 
     &:focus {
         outline: 1.5px solid #448bdb;
@@ -228,11 +234,4 @@ export const SubmitButton = styled.button`
 export const ButtonDiv = styled.div`
     text-align: center;
     margin-bottom: 10px;
-
-    @media screen and (min-height: 830px) {
-        margin: 30px;
-    }
-    @media screen and (min-height: 830px) {
-        margin: 50px;
-    }
 `;

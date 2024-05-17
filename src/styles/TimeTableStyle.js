@@ -26,6 +26,7 @@ export const Young = styled.div`
     width: 126px;
     padding-left: 10px;
     margin-top: 0;
+    height: 600px;
 `;
 
 export const DayBox = styled.div`
@@ -136,24 +137,24 @@ export const InlineBold = styled.b`
     font-weight: 800;
 `;
 export const InlineBoldF = styled.b`
-    display: inline-block;
     margin-left: 12px;
     margin-right: 5px;
-    margin-top: 1.5px;
     color: white;
     font-size: 9pt;
     font-family: "AppleSDGothicNeo";
     font-weight: 800;
+    align-self: center;
 `;
 export const Top = styled.div`
     display: block;
     color: white;
     font-size: 10pt;
     height: 10px;
-
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
-    margin-left: 10px;
+    margin-left: 25px;
+    width: 120px;
+    margin-top: 12px;
 `;
 export const Top2 = styled.div`
     display: block;
@@ -162,9 +163,10 @@ export const Top2 = styled.div`
     height: 10px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
-    margin-right: 70px;
+    margin-left: 40px;
+    width: 120px;
+    margin-top: 12px;
 `;
-
 export const Time = styled.p`
     margin-left: 12px;
     margin-top: 2px;
@@ -172,6 +174,7 @@ export const Time = styled.p`
     font-size: 8pt;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
+    margin-left: 12px;
 `;
 export const InlineTime = styled.span`
     display: block;
@@ -183,13 +186,12 @@ export const InlineTime = styled.span`
     font-weight: 500;
 `;
 export const InlineTimeF = styled.span`
-    display: block;
     color: white;
     font-size: 7pt;
     margin-left: 4px;
-    margin-top: 7px;
     font-family: "AppleSDGothicNeo";
     font-weight: 500;
+    align-self: center;
 `;
 export const Movie = styled.div`
     width: 126px;
@@ -219,6 +221,7 @@ export const Celeb2Fire = styled.div`
     width: 126px;
     height: 23px;
     display: flex;
+    align-items: center;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -270,11 +273,12 @@ export const Wrapper = styled.div`
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
-    margin-bottom: 10px;
-    margin-top: -593px;
+
+    margin-top: -578px;
 `;
+
 export const BackgroundBox = styled.div`
     width: 100%;
-    height: 600px;
+    height: 585px;
     margin-top: 15px;
 `;

@@ -14,6 +14,7 @@ import Admin from "./pages/Admin";
 import Update from "./pages/Update";
 import List from "./pages/List";
 import Modal from "./pages/Modal";
+
 function App() {
   return (
     <div className="App">
@@ -28,17 +29,13 @@ function App() {
         <Route exact path="/photo" element={<Photo />} />
         <Route exact path="/Modal" element={<Modal />} />
 
-                {/* 어드민 페이지 */}
-                <Route exact path="/pado/admin/post" element={<Admin />} />
-                <Route
-                    exact
-                    path="/pado/admin/update/:id"
-                    element={<Update />}
-                />
-                <Route exact path="/pado/admin" element={<List />} />
-            </Routes>
-        </div>
-    );
+        {/* 어드민 페이지 */}
+        <Route exact path="/pado/admin" element={<List />} />
+        <Route exact path="/pado/admin/post" element={<Admin />} />
+        <Route exact path="/pado/admin/update/:id" element={<Update />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

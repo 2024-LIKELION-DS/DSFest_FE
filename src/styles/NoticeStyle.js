@@ -77,6 +77,7 @@ export const Title = styled.div`
   color: white;
   margin-top: 1rem;
   margin-bottom: 0.7rem;
+  text-align: left;
 `;
 
 export const Context = styled.div`
@@ -85,6 +86,7 @@ export const Context = styled.div`
   font-weight: 500;
   color: white;
   opacity: 0.8;
+  text-align: left;
 `;
 
 //이미지
@@ -112,7 +114,7 @@ export const button = styled.div`
   display: flex;
   position: absolute; // 가장 가까운 포지셔닝된 조상에 대해 상대적으로 위치
   bottom: 0.7rem; // 컨테이너의 하단에 정렬
-  width: 100%; // 너비를 이미지의 전체 너비로 설정
+  width: 360px; // 너비를 이미지의 전체 너비로 설정
   justify-content: space-between; // 요소들을 양 끝에 배치
   padding: 0 10px; // 좌우 패딩으로 화살표 여백 조절
 `;
@@ -134,5 +136,3 @@ export const rightArrowImg = styled.img`
   height: 2rem;
   visibility: ${({ show }) => (show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
 `;
-
-
