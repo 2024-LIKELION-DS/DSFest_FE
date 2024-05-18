@@ -1,45 +1,39 @@
 import React from "react";
-import * as C from "../styles/CommonStyle";
+import { useSwipeable } from "react-swipeable";
+import leftArrowImg from "../img/arrow_L.png";
+import rightArrowImg from "../img/arrow_R.png";
 import * as M from "../styles/ModalStyle";
-import PcTitle from "../components/PcTitle";
 
-function Modal({ onClose, imageUrl, imageCount, currentIndex }) {
-    return (
-        <>
-            <C.Page>
-                <C.BlackBg />
-                <C.Area>
-                    <C.Title>
-                        <PcTitle />
-                    </C.Title>
-                    <M.Background>
-                        <C.Phone>
-                            <M.Modal>
-                                <M.text>
-                                    {currentIndex} / {imageCount}
-                                </M.text>
-                                <M.CloseButton onClick={onClose}>
-                                    X
-                                </M.CloseButton>
-                                <img
-                                    src={imageUrl}
-                                    alt="Modal Content"
-                                    style={{
-                                        width: "100%",
-                                        height: "auto",
-                                        maxHeight: "80vh",
-                                        objectFit: "contain",
-                                        display: "block",
-                                        margin: "auto",
-                                    }}
-                                />
-                            </M.Modal>
-                        </C.Phone>
-                    </M.Background>
-                </C.Area>
-            </C.Page>
-        </>
-    );
+function Modal({ onClose, imageUrl, imageCount, currentIndex, noticeHeight, onSwipeLeft, onSwipeRight }) {
+  const handlers = useSwipeable({
+    onSwipedLeft: onSwipeLeft,
+    onSwipedRight: onSwipeRight,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
+
+  return (
+    <>
+      <M.Modal {...handlers} $noticeHeight={noticeHeight}>
+        <M.text>
+          {currentIndex} / {imageCount}
+        </M.text>
+        <M.CloseButton onClick={onClose}>X</M.CloseButton>
+        <M.ModalImg src={imageUrl} alt="Modal Content" />
+        {imageCount > 1 && (
+          <M.ArrowWrapper>
+            <M.ArrowImg src={leftArrowImg} alt="leftarrowImg" onClick={onSwipeRight} $show={currentIndex > 1} />
+            <M.ArrowImg
+              src={rightArrowImg}
+              alt="rightarrowImg"
+              onClick={onSwipeLeft}
+              $show={currentIndex < imageCount}
+            />
+          </M.ArrowWrapper>
+        )}
+      </M.Modal>
+    </>
+  );
 }
 
 export default Modal;

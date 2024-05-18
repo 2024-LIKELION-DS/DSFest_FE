@@ -20,7 +20,7 @@ export const Map = styled.div`
 `;
 
 export const Mapimg = styled.img`
-    width: 200px;
+    width: auto;
     height: 300px;
 `;
 
@@ -28,7 +28,6 @@ export const Mapimgs = styled.div`
     display: flex;
     justify-content: center;
     object-fit: contain;
-    margin-top: 10%;
 `;
 
 export const MapTitle = styled.div`
@@ -56,7 +55,7 @@ export const MapTitle = styled.div`
     color: rgba(255, 255, 255);
     font-size: 14px;
     margin: 8px 0px;
-    margin-top: 12%;
+    margin-top: 1%;
     font-family: "AppleSDGothicNeo";
     font-style: normal;
     font-weight: 500;
@@ -104,7 +103,7 @@ export const CloudRight = styled.div`
     width: 80px;
     height: 90px;
     align-self: flex-end;
-    margin-top: -6rem;
+    margin-top: -5.5rem;
 `;
 
 export const Infotext = styled.div`

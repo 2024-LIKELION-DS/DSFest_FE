@@ -43,7 +43,7 @@ function Splash() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/main");
-    }, 2500);
+    }, 4000);
     return () => clearTimeout(timer);
   }, [navigate]);
 
@@ -64,7 +64,7 @@ function Splash() {
             <S.Background>
               <C.Phone>
                 <S.Splash>
-                  <S.BackgroundImg backgroundImage={TdayBackImg}>
+                  <S.BackgroundImg $backgroundImage={TdayBackImg}>
                     <S.TdayMoon src={TdayMoon} alt="TdayMoon"></S.TdayMoon>
                     <S.TdayStar1 src={TdayStar1} alt="TdayStar1"></S.TdayStar1>
                     <S.TdayStar2 src={TdayStar2} alt="TdayStar2"></S.TdayStar2>
@@ -101,7 +101,7 @@ function Splash() {
             <S.Background>
               <C.Phone>
                 <S.Splash>
-                  <S.BackgroundImg backgroundImage={SdayBackImg}>
+                  <S.BackgroundImg $backgroundImage={SdayBackImg}>
                     <S.SdaySun1 src={SdaySun1} alt="SdaySun1"></S.SdaySun1>
                     <S.SdaySun2 src={SdaySun2} alt="SdaySun2"></S.SdaySun2>
                     <S.SdaySun3 src={SdaySun3} alt="SdaySun3"></S.SdaySun3>
@@ -139,7 +139,7 @@ function Splash() {
             <S.Background>
               <C.Phone>
                 <S.Splash>
-                  <S.BackgroundImg backgroundImage={FdayBackImg}>
+                  <S.BackgroundImg $backgroundImage={FdayBackImg}>
                     <S.FdaySun1 src={FdaySun1} alt="FdaySun1"></S.FdaySun1>
                     <S.FdaySun2 src={FdaySun2} alt="FdaySun2"></S.FdaySun2>
                     <S.FdaySun3 src={FdaySun3} alt="FdaySun3"></S.FdaySun3>

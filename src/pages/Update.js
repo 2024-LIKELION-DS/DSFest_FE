@@ -105,14 +105,11 @@ function Update() {
       }
 
       const url = `${API_KEY}/admin/update/${id}`;
-      const response = await axios.put(url, formDataToSend, {
+      await axios.put(url, formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      console.log("데이터와 함께 폼 제출:", formDataToSend);
-      console.log("응답:", response.data);
 
       alert("수정되었습니다.");
       navigate("/pado/admin");

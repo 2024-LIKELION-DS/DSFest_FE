@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import * as L from "../styles/ListStyle";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 import Logo from "../img/header_logo_48px.png";
 import Footer from "../components/Footer";
+import DeleteModal from "../components/DeleteModal";
 
 const API_KEY = process.env.REACT_APP_API;
 
 function List() {
   const [items, setItems] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [itemToDelete, setItemToDelete] = useState(null);
 
   const navigate = useNavigate();
   const handlePado = () => {
@@ -35,15 +38,26 @@ function List() {
   }, []);
 
   //api 삭제
-  const handleDelete = async (id) => {
+  const handleDelete = async () => {
     try {
-      await axios.delete(`${API_KEY}/admin/delete/${id}`);
-      const filteredItems = items.filter((item) => item.id !== id);
+      await axios.delete(`${API_KEY}/admin/delete/${itemToDelete}`);
+      const filteredItems = items.filter((item) => item.id !== itemToDelete);
       setItems(filteredItems);
       alert("삭제되었습니다.");
+      closeModal();
     } catch (error) {
       console.error("삭제 중 오류가 발생했습니다:", error);
     }
+  };
+
+  const openModal = (id) => {
+    setItemToDelete(id);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setItemToDelete(null);
   };
 
   return (
@@ -76,7 +90,7 @@ function List() {
                             수정
                           </Link>
                         </L.ListButton>
-                        <L.ListButton onClick={(e) => handleDelete(item.id)}>삭제</L.ListButton>
+                        <L.ListButton onClick={() => openModal(item.id)}>삭제</L.ListButton>
                       </L.ButtonWrap>
                       <L.BoxLine></L.BoxLine>
                     </L.ListItem>
@@ -90,6 +104,7 @@ function List() {
         </L.AdminList>
         <Footer />
       </L.Background>
+      {isModalOpen && <DeleteModal onClose={closeModal} onDelete={handleDelete} />}
     </>
   );
 }
