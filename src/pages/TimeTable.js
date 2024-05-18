@@ -204,11 +204,14 @@ function TimeTable() {
                                 }}
                             />
                         </div>
-                        <T.Movie>
-                            <T.Bold>영화 상영</T.Bold>
-                            <T.Time>15:00~17:30</T.Time>
-                        </T.Movie>
-                        <div style={{ height: "48px" }}></div>
+                        <T.StuPerform style={{ marginTop: "186px" }}>
+                            <T.Bold>
+                                재학생 및 <br />
+                                동아리 공연
+                            </T.Bold>
+                            <T.Time>16:00~18:30</T.Time>
+                        </T.StuPerform>
+
                         <T.Content>
                             <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
                             <T.Time>18:30~19:30</T.Time>
@@ -386,33 +389,24 @@ function TimeTable() {
                                 )}
                                 {/*여기 부분 작업!*/}
                                 <br />
+                                <div
+                                    style={{
+                                        position: "relative",
+                                        display: "flex",
+                                    }}
+                                >
+                                    <T.CloudLeft>
+                                        <img src={cloud_102x74} alt="cloudL" />
+                                    </T.CloudLeft>
+                                    <br />
+                                    <T.CloudRight>
+                                        <img src={cloud_143x144} alt="cloudR" />
+                                    </T.CloudRight>
+                                </div>
+                                <br />
+
                                 <Footer />
                             </T.TimeTable>
-                            <div style={{ position: "relative" }}>
-                                <img
-                                    src={cloud_102x74}
-                                    alt="cloudL"
-                                    style={{
-                                        width: "102px",
-                                        height: "74px",
-                                        position: "absolute",
-                                        left: "-20px",
-                                        top: "-230px",
-                                    }}
-                                />
-                                <br />
-                                <img
-                                    src={cloud_143x144}
-                                    alt="cloudR"
-                                    style={{
-                                        width: "143px",
-                                        height: "144px",
-                                        position: "absolute",
-                                        right: "0",
-                                        top: "-260px",
-                                    }}
-                                />
-                            </div>
                         </C.Phone>
                     </T.Background>
                 </C.Area>
