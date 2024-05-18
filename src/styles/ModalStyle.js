@@ -11,7 +11,7 @@ export const Modal = styled.div`
   height: calc(100% + 10rem);
   overflow: hidden;
 
-  @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
+  @media (hover: hover) and (pointer: fine) {
     width: 360px;
     height: 100%;
   }
@@ -23,7 +23,7 @@ export const CloseButton = styled.button`
   right: 1rem;
   background: transparent;
   border: none;
-  font-size: 1.0rem;
+  font-size: 1rem;
   cursor: pointer;
   color: white;
 `;
@@ -36,7 +36,7 @@ export const ModalImg = styled.img`
   display: block;
   margin-bottom: 183px;
 
-  @media (hover: hover) and (pointer: fine) and (min-height: 801px) {
+  @media (hover: hover) and (pointer: fine) {
     margin-bottom: 0;
   }
 `;
@@ -46,7 +46,7 @@ export const text = styled.div`
   top: 3rem;
   background: transparent;
   border: none;
-  font-size: 1.0rem;
+  font-size: 1rem;
   cursor: pointer;
   color: white;
 `;
@@ -57,7 +57,7 @@ export const ArrowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   top: 50%;
-  
+
   @media (max-width: 800px) {
     display: none;
   }
