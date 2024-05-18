@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import boatImg from "../img/boat_37x44.png";
 
 export const Background = styled.div`
   background: linear-gradient(180deg, #448bdb 0%, #6aacf3 100%);
@@ -48,7 +47,7 @@ export const content_wrap = styled.div`
 
   margin-left: -0.55rem;
   margin-top: -0.1rem;
-  display: ${({ isModalOpen }) => (isModalOpen ? "none" : "")};
+  display: ${(props) => (props.$isModalOpen ? "none" : "")};
 `;
 
 export const box_wrap = styled.div`
@@ -136,7 +135,7 @@ export const leftArrowImg = styled.img`
   margin-left: 1.7rem;
   width: 2rem;
   height: 2rem;
-  visibility: ${({ show }) => (show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
+  visibility: ${(props) => (props.$show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
 `;
 
 // 오른쪽 화살표 스타일
@@ -145,5 +144,5 @@ export const rightArrowImg = styled.img`
   margin-right: 1.7rem;
   width: 2rem;
   height: 2rem;
-  visibility: ${({ show }) => (show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
+  visibility: ${(props) => (props.$show ? "visible" : "hidden")}; // show prop에 따라 visibility 조정
 `;

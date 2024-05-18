@@ -5,7 +5,6 @@ import * as Mp from "../styles/MapStyle";
 import PcTitle from "../components/PcTitle";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import MapTitle from "../img/splash_1_sea_360x195.png";
 import MapImg from "../img/map_original_334x404.png";
 
 import MapImgA from "../img/map_A_334x404.png";
@@ -22,16 +21,7 @@ import cloudRight from "../img/3_cloud_131x144.png";
 
 import { useState, useEffect, useRef } from "react";
 
-function ExpandableContent({
-  showMoreText,
-  showLessText,
-  a,
-  b,
-  c,
-  d,
-  e,
-  setImage,
-}) {
+function ExpandableContent({ showMoreText, showLessText, a, b, c, d, e, setImage }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null); // 활성화된 버튼의 인덱스를 추적하는 상태
 
@@ -101,8 +91,6 @@ function ExpandableContent({
         padding: "5px 10px",
         cursor: "pointer",
         textAlign: "left",
-        display: "flex",
-        justifyContent: "center",
         boxShadow: "0 4px 4px rgba(47, 123, 209, 0.25)",
         backgroundColor: "rgba(106, 172, 243, 0.5)",
       }}
@@ -262,12 +250,7 @@ function Map() {
                 <Header />
                 <C.PageTitle>MAP</C.PageTitle>
                 <Mp.CloudLeft>
-                  <img
-                    src={cloudLeft}
-                    alt="배경 구름"
-                    width={102}
-                    style={{ marginLeft: "-28px" }}
-                  />
+                  <img src={cloudLeft} alt="배경 구름" width={102} style={{ marginLeft: "-28px" }} />
                 </Mp.CloudLeft>
 
                 <Mp.MapTitle>[근화제 부스 지도]</Mp.MapTitle>
@@ -281,19 +264,14 @@ function Map() {
                 <Mp.Mapline></Mp.Mapline>
                 <Mp.MapInfo>
                   <Mp.Infobox>
-                    <Mp.Infotext>
-                      * 부스를 누르면 지도에서 부스별 위치를 확인할 수 있습니다.
-                    </Mp.Infotext>
+                    <Mp.Infotext>* 부스를 누르면 지도에서 부스별 위치를 확인할 수 있습니다.</Mp.Infotext>
 
                     <ExpandableContent
                       showMoreText="5월 22일 수요일 - 낮 부스"
                       showLessText="1일차"
                       a={
                         applyBrTags ? (
-                          <>
-                            진로취업지원센터, 현장실습지원센터,
-                            사회봉사/학생지원과
-                          </>
+                          <>진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과</>
                         ) : (
                           "진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과"
                         )
@@ -351,21 +329,12 @@ function Map() {
                       showLessText="1일차"
                       a={
                         applyBrTags ? (
-                          <>
-                            진로취업지원센터, 현장실습지원센터,
-                            사회봉사/학생지원과
-                          </>
+                          <>진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과</>
                         ) : (
                           "진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과"
                         )
                       }
-                      b={
-                        applyBrTags ? (
-                          <>국제처, 총학생회, 운현방송국</>
-                        ) : (
-                          "국제처, 총학생회, 운현방송국"
-                        )
-                      }
+                      b={applyBrTags ? <>국제처, 총학생회, 운현방송국</> : "국제처, 총학생회, 운현방송국"}
                       c={
                         applyBrTags ? (
                           <>
@@ -383,10 +352,7 @@ function Map() {
                       }
                       d={
                         applyBrTags ? (
-                          <>
-                            빛내미, 디지털소프트웨어공학부, 한빛, 톤잘알,
-                            폭닥폭닥
-                          </>
+                          <>빛내미, 디지털소프트웨어공학부, 한빛, 톤잘알, 폭닥폭닥</>
                         ) : (
                           "빛내미, 디지털소프트웨어공학부, 한빛, 톤잘알, 폭닥폭닥"
                         )
@@ -413,21 +379,12 @@ function Map() {
                       showLessText="2일차"
                       a={
                         applyBrTags ? (
-                          <>
-                            진로취업지원센터, 현장실습지원센터,
-                            사회봉사/학생지원과
-                          </>
+                          <>진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과</>
                         ) : (
                           "진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과"
                         )
                       }
-                      b={
-                        applyBrTags ? (
-                          <>국제처, 총학생회, 운현방송국</>
-                        ) : (
-                          "국제처, 총학생회, 운현방송국"
-                        )
-                      }
+                      b={applyBrTags ? <>국제처, 총학생회, 운현방송국</> : "국제처, 총학생회, 운현방송국"}
                       c={
                         applyBrTags ? (
                           <>
@@ -443,10 +400,7 @@ function Map() {
                       }
                       d={
                         applyBrTags ? (
-                          <>
-                            유아교육과, 사이버보안, 사학, 도담도담,
-                            드리즐스튜디오
-                          </>
+                          <>유아교육과, 사이버보안, 사학, 도담도담, 드리즐스튜디오</>
                         ) : (
                           "유아교육과, 사이버보안, 사학, 도담도담, 드리즐스튜디오"
                         )
@@ -473,17 +427,12 @@ function Map() {
                       showLessText="2일차"
                       a={
                         applyBrTags ? (
-                          <>
-                            진로취업지원센터, 현장실습지원센터,
-                            사회봉사/학생지원과
-                          </>
+                          <>진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과</>
                         ) : (
                           "진로취업지원센터, 현장실습지원센터, 사회봉사/학생지원과"
                         )
                       }
-                      b={
-                        applyBrTags ? <>국제처, 총학생회</> : "국제처, 총학생회"
-                      }
+                      b={applyBrTags ? <>국제처, 총학생회</> : "국제처, 총학생회"}
                       c={
                         applyBrTags ? (
                           <>
@@ -535,13 +484,7 @@ function Map() {
                           "기후환경과문화전공, 현장실습지원센터, 사회봉사/학생지원과"
                         )
                       }
-                      b={
-                        applyBrTags ? (
-                          <>총학생회, 운현방송국</>
-                        ) : (
-                          "총학생회, 운현방송국"
-                        )
-                      }
+                      b={applyBrTags ? <>총학생회, 운현방송국</> : "총학생회, 운현방송국"}
                       c={
                         applyBrTags ? (
                           <>
@@ -593,13 +536,7 @@ function Map() {
                           "현장실습지원센터, 사회봉사/학생지원과"
                         )
                       }
-                      b={
-                        applyBrTags ? (
-                          <>총학생회, 운현방송국</>
-                        ) : (
-                          "총학생회, 운현방송국"
-                        )
-                      }
+                      b={applyBrTags ? <>총학생회, 운현방송국</> : "총학생회, 운현방송국"}
                       c={
                         applyBrTags ? (
                           <>
@@ -629,8 +566,7 @@ function Map() {
                           <>
                             수학, 도담도담, 운현극예술연구회, 이오,
                             <br />
-                            열음, LBC, 행운 하나 들고가세요~!, KimKim, 오묘한
-                            상점, 꽃신을 신고, 뜨개뜨개
+                            열음, LBC, 행운 하나 들고가세요~!, KimKim, 오묘한 상점, 꽃신을 신고, 뜨개뜨개
                           </>
                         ) : (
                           "수학, 도담도담, 운현극예술연구회, 이오, 열음, LBC, 행운 하나 들고가세요~!, KimKim, 오묘한 상점, 꽃신을 신고, 뜨개뜨개"

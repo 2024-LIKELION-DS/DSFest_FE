@@ -125,7 +125,7 @@ function Notice() {
                       <N.img_boat src={boatImg} alt="Boat" />
                     </N.ImgSpace>
                   </N.img_wrap>
-                  <N.content_wrap isModalOpen={isModalOpen}>
+                  <N.content_wrap $isModalOpen={isModalOpen}>
                     {notice.map((item) => (
                       <N.box_wrap key={item.id}>
                         <N.List>{item.category.name}</N.List>
@@ -150,13 +150,13 @@ function Notice() {
                           src={leftArrowImg}
                           alt="leftarrowImg"
                           onClick={handlePrevious}
-                          show={notice[0].images.length > 1 && currentImageIndex > 0}
+                          $show={notice[0].images.length > 1 && currentImageIndex > 0}
                         />
                         <N.rightArrowImg
                           src={rightArrowImg}
                           alt="rightarrowImg"
                           onClick={handleNext}
-                          show={notice[0].images.length > 1 && currentImageIndex < notice[0].images.length - 1}
+                          $show={notice[0].images.length > 1 && currentImageIndex < notice[0].images.length - 1}
                         />
                       </N.button>
                     )}

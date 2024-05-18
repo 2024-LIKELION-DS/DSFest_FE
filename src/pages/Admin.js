@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as A from "../styles/AdminStyle";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import Logo from "../img/header_logo_48px.png";
@@ -11,7 +11,6 @@ const API_KEY = process.env.REACT_APP_API; // 환경변수에 저장된 API 키 
 
 function Admin() {
   const navigate = useNavigate();
-  const { postId } = useParams();
 
   const handlePado = () => {
     navigate("/");
@@ -46,9 +45,7 @@ function Admin() {
     }
 
     try {
-      const responseData = await createWriting(formData); // createWriting 함수를 사용합니다.
-      console.log("Response from createWriting:", responseData);
-      // TODO: 서버 응답에 대한 처리 추가
+      await createWriting(formData);
 
       navigate("/pado/admin");
     } catch (error) {
@@ -86,9 +83,6 @@ function Admin() {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      console.log("Form submitted with data:", formDataToSend);
-      console.log("Response:", response.data);
 
       return response.data;
     } catch (error) {
@@ -148,7 +142,7 @@ function Admin() {
                       <A.LabelTag>분류</A.LabelTag>
                       <A.BlankDiv>
                         <A.Selection name="categoryName" value={formData.categoryName} onChange={handleInputChange}>
-                          <A.Opt value="" disabled selected hidden>
+                          <A.Opt value="" disabled hidden>
                             선택
                           </A.Opt>
                           <A.Opt value="notice" name="notice">

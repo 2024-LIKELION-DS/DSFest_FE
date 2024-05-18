@@ -14,7 +14,7 @@ function Modal({ onClose, imageUrl, imageCount, currentIndex, noticeHeight, onSw
 
   return (
     <>
-      <M.Modal {...handlers} noticeHeight={noticeHeight}>
+      <M.Modal {...handlers} $noticeHeight={noticeHeight}>
         <M.text>
           {currentIndex} / {imageCount}
         </M.text>
@@ -22,8 +22,13 @@ function Modal({ onClose, imageUrl, imageCount, currentIndex, noticeHeight, onSw
         <M.ModalImg src={imageUrl} alt="Modal Content" />
         {imageCount > 1 && (
           <M.ArrowWrapper>
-            <M.ArrowImg src={leftArrowImg} alt="leftarrowImg" onClick={onSwipeRight} show={currentIndex > 1} />
-            <M.ArrowImg src={rightArrowImg} alt="rightarrowImg" onClick={onSwipeLeft} show={currentIndex < imageCount} />
+            <M.ArrowImg src={leftArrowImg} alt="leftarrowImg" onClick={onSwipeRight} $show={currentIndex > 1} />
+            <M.ArrowImg
+              src={rightArrowImg}
+              alt="rightarrowImg"
+              onClick={onSwipeLeft}
+              $show={currentIndex < imageCount}
+            />
           </M.ArrowWrapper>
         )}
       </M.Modal>

@@ -68,5 +68,5 @@ export const ArrowImg = styled.img`
   width: 30px;
   height: 30px;
   margin: 0 0.1rem;
-  visibility: ${({ show }) => (show ? "visible" : "hidden")};
+  visibility: ${(props) => (props.$show ? "visible" : "hidden")};
 `;
