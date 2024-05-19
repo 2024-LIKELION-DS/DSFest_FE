@@ -75,9 +75,9 @@ function TimeTable() {
                         </div>
                         <T.Movie>
                             <T.Bold>영화 상영</T.Bold>
-                            <T.Time>15:00~17:30</T.Time>
+                            <T.Time>14:30~16:00</T.Time>
                         </T.Movie>
-
+                        <div style={{ height: "69.2px" }}></div>
                         <T.StuPerform>
                             <T.Bold>
                                 재학생 및 <br />
@@ -144,7 +144,7 @@ function TimeTable() {
                         </div>
                         <T.SongFest>
                             <T.Bold>운현가요제</T.Bold>
-                            <T.Time>18:30~20:30</T.Time>
+                            <T.Time>18:00~20:30</T.Time>
                         </T.SongFest>
 
                         <T.Celeb2Fire>
@@ -204,7 +204,7 @@ function TimeTable() {
                                 }}
                             />
                         </div>
-                        <T.StuPerform style={{ marginTop: "186px" }}>
+                        <T.StuPerform style={{ marginTop: "232.5px" }}>
                             <T.Bold>
                                 재학생 및 <br />
                                 동아리 공연
@@ -222,10 +222,10 @@ function TimeTable() {
                             </T.BoldTop5>
                             <T.Time>19:30~21:00</T.Time>
                         </T.Dj>
-                        <div style={{ height: "20px" }}></div>
+
                         <T.Celeb2Fire>
                             <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
-                            <T.InlineTimeF>21:30~22:00</T.InlineTimeF>
+                            <T.InlineTimeF>21:00~21:30</T.InlineTimeF>
                         </T.Celeb2Fire>
                     </div>
                 </T.Young>
