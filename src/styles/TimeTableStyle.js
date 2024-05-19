@@ -195,8 +195,8 @@ export const InlineTimeF = styled.span`
 `;
 export const Movie = styled.div`
     width: 126px;
-    height: 114px;
-    margin-top: 186px;
+    height: 70px;
+    margin-top: 161px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -228,22 +228,22 @@ export const Celeb2Fire = styled.div`
 `;
 export const SongFest = styled.div`
     width: 126px;
-    height: 86.34px;
+    height: 109.5px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
-    margin-top: 302.93px;
+    margin-top: 327px;
 `;
 export const Content = styled.div`
     width: 126px;
-    height: 42px;
+    height: 44px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
 `;
 export const Dj = styled.div`
     width: 126px;
-    height: 66px;
+    height: 67px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
