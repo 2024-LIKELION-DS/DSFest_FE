@@ -12,12 +12,8 @@ function DeleteModal({ onClose, onDelete }) {
           </DM.ModalCloseSpace>
           <DM.ModalContent>
             <DM.ModalWarn>!</DM.ModalWarn>
-            <DM.ModalTitle>공지사항을 삭제하시겠습니까?</DM.ModalTitle>
-            <DM.ModalText>
-              삭제를 선택하실 경우,
-              <br />
-              삭제한 공지사항은 되돌릴 수 없습니다.
-            </DM.ModalText>
+            <DM.ModalTitle>해당 게시물을 삭제하시겠습니까?</DM.ModalTitle>
+            <DM.ModalText>삭제 시, 복원이 어렵습니다.</DM.ModalText>
             <DM.CardDeleteBtn onClick={onDelete}>삭제</DM.CardDeleteBtn>
             <DM.CardDeleteBtnNone onClick={onClose}>취소</DM.CardDeleteBtnNone>
           </DM.ModalContent>
