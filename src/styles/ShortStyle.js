@@ -5,7 +5,7 @@ export const All = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 72px;
+  padding-bottom: 72px;
 `;
 
 export const BgBox = styled.div`
@@ -13,7 +13,7 @@ export const BgBox = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  max-height: calc(100% + 72px);
+  max-height: 100%;
   aspect-ratio: 9/11;
   & img {
     display: block;
