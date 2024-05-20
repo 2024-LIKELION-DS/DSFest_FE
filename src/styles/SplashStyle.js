@@ -42,7 +42,7 @@ export const Background = styled.div`
 `;
 
 export const BackgroundImg = styled.div`
-    background-image: url(${(props) => props.backgroundImage});
+    background-image: url(${(props) => props.$backgroundImage});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

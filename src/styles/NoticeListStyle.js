@@ -18,9 +18,9 @@ export const Notice = styled.div`
   }
 `;
 
-export const img_wrap = styled.div`
+export const ImgWrap = styled.div`
   display: flex;
-  opacity: ${(props) => (props.hide ? "0" : "1")};
+  opacity: ${(props) => (props.$hide ? "0" : "1")};
   justify-content: center;
 `;
 
@@ -30,13 +30,13 @@ export const ImgSpace = styled.div`
   justify-content: flex-end;
 `;
 
-export const img_boat = styled.img`
+export const ImgBoat = styled.img`
   width: 37px;
   height: 44px;
   margin-right: 2rem;
 `;
 
-export const content_wrap = styled.div`
+export const ContentWrap = styled.div`
   text-align: center;
   display: flex;
   height: 670px;
@@ -47,7 +47,7 @@ export const content_wrap = styled.div`
   margin-bottom: 25px;
 `;
 
-export const content_wrap2 = styled.div`
+export const ContentWrap2 = styled.div`
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -59,11 +59,11 @@ export const content_wrap2 = styled.div`
   padding: 0;
 `;
 
-export const content = styled.div`
+export const Content = styled.div`
   text-align: left;
 `;
 
-export const box = styled.div`
+export const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,7 +75,7 @@ export const box = styled.div`
   padding: 0px;
 `;
 
-export const img_exImg = styled.img`
+export const ImgExImg = styled.img`
   border: 4px solid white;
   border-radius: 12px;
   box-sizing: border-box;
@@ -83,7 +83,7 @@ export const img_exImg = styled.img`
   height: 156px;
 `;
 
-export const title = styled.div`
+export const Title = styled.div`
   font-size: 15px;
   font-family: "AppleSDGothicNeo";
   font-weight: 800;
@@ -96,7 +96,7 @@ export const title = styled.div`
   white-space: nowrap;
 `;
 
-export const category = styled.div`
+export const Category = styled.div`
   font-size: 12px;
   font-family: "AppleSDGothicNeo";
   font-weight: 400;

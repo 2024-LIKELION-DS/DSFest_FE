@@ -10,9 +10,8 @@ import NoticeHeader from "../components/NoticeHeader";
 import Footer from "../components/Footer";
 
 import boatImg from "../img/boat_37x44.png";
-
-import leftArrowImg from "../img/leftArrowImg.png";
-import rightArrowImg from "../img/rightArrowImg.png";
+import leftArrowImg from "../img/arrow_L.png";
+import rightArrowImg from "../img/arrow_R.png";
 
 function Notice() {
   const location = useLocation();
@@ -22,6 +21,7 @@ function Notice() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // 현재 이미지 인덱스 상태
+  const [noticeHeight, setNoticeHeight] = useState(0);
   const { id } = useParams();
 
   useEffect(() => {
@@ -37,15 +37,34 @@ function Notice() {
     fetchNotice();
   }, [id]);
 
+  useEffect(() => {
+    // notice 페이지 높이 계산
+    if (containerRef.current) {
+      setNoticeHeight(containerRef.current.offsetHeight);
+    }
+  }, [notice]);
+
+  useEffect(() => {
+    // 모달 상태가 변경될 때 푸터의 스타일을 조절합니다.
+    const footer = document.querySelector("Footer");
+    if (footer) {
+      footer.style.display = isModalOpen ? "none" : "block";
+    }
+  }, [isModalOpen]);
+
   const handleNext = () => {
     if (notice.length > 0 && notice[0].images) {
-      setCurrentImageIndex((prev) => (prev + 1) % notice[0].images.length);
+      const newIndex = (currentImageIndex + 1) % notice[0].images.length;
+      setCurrentImageIndex(newIndex);
+      setCurrentImage(notice[0].images[newIndex].imageUrl);
     }
   };
 
   const handlePrevious = () => {
     if (notice.length > 0 && notice[0].images) {
-      setCurrentImageIndex((prev) => (prev - 1 + notice[0].images.length) % notice[0].images.length);
+      const newIndex = (currentImageIndex - 1 + notice[0].images.length) % notice[0].images.length;
+      setCurrentImageIndex(newIndex);
+      setCurrentImage(notice[0].images[newIndex].imageUrl);
     }
   };
 
@@ -59,6 +78,32 @@ function Notice() {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const renderContentWithLinks = (content) => {
+    const urlPattern = /https?:\/\/[^\s]+/g;
+    const parts = content.split("\n");
+
+    return parts.map((part, index) => {
+      const urls = part.match(urlPattern) || [];
+      const subParts = part.split(urlPattern);
+
+      return (
+        <React.Fragment key={`line-${index}`}>
+          {subParts.map((subPart, subIndex) => (
+            <React.Fragment key={`subPart-${subIndex}`}>
+              <span>{subPart}</span>
+              {subIndex < urls.length && (
+                <a href={urls[subIndex]} target="_blank" rel="noopener noreferrer">
+                  {urls[subIndex]}
+                </a>
+              )}
+            </React.Fragment>
+          ))}
+          <br />
+        </React.Fragment>
+      );
+    });
   };
 
   return (
@@ -80,12 +125,12 @@ function Notice() {
                       <N.img_boat src={boatImg} alt="Boat" />
                     </N.ImgSpace>
                   </N.img_wrap>
-                  <N.content_wrap>
+                  <N.content_wrap $isModalOpen={isModalOpen}>
                     {notice.map((item) => (
                       <N.box_wrap key={item.id}>
                         <N.List>{item.category.name}</N.List>
                         <N.Title>{item.title}</N.Title>
-                        <N.Context>{item.content}</N.Context>
+                        <N.Context>{renderContentWithLinks(item.content)}</N.Context>
                       </N.box_wrap>
                     ))}
                   </N.content_wrap>
@@ -105,13 +150,13 @@ function Notice() {
                           src={leftArrowImg}
                           alt="leftarrowImg"
                           onClick={handlePrevious}
-                          show={notice[0].images.length > 1 && currentImageIndex > 0}
+                          $show={notice[0].images.length > 1 && currentImageIndex > 0}
                         />
                         <N.rightArrowImg
                           src={rightArrowImg}
                           alt="rightarrowImg"
                           onClick={handleNext}
-                          show={notice[0].images.length > 1 && currentImageIndex < notice[0].images.length - 1}
+                          $show={notice[0].images.length > 1 && currentImageIndex < notice[0].images.length - 1}
                         />
                       </N.button>
                     )}
@@ -121,8 +166,11 @@ function Notice() {
                   <Modal
                     onClose={closeModal}
                     imageUrl={currentImage}
-                    imageCount={notice[0]?.imageNum}
+                    imageCount={notice[0]?.images.length}
                     currentIndex={currentImageIndex + 1}
+                    noticeHeight={noticeHeight}
+                    onSwipeLeft={handleNext}
+                    onSwipeRight={handlePrevious}
                   />
                 )}
               </N.Notice>

@@ -17,7 +17,9 @@ function Shortcut() {
   return (
     <S.All>
       <S.BgBox>
-        <img className="bg" src={bg} alt="bg" />
+        <S.BgBoxImg>
+          <img className="bg" src={bg} alt="bg" />
+        </S.BgBoxImg>
       </S.BgBox>
       <S.Logo>
         <NavLink to="/">

@@ -19,7 +19,7 @@ function NoticeList() {
   const page = searchParams.get("page");
   const [notice, setNotice] = useState([]); // 공지사항 목록을 저장하는 상태
   const [totalNum, setTotalNum] = useState(0); // 전체 공지사항 수를 저장하는 상태
-  const [currentPage, setCurrentPage] = useState(page || 1); // 현재 페이지 번호를 저장하는 상태
+  const [currentPage, setCurrentPage] = useState(page ? parseInt(page) : 1); // 현재 페이지 번호를 저장하는 상태
   const [hideBoat, setHideBoat] = useState(false); // 보트 이미지 숨기기 상태
 
   useEffect(() => {
@@ -55,29 +55,26 @@ function NoticeList() {
               <NL.Notice>
                 <Header />
                 <C.PageTitle>NOTICE</C.PageTitle>
-                <NL.img_wrap hide={hideBoat}>
+                <NL.ImgWrap $hide={hideBoat}>
                   <NL.ImgSpace>
-                    <NL.img_boat src={boatImg} alt="Boat" />
+                    <NL.ImgBoat src={boatImg} alt="Boat" />
                   </NL.ImgSpace>
-                </NL.img_wrap>
-                <NL.content_wrap>
-                  <NL.content_wrap2 itemsCount={notice.length}>
+                </NL.ImgWrap>
+                <NL.ContentWrap>
+                  <NL.ContentWrap2 $itemscount={notice.length}>
                     {notice.map((item) => (
                       <Link to={`/notice/${item.id}`} key={item.id} state={{ fromPage: currentPage }}>
-                        <NL.content>
-                          <NL.box>
-                            <NL.img_exImg
-                              src={item.images && item.images.length > 0 ? item.images[0].imageUrl : exImg}
-                              alt="exImg"
-                            />
-                          </NL.box>
-                          <NL.title>{item.title}</NL.title>
-                          <NL.category>{item.category.name}</NL.category>
-                        </NL.content>
+                        <NL.Content>
+                          <NL.Box>
+                            <NL.ImgExImg src={item.thumbnail ? item.thumbnail.imageUrl : exImg} alt="exImg" />
+                          </NL.Box>
+                          <NL.Title>{item.title}</NL.Title>
+                          <NL.Category>{item.category.name}</NL.Category>
+                        </NL.Content>
                       </Link>
                     ))}
-                  </NL.content_wrap2>
-                </NL.content_wrap>
+                  </NL.ContentWrap2>
+                </NL.ContentWrap>
                 <NL.PaginationContainer>
                   <Pagination
                     activePage={currentPage}

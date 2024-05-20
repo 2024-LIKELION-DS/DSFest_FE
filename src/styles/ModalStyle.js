@@ -8,7 +8,8 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: calc(100% + 183px);
+  height: calc(100% + 10rem);
+  overflow: hidden;
 
   @media (hover: hover) and (pointer: fine) {
     width: 360px;
@@ -18,11 +19,11 @@ export const Modal = styled.div`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 3rem; // 모달의 상단 오른쪽에 위치
-  right: 1rem; // 왼쪽에서 오른쪽으로 변경
+  top: 3rem;
+  right: 1rem;
   background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 1rem;
   cursor: pointer;
   color: white;
 `;
@@ -42,10 +43,30 @@ export const ModalImg = styled.img`
 
 export const text = styled.div`
   position: absolute;
-  top: 3rem; // 모달의 상단 오른쪽에 위치
+  top: 3rem;
   background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 1rem;
   cursor: pointer;
   color: white;
+`;
+
+export const ArrowWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
+export const ArrowImg = styled.img`
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 0 0.1rem;
+  visibility: ${(props) => (props.$show ? "visible" : "hidden")};
 `;

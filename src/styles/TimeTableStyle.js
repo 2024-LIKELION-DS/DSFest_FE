@@ -26,7 +26,7 @@ export const Young = styled.div`
     width: 126px;
     padding-left: 10px;
     margin-top: 0;
-    height: 600px;
+    min-height: 600px;
 `;
 
 export const DayBox = styled.div`
@@ -195,8 +195,8 @@ export const InlineTimeF = styled.span`
 `;
 export const Movie = styled.div`
     width: 126px;
-    height: 114px;
-    margin-top: 186px;
+    height: 70px;
+    margin-top: 161px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -228,22 +228,22 @@ export const Celeb2Fire = styled.div`
 `;
 export const SongFest = styled.div`
     width: 126px;
-    height: 86.34px;
+    height: 109.5px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
-    margin-top: 302.93px;
+    margin-top: 327px;
 `;
 export const Content = styled.div`
     width: 126px;
-    height: 42px;
+    height: 44px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
 `;
 export const Dj = styled.div`
     width: 126px;
-    height: 66px;
+    height: 67px;
     border-radius: 8px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -273,7 +273,6 @@ export const Wrapper = styled.div`
     justify-content: center;
     margin-left: 50px;
     margin-right: 12px;
-
     margin-top: -578px;
 `;
 
@@ -281,4 +280,19 @@ export const BackgroundBox = styled.div`
     width: 100%;
     height: 585px;
     margin-top: 15px;
+`;
+export const CloudLeft = styled.div`
+    width: 102px;
+    height: 74px;
+    position: absolute;
+    left: -30px;
+    margin-top: -240px;
+`;
+
+export const CloudRight = styled.div`
+    width: 143px;
+    height: 144px;
+    position: absolute;
+    right: -20px;
+    margin-top: -260px;
 `;

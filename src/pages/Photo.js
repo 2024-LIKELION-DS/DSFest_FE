@@ -59,7 +59,8 @@ function Photo() {
                 <P.PhotoSpace>
                   <P.TextSpace>
                     <P.Text>
-                      <p>* 이미지는 약 5:6 비율을 권장합니다.</p>
+                      <p>이미지는 약 5:6 비율을 권장합니다.</p>
+                      <p>카카오톡으로 접속 시 다운로드가 어렵습니다.</p>
                     </P.Text>
                     <P.PhotoDownImg src={PhotoDown} alt="다운로드" onClick={onCaptureClick} />
                   </P.TextSpace>
