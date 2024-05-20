@@ -66,10 +66,7 @@ function NoticeList() {
                       <Link to={`/notice/${item.id}`} key={item.id} state={{ fromPage: currentPage }}>
                         <NL.Content>
                           <NL.Box>
-                            <NL.ImgExImg
-                              src={item.images && item.images.length > 0 ? item.images[0].imageUrl : exImg}
-                              alt="exImg"
-                            />
+                            <NL.ImgExImg src={item.thumbnail ? item.thumbnail.imageUrl : exImg} alt="exImg" />
                           </NL.Box>
                           <NL.Title>{item.title}</NL.Title>
                           <NL.Category>{item.category.name}</NL.Category>
