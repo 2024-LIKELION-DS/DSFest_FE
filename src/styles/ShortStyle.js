@@ -14,15 +14,25 @@ export const BgBox = styled.div`
   left: 0;
   width: 100%;
   max-height: 100%;
-  aspect-ratio: 9/11;
-  & img {
+  overflow: hidden;
+`;
+
+export const BgBoxImg = styled.div`
+  &::before {
+    content: "";
     display: block;
+    padding-top: calc(100% * (11 / 9)); /* 11/9 비율을 유지 */
+    max-height: 100%;
+  }
+
+  & img {
+    position: absolute; /* 이미지를 박스 안에 절대적으로 배치 */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    animation: pulse;
-    animation-duration: 5s;
+    animation: pulse 5s;
   }
 `;
 
