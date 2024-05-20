@@ -42,28 +42,17 @@ function TimeTable() {
     const [isFriClicked, setIsFriClicked] = useState(false);
 
     useEffect(() => {
-        if (selectedDay === "5/22 Wed") {
-            setIsWedClicked(true);
-            setIsThuClicked(false);
-            setIsFriClicked(false);
-        } else if (selectedDay === "5/23 Thu") {
-            setIsWedClicked(false);
-            setIsThuClicked(true);
-            setIsFriClicked(false);
-        } else if (selectedDay === "5/24 Fri") {
-            setIsWedClicked(false);
-            setIsThuClicked(false);
-            setIsFriClicked(true);
-        }
-    }, [selectedDay]);
-
-    useEffect(() => {
         console.log("Current Date:", currentDate.toLocaleDateString("en-US"));
         console.log("Selected Day:", selectedDay);
     }, [selectedDay]);
 
     function Day1TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
+        const handleWedButtonClick = () => {
+            setIsWedClicked(true);
+            setIsThuClicked(false); // 다른 버튼의 클릭 상태를 초기화
+            setIsFriClicked(false); // 다른 버튼의 클릭 상태를 초기화
+        };
         useEffect(() => {
             setIsAnimated(true);
         }, []);
@@ -128,6 +117,11 @@ function TimeTable() {
 
     function Day2TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
+        const handleThuButtonClick = () => {
+            setIsWedClicked(false);
+            setIsThuClicked(true); // 다른 버튼의 클릭 상태를 초기화
+            setIsFriClicked(false); // 다른 버튼의 클릭 상태를 초기화
+        };
         useEffect(() => {
             setIsAnimated(true);
         }, []);
@@ -183,6 +177,11 @@ function TimeTable() {
 
     function Day3TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
+        const handleWFriButtonClick = () => {
+            setIsWedClicked(false);
+            setIsThuClicked(false); // 다른 버튼의 클릭 상태를 초기화
+            setIsFriClicked(true); // 다른 버튼의 클릭 상태를 초기화
+        };
         useEffect(() => {
             setIsAnimated(true);
         }, []);
