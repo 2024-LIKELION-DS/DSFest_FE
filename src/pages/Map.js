@@ -155,8 +155,8 @@ function ExpandableContent({
                 <div
                     style={{
                         height: "20px",
-
                         alignContent: "center",
+                        height: "20px",
                     }}
                 >
                     <img
