@@ -81,7 +81,7 @@ function Notice() {
   };
 
   const renderContentWithLinks = (content) => {
-    const urlPattern = /https?:\/\/[^\s]+/g;
+    const urlPattern = /(?:https?:\/\/|www\.)[^\s]+/g;
     const parts = content.split("\n");
 
     return parts.map((part, index) => {
@@ -94,7 +94,11 @@ function Notice() {
             <React.Fragment key={`subPart-${subIndex}`}>
               <span>{subPart}</span>
               {subIndex < urls.length && (
-                <a href={urls[subIndex]} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={urls[subIndex].startsWith("www.") ? `http://${urls[subIndex]}` : urls[subIndex]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {urls[subIndex]}
                 </a>
               )}
