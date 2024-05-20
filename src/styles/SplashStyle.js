@@ -21,9 +21,9 @@ export const Phones = styled.div`
             margin-right: -11.294px;
             box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
             // 스플래시 이슈로 추가한 부분
-            position: absolute !important;
-            z-index: 15 !important;
-            right: 0 !important;
+            position: absolute;
+            z-index: 15;
+            right: 0;
         }
     }
 `;

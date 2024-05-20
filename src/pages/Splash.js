@@ -78,7 +78,7 @@ function Splash() {
                             <S.Phones>
                                 <S.Splash>
                                     <S.BackgroundImg
-                                        backgroundImage={TdayBackImg}
+                                        $backgroundImage={TdayBackImg}
                                     >
                                         <S.TdayMoon
                                             src={TdayMoon}
@@ -153,7 +153,7 @@ function Splash() {
                             <S.Phones>
                                 <S.Splash>
                                     <S.BackgroundImg
-                                        backgroundImage={SdayBackImg}
+                                        $backgroundImage={SdayBackImg}
                                     >
                                         <S.SdaySun1
                                             src={SdaySun1}
@@ -232,7 +232,7 @@ function Splash() {
                             <S.Phones>
                                 <S.Splash>
                                     <S.BackgroundImg
-                                        backgroundImage={FdayBackImg}
+                                        $backgroundImage={FdayBackImg}
                                     >
                                         <S.FdaySun1
                                             src={FdaySun1}
