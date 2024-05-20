@@ -52,6 +52,19 @@ function Splash() {
     const SecondDate = new Date(2024, 4, 23);
     const LastDate = new Date(2024, 4, 24);
 
+    // 스크롤 방지
+    useEffect(() => {
+        const preventScroll = (e) => {
+            window.scrollTo(0, 0);
+        };
+
+        window.addEventListener("scroll", preventScroll);
+
+        return () => {
+            window.removeEventListener("scroll", preventScroll);
+        };
+    }, []);
+
     if (currentDate.toDateString() === LastDate.toDateString()) {
         return (
             <>
@@ -62,7 +75,7 @@ function Splash() {
                             <PcTitle />
                         </C.Title>
                         <S.Background>
-                            <C.Phone>
+                            <S.Phones>
                                 <S.Splash>
                                     <S.BackgroundImg
                                         backgroundImage={TdayBackImg}
@@ -121,7 +134,7 @@ function Splash() {
                                         ></S.Beach>
                                     </S.BackgroundImg>
                                 </S.Splash>
-                            </C.Phone>
+                            </S.Phones>
                         </S.Background>
                     </C.Area>
                 </C.Page>
@@ -137,7 +150,7 @@ function Splash() {
                             <PcTitle />
                         </C.Title>
                         <S.Background>
-                            <C.Phone>
+                            <S.Phones>
                                 <S.Splash>
                                     <S.BackgroundImg
                                         backgroundImage={SdayBackImg}
@@ -200,7 +213,7 @@ function Splash() {
                                         ></S.Beach>
                                     </S.BackgroundImg>
                                 </S.Splash>
-                            </C.Phone>
+                            </S.Phones>
                         </S.Background>
                     </C.Area>
                 </C.Page>
@@ -216,7 +229,7 @@ function Splash() {
                             <PcTitle />
                         </C.Title>
                         <S.Background>
-                            <C.Phone>
+                            <S.Phones>
                                 <S.Splash>
                                     <S.BackgroundImg
                                         backgroundImage={FdayBackImg}
@@ -279,7 +292,7 @@ function Splash() {
                                         ></S.Beach>
                                     </S.BackgroundImg>
                                 </S.Splash>
-                            </C.Phone>
+                            </S.Phones>
                         </S.Background>
                     </C.Area>
                 </C.Page>

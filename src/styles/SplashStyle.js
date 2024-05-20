@@ -1,6 +1,33 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
+export const Phones = styled.div`
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        width: 360px;
+        height: 100%;
+
+        @media (min-height: 801px) {
+            border: 12px solid #111111;
+            border-radius: 24px;
+            margin-top: -11.294px;
+            margin-right: -11.294px;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+            // 스플래시 이슈로 추가한 부분
+            position: absolute !important;
+            z-index: 15 !important;
+            right: 0 !important;
+        }
+    }
+`;
+
 export const Background = styled.div`
     background: linear-gradient(
         to bottom,
@@ -82,7 +109,8 @@ export const FdaySun2 = styled.img`
     top: 0;
 
     @media (hover: hover) and (pointer: fine) and (max-width: 1157px) {
-        right: -11.294px;
+        /* right: -11.294px;
+        border-radius: 12px; */
     }
 `;
 
@@ -312,6 +340,23 @@ export const Beach = styled.img`
 `;
 
 // 글자
+const moveLogo = () => keyframes`
+    0% {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+`;
+
 export const LogoBox = styled.div`
     display: flex;
     flex-direction: column;
@@ -337,23 +382,6 @@ export const LogoBox = styled.div`
         width: 214px;
         height: auto;
         padding: 0;
-    }
-`;
-
-const moveLogo = () => keyframes`
-    0% {
-        transform: translateY(5px);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(-5px);
-        opacity: 1;
-    }
-    80% {
-        transform: translateY(2px);
-    }
-    100% {
-        transform: translateY(0px);
     }
 `;
 
