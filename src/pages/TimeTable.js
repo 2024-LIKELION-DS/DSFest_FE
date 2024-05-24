@@ -1,4 +1,3 @@
-//import React from "react";
 import * as C from "../styles/CommonStyle";
 import * as T from "../styles/TimeTableStyle";
 
@@ -14,7 +13,25 @@ import cloud_143x144 from "../img/12_cloud_143x144.png";
 import cloud_102x74 from "../img/12_cloud_102x74.png";
 
 function TimeTable() {
-    const [selectedDay, setSelectedDay] = useState("5/22 Wed");
+    const currentDate = new Date();
+    const firstDate = new Date(2024, 4, 22);
+    const secondDate = new Date(2024, 4, 23);
+    const lastDate = new Date(2024, 4, 24);
+
+    const getDefaultDay = () => {
+        const currentDateString = currentDate.toLocaleDateString("en-US");
+        if (currentDateString === lastDate.toLocaleDateString("en-US")) {
+            return "5/24 Fri";
+        } else if (
+            currentDateString === secondDate.toLocaleDateString("en-US")
+        ) {
+            return "5/23 Thu";
+        } else {
+            return "5/22 Wed";
+        }
+    };
+
+    const [selectedDay, setSelectedDay] = useState(getDefaultDay());
 
     const handleDayChange = (day) => {
         setSelectedDay(day);
@@ -24,14 +41,29 @@ function TimeTable() {
     const [isThuClicked, setIsThuClicked] = useState(false);
     const [isFriClicked, setIsFriClicked] = useState(false);
 
+    useEffect(() => {
+        if (selectedDay === "5/22 Wed") {
+            setIsWedClicked(true);
+            setIsThuClicked(false);
+            setIsFriClicked(false);
+        } else if (selectedDay === "5/23 Thu") {
+            setIsWedClicked(false);
+            setIsThuClicked(true);
+            setIsFriClicked(false);
+        } else if (selectedDay === "5/24 Fri") {
+            setIsWedClicked(false);
+            setIsThuClicked(false);
+            setIsFriClicked(true);
+        }
+    }, [selectedDay]);
+
+    useEffect(() => {
+        console.log("Current Date:", currentDate.toLocaleDateString("en-US"));
+        console.log("Selected Day:", selectedDay);
+    }, [selectedDay]);
+
     function Day1TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
-        const handleWedButtonClick = () => {
-            setIsWedClicked(true);
-            setIsThuClicked(false); // 다른 버튼의 클릭 상태를 초기화
-            setIsFriClicked(false); // 다른 버튼의 클릭 상태를 초기화
-        };
-
         useEffect(() => {
             setIsAnimated(true);
         }, []);
@@ -48,7 +80,6 @@ function TimeTable() {
                         <T.Time>16:00~19:30</T.Time>
                     </T.DayBooth>
                 </T.Booth>
-
                 <T.Young>
                     <div
                         style={{
@@ -97,12 +128,6 @@ function TimeTable() {
 
     function Day2TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
-        const handleThuButtonClick = () => {
-            setIsWedClicked(false); // 다른 버튼의 클릭 상태를 초기화
-            setIsThuClicked(true);
-            setIsFriClicked(false); // 다른 버튼의 클릭 상태를 초기화
-        };
-
         useEffect(() => {
             setIsAnimated(true);
         }, []);
@@ -146,7 +171,6 @@ function TimeTable() {
                             <T.Bold>운현가요제</T.Bold>
                             <T.Time>18:00~20:30</T.Time>
                         </T.SongFest>
-
                         <T.Celeb2Fire>
                             <T.InlineBold>연예인 공연</T.InlineBold>
                             <T.InlineTime>20:30~21:00</T.InlineTime>
@@ -159,11 +183,6 @@ function TimeTable() {
 
     function Day3TimeTable() {
         const [isAnimated, setIsAnimated] = useState(false);
-        const handleFriButtonClick = () => {
-            setIsWedClicked(false); // 다른 버튼의 클릭 상태를 초기화
-            setIsThuClicked(false); // 다른 버튼의 클릭 상태를 초기화
-            setIsFriClicked(true);
-        };
         useEffect(() => {
             setIsAnimated(true);
         }, []);
@@ -211,7 +230,6 @@ function TimeTable() {
                             </T.Bold>
                             <T.Time>16:00~18:30</T.Time>
                         </T.StuPerform>
-
                         <T.Content>
                             <T.BoldTop5>총학생회 콘텐츠</T.BoldTop5>
                             <T.Time>18:30~19:30</T.Time>
@@ -222,7 +240,6 @@ function TimeTable() {
                             </T.BoldTop5>
                             <T.Time>19:30~21:00</T.Time>
                         </T.Dj>
-
                         <T.Celeb2Fire>
                             <T.InlineBoldF>불꽃놀이</T.InlineBoldF>
                             <T.InlineTimeF>21:00~21:30</T.InlineTimeF>
@@ -285,7 +302,6 @@ function TimeTable() {
                                     >
                                         5/22 Wed
                                     </T.WedButton>
-
                                     <T.ThuButton
                                         style={
                                             selectedDay === "5/23 Thu"
@@ -301,7 +317,6 @@ function TimeTable() {
                                     >
                                         5/23 Thu
                                     </T.ThuButton>
-
                                     <T.FriButton
                                         style={
                                             selectedDay === "5/24 Fri"
@@ -318,7 +333,6 @@ function TimeTable() {
                                         5/24 Fri
                                     </T.FriButton>
                                 </T.DayBox>
-
                                 <div
                                     style={{
                                         display: "flex",
@@ -387,7 +401,6 @@ function TimeTable() {
                                 {selectedDay === "5/24 Fri" && (
                                     <Day3TimeTable />
                                 )}
-                                {/*여기 부분 작업!*/}
                                 <br />
                                 <div
                                     style={{
@@ -404,7 +417,6 @@ function TimeTable() {
                                     </T.CloudRight>
                                 </div>
                                 <br />
-
                                 <Footer />
                             </T.TimeTable>
                         </C.Phone>
